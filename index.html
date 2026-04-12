@@ -52,7 +52,6 @@
             position: relative;
         }
 
-        /* Miglioramento 1: bottone tema con bordo e forma circolare */
         #theme-toggle {
             position: absolute; top: 2rem; right: 1.5rem;
             background: none;
@@ -94,7 +93,6 @@
         .social-links a {
             text-decoration: none; color: var(--accent); font-size: 0.8rem;
             font-weight: 500; display: flex; align-items: center; gap: 0.4rem;
-            /* Miglioramento 2: transizione anche su letter-spacing */
             transition: color 0.2s ease, letter-spacing 0.2s ease;
         }
         .social-links a:hover {
@@ -132,7 +130,6 @@
         .item strong { display: block; font-size: 0.9rem; font-weight: 600; letter-spacing: -0.02em; color: var(--fg); }
         .item span { display: block; font-size: 0.85rem; color: var(--accent); line-height: 1.5; letter-spacing: 0.005em; }
 
-        /* Miglioramento 3: border-bottom del cta-link più sottile e tematico */
         .cta-link {
             font-size: 0.9rem; font-weight: 600; color: var(--fg);
             text-decoration: none;
@@ -231,7 +228,7 @@
         const btn = document.getElementById("theme-toggle");
         const sunIcon = document.getElementById("sun-icon");
         const moonIcon = document.getElementById("moon-icon");
-        
+
         function updateIcons(theme) {
             const isDark = theme === "dark";
             sunIcon.style.display = isDark ? "block" : "none";
@@ -243,4 +240,12 @@
         updateIcons(currentTheme);
 
         btn.addEventListener("click", () => {
-            let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light
+            let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+            updateIcons(theme);
+        });
+    </script>
+
+</body>
+</html>
