@@ -3,34 +3,30 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Giovanni Duminuco, PhD</title>
+    <title>Giovanni Duminuco, PhD | Filosofia e Progettazione Sociale</title>
+    <meta name="description" content="Sito personale di Giovanni Duminuco, PhD. Docente di Filosofia dell'Educazione, ricercatore e progettista sociale esperto in valutazione d'impatto.">
     
-    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="preconnect" href="https://rsms.me/" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com/" crossorigin>
+    
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 
     <style>
+        /* Ottimizzazione Font Display per PageSpeed */
+        @font-face { font-family: 'Inter'; font-display: swap; }
+
         :root {
-            --bg: #ffffff;
-            --fg: #111111;
-            --accent: #666666;
-            --border: #f0f0f0;
-            --m-width: 600px;
+            --bg: #ffffff; --fg: #111111; --accent: #666666; --border: #f0f0f0; --m-width: 600px;
         }
 
         [data-theme="dark"] {
-            --bg: #0a0a0a;
-            --fg: #e0e0e0;
-            --accent: #888888;
-            --border: #1a1a1a;
+            --bg: #0a0a0a; --fg: #e0e0e0; --accent: #888888; --border: #1a1a1a;
         }
 
         @media (prefers-color-scheme: dark) {
             :root:not([data-theme="light"]) {
-                --bg: #0a0a0a;
-                --fg: #e0e0e0;
-                --accent: #888888;
-                --border: #1a1a1a;
+                --bg: #0a0a0a; --fg: #e0e0e0; --accent: #888888; --border: #1a1a1a;
             }
         }
 
@@ -42,7 +38,7 @@
             color: var(--fg);
             line-height: 1.5;
             -webkit-font-smoothing: antialiased;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease;
         }
 
         body {
@@ -52,18 +48,12 @@
             position: relative;
         }
 
+        /* Pulsante Dark Mode ottimizzato */
         #theme-toggle {
-            position: absolute;
-            top: 2rem;
-            right: 1.5rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--accent);
-            padding: 5px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: absolute; top: 2rem; right: 1.5rem;
+            background: none; border: none; cursor: pointer;
+            color: var(--accent); padding: 8px;
+            display: flex; align-items: center; justify-content: center;
         }
 
         header {
@@ -79,79 +69,41 @@
             border-radius: 50%;
             object-fit: cover;
             border: 1px solid var(--border);
+            /* Importante per LCP: carica l'immagine con priorità */
+            content-visibility: auto;
         }
 
-        h1 {
-            font-size: 1.35rem;
-            font-weight: 600;
-            letter-spacing: -0.03em;
-            line-height: 1;
-            margin-bottom: 0.2rem;
-        }
-
+        h1 { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.2rem; }
         h1 span.phd { font-weight: 400; color: var(--accent); font-size: 0.8em; }
-        .hero-role { font-size: 0.9rem; color: var(--accent); font-weight: 400; margin-bottom: 0.8rem; }
+        .hero-role { font-size: 0.9rem; color: var(--accent); margin-bottom: 0.8rem; }
 
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
+        .social-links { display: flex; gap: 1rem; flex-wrap: wrap; }
         .social-links a {
-            text-decoration: none;
-            color: var(--accent);
-            font-size: 0.8rem;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-            transition: color 0.2s ease;
+            text-decoration: none; color: var(--accent); font-size: 0.8rem;
+            font-weight: 500; display: flex; align-items: center; gap: 0.4rem;
         }
-
         .social-links a:hover { color: var(--fg); }
-        .social-links i { font-size: 0.9rem; }
 
         section { margin-bottom: 3rem; }
-
         h2 {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--accent);
-            margin-bottom: 1rem;
-            padding-bottom: 0.4rem;
-            border-bottom: 1px solid var(--border);
-            width: 100%;
+            font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em;
+            color: var(--accent); margin-bottom: 1rem; padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border); width: 100%;
         }
 
         .text-block { font-size: 0.92rem; line-height: 1.55; }
-
         .list-grid { display: grid; gap: 1rem; }
         .item strong { display: block; font-size: 0.92rem; font-weight: 600; color: var(--fg); }
         .item span { display: block; font-size: 0.9rem; color: var(--accent); line-height: 1.4; }
 
-        .cta-link {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--fg);
-            text-decoration: none;
-            border-bottom: 1px solid var(--fg);
-        }
+        .cta-link { font-size: 0.9rem; font-weight: 600; color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--fg); }
 
-        footer {
-            margin-top: 4rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.8rem;
-            color: var(--accent);
-        }
+        footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--accent); }
 
         @media (max-width: 600px) {
             body { padding-top: 5rem; }
             header { grid-template-columns: 1fr; text-align: center; justify-items: center; }
             .social-links { justify-content: center; }
-            #theme-toggle { top: 1.5rem; }
         }
     </style>
 </head>
@@ -163,7 +115,7 @@
     </button>
 
     <header>
-        <img src="profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
+        <img src="profile.jpg" alt="Giovanni Duminuco" class="profile-photo" width="85" height="85" fetchpriority="high">
         <div class="header-text">
             <h1>Giovanni Duminuco <span class="phd">PhD</span></h1>
             <p class="hero-role">Docente di Filosofia dell'Educazione e Progettista sociale</p>
