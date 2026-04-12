@@ -52,7 +52,6 @@
             position: relative;
         }
 
-        /* FIX 4: Accessibilità bottone */
         #theme-toggle {
             position: absolute; top: 2rem; right: 1.5rem;
             background: none; border: none; cursor: pointer;
@@ -70,7 +69,6 @@
             align-items: center;
         }
 
-        /* FIX 2: Rimozione content-visibility per LCP */
         .profile-photo {
             width: 85px; height: 85px;
             border-radius: 50%;
@@ -81,7 +79,7 @@
 
         h1 { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.2rem; }
         h1 span.phd { font-weight: 400; color: var(--accent); font-size: 0.8em; }
-        .hero-role { font-size: 0.9rem; color: var(--accent); margin-bottom: 0.8rem; }
+        .hero-role { font-size: 0.9rem; color: var(--accent); font-weight: 400; margin-bottom: 0.8rem; }
 
         .social-links { display: flex; gap: 1rem; flex-wrap: wrap; }
         .social-links a {
@@ -92,15 +90,22 @@
         .social-links a:hover { color: var(--fg); }
         .social-links svg { width: 14px; height: 14px; fill: currentColor; }
 
-        section { margin-bottom: 3rem; }
+        section { margin-bottom: 3.5rem; }
+
+        /* Titoli Ricerca e Newsletter aggiornati */
         h2 {
-            font-size: 0.6rem; text-transform: uppercase; letter-spacing: 0.1em;
-            color: var(--accent); margin-bottom: 1rem; padding-bottom: 0.4rem;
-            border-bottom: 1px solid var(--border); width: 100%;
+            font-size: 0.85rem; /* Aumentato da 0.6rem */
+            font-weight: 600; /* Leggermente più marcato */
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border);
+            width: 100%;
         }
 
         .text-block { font-size: 0.92rem; line-height: 1.55; }
-        /* FIX 8: Classi per margini invece di inline style */
         .mb-sm { margin-bottom: 0.8rem; }
         .mb-md { margin-bottom: 1.2rem; }
 
@@ -197,7 +202,6 @@
             btn.setAttribute("aria-pressed", isDark);
         }
 
-        // Recupera il tema già impostato dal pre-script in head
         let currentTheme = document.documentElement.getAttribute("data-theme") || "light";
         updateIcons(currentTheme);
 
