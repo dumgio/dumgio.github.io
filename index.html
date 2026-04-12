@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giovanni Duminuco, PhD</title>
+    
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --fg: #111111;
+            --accent: #666666;
+            --border: #f0f0f0;
+            --m-width: 600px;
+        }
+
+        [data-theme="dark"] {
+            --bg: #0a0a0a;
+            --fg: #e0e0e0;
+            --accent: #888888;
+            --border: #1a1a1a;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #0a0a0a;
+                --fg: #e0e0e0;
+                --accent: #888888;
+                --border: #1a1a1a;
+            }
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { 
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--fg);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        body {
+            padding: 8vh 1.5rem 4vh;
+            max-width: var(--m-width);
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #theme-toggle {
+            position: absolute;
+            top: 2rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--accent);
+            padding: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        header {
+            margin-bottom: 2.5rem;
+            display: grid;
+            grid-template-columns: 85px 1fr;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        .profile-photo {
+            width: 85px; height: 85px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 1.35rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 0.2rem;
+        }
+
+        h1 span.phd { font-weight: 400; color: var(--accent); font-size: 0.8em; }
+        .hero-role { font-size: 0.9rem; color: var(--accent); font-weight: 400; margin-bottom: 0.8rem; }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: var(--accent);
+            font-size: 0.8rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: color 0.2s ease;
+        }
+
+        .social-links a:hover { color: var(--fg); }
+        .social-links i { font-size: 0.9rem; }
+
+        section { margin-bottom: 3rem; }
+
+        h2 {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 1px solid var(--border);
+            width: 100%;
+        }
+
+        .text-block { font-size: 0.92rem; line-height: 1.55; }
+
+        .list-grid { display: grid; gap: 1rem; }
+        .item strong { display: block; font-size: 0.92rem; font-weight: 600; color: var(--fg); }
+        .item span { display: block; font-size: 0.9rem; color: var(--accent); line-height: 1.4; }
+
+        .cta-link {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--fg);
+            text-decoration: none;
+            border-bottom: 1px solid var(--fg);
+        }
+
+        footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.8rem;
+            color: var(--accent);
+        }
+
+        @media (max-width: 600px) {
+            body { padding-top: 5rem; }
+            header { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+            .social-links { justify-content: center; }
+            #theme-toggle { top: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="theme-toggle" aria-label="Cambia tema">
+        <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+
+    <header>
+        <img src="profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
+        <div class="header-text">
+            <h1>Giovanni Duminuco <span class="phd">PhD</span></h1>
+            <p class="hero-role">Docente di Filosofia dell'Educazione e Progettista sociale</p>
+            <div class="social-links">
+                <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
+                <a href="https://www.linkedin.com/in/dumgio/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="mailto:giovanni.duminuco@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <p class="text-block">
+                PhD in Scienze dell'Educazione. Docente di Filosofia dell'Educazione, con oltre vent'anni di esperienza tra Terzo Settore ed enti pubblici, mi occupo di progettazione sociale, fondi europei e valutazione d'impatto.
+            </p>
+        </section>
+
+        <section id="ricerca">
+            <h2>Ricerca</h2>
+            <p class="text-block" style="margin-bottom: 1.2rem;">
+                La mia ricerca analizza i fondamenti antropologici dei processi educativi e le trasformazioni che l'IA introduce nei legami sociali e nelle pratiche di cura. L’indagine si focalizza sulla riconfigurazione della relazione pedagogica negli scenari tecnologici contemporanei.
+            </p>
+            <div class="list-grid">
+                <div class="item">
+                    <strong>Evoluzione dell'atto educativo</strong>
+                    <span>Studio dei presupposti antropologici e avanzamento tecnologico.</span>
+                </div>
+                <div class="item">
+                    <strong>Soggettività e processi formativi</strong>
+                    <span>Centralità della persona oltre le logiche funzionaliste.</span>
+                </div>
+                <div class="item">
+                    <strong>Mutamenti del legame educativo</strong>
+                    <span>L'impatto dell'IA nelle dinamiche relazionali contemporanee.</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="newsletter">
+            <h2>Newsletter</h2>
+            <p class="text-block" style="margin-bottom: 0.8rem;">Scrivo <strong>Soglie</strong>, un'esplorazione tra pedagogia e filosofia.</p>
+            <a href="https://soglie.substack.com" target="_blank" class="cta-link">Leggi su Substack &rarr;</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Giovanni Duminuco &middot; Roma, Italia</p>
+    </footer>
+
+    <script>
+        const btn = document.getElementById("theme-toggle");
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+        
+        function updateIcons(theme) {
+            if (theme === "dark") {
+                sunIcon.style.display = "block";
+                moonIcon.style.display = "none";
+            } else {
+                sunIcon.style.display = "none";
+                moonIcon.style.display = "block";
+            }
+        }
+
+        const savedTheme = localStorage.getItem("theme");
+        if (savedTheme) {
+            document.documentElement.setAttribute("data-theme", savedTheme);
+            updateIcons(savedTheme);
+        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+            updateIcons("dark");
+        }
+
+        btn.addEventListener("click", () => {
+            let theme = document.documentElement.getAttribute("data-theme") || 
+                        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+            
+            theme = (theme === "dark") ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+            updateIcons(theme);
+        });
+    </script>
+</body>
+</html>
