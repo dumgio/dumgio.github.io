@@ -6,28 +6,32 @@
     <title>Giovanni Duminuco, PhD | Filosofia e Progettazione Sociale</title>
     <meta name="description" content="Sito personale di Giovanni Duminuco, PhD. Docente di Filosofia dell'Educazione, ricercatore e progettista sociale esperto in valutazione d'impatto.">
     
+    <link rel="canonical" href="https://giovanniduminuco.it">
+    <meta property="og:title" content="Giovanni Duminuco, PhD">
+    <meta property="og:description" content="Docente di Filosofia dell'Educazione e Progettista sociale.">
+    <meta property="og:type" content="website">
+
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                document.documentElement.setAttribute("data-theme", savedTheme);
+            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+
     <link rel="preconnect" href="https://rsms.me/" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com/" crossorigin>
-    
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
 
     <style>
-        /* Ottimizzazione Font Display per PageSpeed */
-        @font-face { font-family: 'Inter'; font-display: swap; }
-
         :root {
             --bg: #ffffff; --fg: #111111; --accent: #666666; --border: #f0f0f0; --m-width: 600px;
         }
 
         [data-theme="dark"] {
             --bg: #0a0a0a; --fg: #e0e0e0; --accent: #888888; --border: #1a1a1a;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) {
-                --bg: #0a0a0a; --fg: #e0e0e0; --accent: #888888; --border: #1a1a1a;
-            }
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -48,13 +52,15 @@
             position: relative;
         }
 
-        /* Pulsante Dark Mode ottimizzato */
+        /* FIX 4: Accessibilità bottone */
         #theme-toggle {
             position: absolute; top: 2rem; right: 1.5rem;
             background: none; border: none; cursor: pointer;
             color: var(--accent); padding: 8px;
             display: flex; align-items: center; justify-content: center;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
+        #theme-toggle:hover { color: var(--fg); transform: scale(1.1); }
 
         header {
             margin-bottom: 2.5rem;
@@ -64,13 +70,13 @@
             align-items: center;
         }
 
+        /* FIX 2: Rimozione content-visibility per LCP */
         .profile-photo {
             width: 85px; height: 85px;
             border-radius: 50%;
             object-fit: cover;
             border: 1px solid var(--border);
-            /* Importante per LCP: carica l'immagine con priorità */
-            content-visibility: auto;
+            display: block;
         }
 
         h1 { font-size: 1.35rem; font-weight: 600; letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.2rem; }
@@ -81,8 +87,10 @@
         .social-links a {
             text-decoration: none; color: var(--accent); font-size: 0.8rem;
             font-weight: 500; display: flex; align-items: center; gap: 0.4rem;
+            transition: color 0.2s ease;
         }
         .social-links a:hover { color: var(--fg); }
+        .social-links svg { width: 14px; height: 14px; fill: currentColor; }
 
         section { margin-bottom: 3rem; }
         h2 {
@@ -92,11 +100,16 @@
         }
 
         .text-block { font-size: 0.92rem; line-height: 1.55; }
+        /* FIX 8: Classi per margini invece di inline style */
+        .mb-sm { margin-bottom: 0.8rem; }
+        .mb-md { margin-bottom: 1.2rem; }
+
         .list-grid { display: grid; gap: 1rem; }
         .item strong { display: block; font-size: 0.92rem; font-weight: 600; color: var(--fg); }
         .item span { display: block; font-size: 0.9rem; color: var(--accent); line-height: 1.4; }
 
-        .cta-link { font-size: 0.9rem; font-weight: 600; color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--fg); }
+        .cta-link { font-size: 0.9rem; font-weight: 600; color: var(--fg); text-decoration: none; border-bottom: 1px solid var(--fg); transition: opacity 0.2s ease; }
+        .cta-link:hover { opacity: 0.6; }
 
         footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.8rem; color: var(--accent); }
 
@@ -109,7 +122,7 @@
 </head>
 <body>
 
-    <button id="theme-toggle" aria-label="Cambia tema">
+    <button id="theme-toggle" aria-label="Cambia tema" aria-pressed="false">
         <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></svg>
         <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
     </button>
@@ -120,9 +133,15 @@
             <h1>Giovanni Duminuco <span class="phd">PhD</span></h1>
             <p class="hero-role">Docente di Filosofia dell'Educazione e Progettista sociale</p>
             <div class="social-links">
-                <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
-                <a href="https://www.linkedin.com/in/dumgio/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                <a href="mailto:giovanni.duminuco@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+                <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg> Scholar
+                </a>
+                <a href="https://www.linkedin.com/in/dumgio/" target="_blank" rel="noopener noreferrer">
+                    <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg> LinkedIn
+                </a>
+                <a href="mailto:giovanni.duminuco@gmail.com">
+                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg> Email
+                </a>
             </div>
         </div>
     </header>
@@ -136,7 +155,7 @@
 
         <section id="ricerca">
             <h2>Ricerca</h2>
-            <p class="text-block" style="margin-bottom: 1.2rem;">
+            <p class="text-block mb-md">
                 La mia ricerca analizza i fondamenti antropologici dei processi educativi e le trasformazioni che l'IA introduce nei legami sociali e nelle pratiche di cura. L’indagine si focalizza sulla riconfigurazione della relazione pedagogica negli scenari tecnologici contemporanei.
             </p>
             <div class="list-grid">
@@ -157,8 +176,8 @@
 
         <section id="newsletter">
             <h2>Newsletter</h2>
-            <p class="text-block" style="margin-bottom: 0.8rem;">Scrivo <strong>Soglie</strong>, un'esplorazione tra pedagogia e filosofia.</p>
-            <a href="https://soglie.substack.com" target="_blank" class="cta-link">Leggi su Substack &rarr;</a>
+            <p class="text-block mb-sm">Scrivo <strong>Soglie</strong>, un'esplorazione tra pedagogia e filosofia.</p>
+            <a href="https://soglie.substack.com" target="_blank" rel="noopener noreferrer" class="cta-link">Leggi su Substack &rarr;</a>
         </section>
     </main>
 
@@ -172,28 +191,18 @@
         const moonIcon = document.getElementById("moon-icon");
         
         function updateIcons(theme) {
-            if (theme === "dark") {
-                sunIcon.style.display = "block";
-                moonIcon.style.display = "none";
-            } else {
-                sunIcon.style.display = "none";
-                moonIcon.style.display = "block";
-            }
+            const isDark = theme === "dark";
+            sunIcon.style.display = isDark ? "block" : "none";
+            moonIcon.style.display = isDark ? "none" : "block";
+            btn.setAttribute("aria-pressed", isDark);
         }
 
-        const savedTheme = localStorage.getItem("theme");
-        if (savedTheme) {
-            document.documentElement.setAttribute("data-theme", savedTheme);
-            updateIcons(savedTheme);
-        } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-            updateIcons("dark");
-        }
+        // Recupera il tema già impostato dal pre-script in head
+        let currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+        updateIcons(currentTheme);
 
         btn.addEventListener("click", () => {
-            let theme = document.documentElement.getAttribute("data-theme") || 
-                        (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-            
-            theme = (theme === "dark") ? "light" : "dark";
+            let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
             document.documentElement.setAttribute("data-theme", theme);
             localStorage.setItem("theme", theme);
             updateIcons(theme);
