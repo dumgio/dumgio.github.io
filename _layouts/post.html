@@ -1,17 +1,3 @@
----
-layout: default
----
-<article class="post-container">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <time class="post-date">{{ page.date | date: "%d.%m.%Y" }}</time>
-  </header>
-
-  <div class="post-content">
-    {{ content }}
-  </div>
-</article>
-
 <style>
   /* Contenitore principale */
   .post-container {
@@ -21,16 +7,17 @@ layout: default
   .post-header {
     margin-bottom: 2rem;
     display: flex;
-    flex-direction: column; /* Mette la data SOTTO il titolo */
-    align-items: flex-start; /* Allinea tutto a sinistra */
+    flex-direction: column; 
+    align-items: flex-start; 
   }
 
-  /* Titolo più piccolo e pulito */
+  /* Titolo bilanciato: leggermente più grande dell'H1 del sito ma non enorme */
   .post-title {
-    font-size: 1.6rem; /* Dimensione ridotta */
+    font-size: 1.5rem; /* Era 1.6rem o più, ora è armonizzato con l'H1 del sito */
+    font-weight: 600;
     letter-spacing: -0.02em;
     line-height: 1.2;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
     color: var(--fg);
     text-align: left;
   }
@@ -41,11 +28,13 @@ layout: default
     font-size: 0.85rem;
     font-weight: 500;
     text-align: left;
+    font-family: monospace; /* Coerenza con la lista in Home e Appunti */
   }
 
   /* Testo dell'appunto */
   .post-content {
     text-align: left;
+    margin-top: 2.5rem; /* Dà respiro tra testata e inizio testo */
   }
 
   .post-content p {
@@ -54,7 +43,7 @@ layout: default
     line-height: 1.6;
   }
 
-  /* Correzione per Mobile: forza l'allineamento a sinistra */
+  /* Forza l'allineamento a sinistra ovunque */
   @media (max-width: 600px) {
     .post-header, .post-title, .post-date, .post-content {
       text-align: left !important;
