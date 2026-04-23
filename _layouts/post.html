@@ -6,6 +6,7 @@ layout: default
     <h1 style="font-size: 1.8rem; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 0.5rem;">
       {{ page.title }}
     </h1>
+    
     <time style="color: var(--accent); font-size: 0.85rem; font-weight: 500;">
       {{ page.date | date: "%d.%m.%Y" }}
     </time>
@@ -17,27 +18,6 @@ layout: default
 </article>
 
 <style>
-  /* Stili specifici per il contenuto del post */
-  .post-content p {
-    margin-bottom: 1.5rem;
-    font-size: 1.05rem;
-  }
-  .post-content h2 {
-    margin-top: 2rem;
-    margin-bottom: 1rem;
-    text-transform: none; /* Sovrascrive lo stile delle H2 della home */
-    letter-spacing: -0.01em;
-    border-bottom: none;
-    font-size: 1.4rem;
-    color: var(--fg);
-  }
-  .post-content a {
-    color: var(--fg);
-    text-decoration: underline;
-    text-decoration-color: var(--border);
-    text-underline-offset: 3px;
-  }
-  .post-content a:hover {
-    text-decoration-color: var(--accent);
-  }
+  .post-content p { margin-bottom: 1.5rem; font-size: 1.05rem; }
+  .post-content h2 { margin-top: 2rem; margin-bottom: 1rem; text-transform: none; font-size: 1.4rem; color: var(--fg); }
 </style>
