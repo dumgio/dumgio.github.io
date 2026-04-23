@@ -30,17 +30,17 @@
         }
         
         body { 
-            padding: 8vh 2rem 4vh; /* Padding laterale leggermente aumentato per lo stile a sinistra */
+            padding: 8vh 1.5rem 4vh; 
             max-width: var(--m-width); 
-            margin: 0; /* Rimuove il "auto" che centrava il sito */
+            margin: 0 auto; /* Ripristina la centratura del blocco sito */
             position: relative; 
+            text-align: left; /* Assicura che il testo sia allineato a sinistra */
         }
         
-        /* Spostiamo il toggle affinché segua il layout a sinistra invece di restare fisso a destra schermo */
         #theme-toggle { 
             position: absolute; 
             top: 2rem; 
-            left: calc(var(--m-width) - 40px); /* Lo tiene vicino al limite destro del testo */
+            right: 1.5rem; /* Torna a destra rispetto al contenuto centrato */
             background: none; 
             border: 1px solid var(--border); 
             border-radius: 50%; 
@@ -58,7 +58,14 @@
         #theme-toggle:hover { border-color: var(--accent); color: var(--fg); }
         [data-theme="dark"] #sun-icon { color: #ffb700; filter: drop-shadow(0 0 2px rgba(255, 183, 0, 0.4)); }
         
-        header { margin-bottom: 2.5rem; display: grid; grid-template-columns: 85px 1fr; gap: 1.5rem; align-items: center; }
+        header { 
+            margin-bottom: 2.5rem; 
+            display: grid; 
+            grid-template-columns: 85px 1fr; 
+            gap: 1.5rem; 
+            align-items: center; 
+            text-align: left;
+        }
         .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
         
         h1 { font-size: 1.45rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.2rem; }
@@ -81,14 +88,24 @@
         .item strong { display: block; font-size: 0.95rem; color: var(--fg); margin-bottom: 0.2rem; }
         .item span { font-size: 0.9rem; color: var(--accent); }
         
-        footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--accent); display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+        footer { 
+            margin-top: 4rem; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid var(--border); 
+            font-size: 0.85rem; 
+            color: var(--accent); 
+            display: flex; 
+            flex-direction: column; 
+            align-items: flex-start; 
+            gap: 1rem; 
+        }
         .footer-links { display: flex; gap: 0.8rem; flex-wrap: wrap; }
         footer a { color: var(--accent); text-decoration: none; font-weight: 500; }
         footer a:hover { color: var(--fg); }
 
-        @media (max-width: 700px) {
-            #theme-toggle { left: auto; right: 1.5rem; }
-            header { grid-template-columns: 1fr; text-align: left; justify-items: flex-start; }
+        @media (max-width: 600px) {
+            header { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+            #theme-toggle { right: 1rem; }
         }
     </style>
 </head>
