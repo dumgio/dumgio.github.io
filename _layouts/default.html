@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | Giovanni Duminuco, PhD</title>
+    
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                document.documentElement.setAttribute("data-theme", savedTheme);
+            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://rsms.me/" crossorigin>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+
+    <style>
+        :root { --bg: #ffffff; --fg: #111111; --accent: #666666; --border: #e8e8e8; --m-width: 600px; }
+        [data-theme="dark"] { --bg: #0a0a0a; --fg: #e0e0e0; --accent: #888888; --border: #1e1e1e; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg); color: var(--fg); line-height: 1.5; -webkit-font-smoothing: antialiased; transition: background-color 0.3s ease; }
+        body { padding: 8vh 1.5rem 4vh; max-width: var(--m-width); margin: 0 auto; position: relative; }
+        
+        /* Stili Header, Nav e Footer (Tuoi originali) */
+        #theme-toggle { position: absolute; top: 2rem; right: 1.5rem; background: none; border: 1px solid var(--border); border-radius: 50%; width: 34px; height: 34px; cursor: pointer; color: var(--accent); display: flex; align-items: center; justify-content: center; transition: all 0.2s ease; }
+        #theme-toggle:hover { color: var(--fg); border-color: var(--accent); transform: scale(1.08); }
+        header { margin-bottom: 2.5rem; display: grid; grid-template-columns: 85px 1fr; gap: 1.5rem; align-items: center; }
+        .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
+        h1 { font-size: 1.45rem; font-weight: 500; letter-spacing: -0.045em; line-height: 1; margin-bottom: 0.2rem; }
+        .hero-role { font-size: 0.85rem; color: var(--accent); margin-bottom: 0.8rem; }
+        .social-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
+        .social-links a { text-decoration: none; color: var(--accent); font-size: 0.8rem; font-weight: 500; }
+        .social-links a:hover { color: var(--fg); }
+        
+        section { margin-bottom: 3rem; }
+        h2 { font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.18em; color: var(--accent); margin-bottom: 1.25rem; padding-bottom: 0.5rem; border-bottom: 0.5px solid var(--border); }
+        .text-block { font-size: 0.92rem; }
+        .list-grid { display: grid; gap: 1rem; }
+        .item { padding-left: 0.85rem; border-left: 1px solid transparent; }
+        .item:hover { border-left-color: var(--accent); }
+        .item strong { display: block; font-size: 0.9rem; color: var(--fg); }
+        
+        footer { margin-top: 4rem; padding-top: 1.5rem; border-top: 0.5px solid var(--border); font-size: 0.8rem; color: var(--accent); display: flex; justify-content: space-between; }
+        
+        /* Stili specifici per il blog */
+        .post-list { list-style: none; }
+        .post-item { margin-bottom: 1rem; text-decoration: none; display: block; }
+        .post-date { font-size: 0.8rem; color: var(--accent); margin-right: 10px; }
+
+        @media (max-width: 600px) {
+            header { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <button id="theme-toggle" aria-label="Cambia tema">
+        <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/></svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+
+    <header>
+        <a href="/"><img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo"></a>
+        <div>
+            <h1>{{ site.title }}</h1>
+            <p class="hero-role">Ricerca pedagogica applicata al sociale</p>
+            <div class="social-links">
+                <a href="/">Home</a>
+                <a href="/blog">Blog</a>
+                <a href="mailto:giovanni.duminuco@gmail.com">Email</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ "now" | date: "%Y" }} &middot; Giovanni Duminuco</p>
+        <a href="https://soglie.substack.com">Soglie Substack</a>
+    </footer>
+
+    <script>
+        const btn = document.getElementById("theme-toggle");
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+        function updateIcons(theme) {
+            const isDark = theme === "dark";
+            sunIcon.style.display = isDark ? "block" : "none";
+            moonIcon.style.display = isDark ? "none" : "block";
+        }
+        let currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+        updateIcons(currentTheme);
+        btn.addEventListener("click", () => {
+            let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+            updateIcons(theme);
+        });
+    </script>
+</body>
+</html>
