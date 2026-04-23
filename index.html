@@ -32,16 +32,43 @@ title:
 </section>
 
 <section id="blog">
-    <h2>Ultimi appunti</h2> <div class="post-list">
-        {% for post in site.posts %}
-        <a href="{{ post.url }}" class="post-item" style="text-decoration: none; display: block; margin-bottom: 1rem;">
-            <span class="post-date" style="font-size: 0.8rem; color: var(--accent); margin-right: 10px;">
+    <h2>Ultimi appunti</h2> 
+    <div class="post-list">
+        {% for post in site.posts limit:5 %}
+        <a href="{{ post.url }}" class="post-item" style="text-decoration: none; display: block; margin-bottom: 1.5rem;">
+            <span class="post-date" style="font-size: 0.8rem; color: var(--accent); margin-right: 12px; font-family: monospace;">
                 {{ post.date | date: "%d.%m.%Y" }}
             </span>
-            <strong style="color: var(--fg);">{{ post.title }}</strong>
+            <span class="post-link-title">
+                {{ post.title }}
+            </span>
         </a>
         {% else %}
         <p class="text-block" style="color: var(--accent);">In attesa del primo appunto.</p>
         {% endfor %}
     </div>
 </section>
+
+<style>
+    /* Stile specifico per i titoli degli appunti nella Home */
+    .post-link-title {
+        font-weight: 500;
+        color: var(--fg);
+        font-size: 1.05rem;
+        text-decoration: underline;
+        text-decoration-color: var(--border); /* Sottolineatura grigio chiaro */
+        text-underline-offset: 4px; /* Distanza tra testo e linea */
+        transition: all 0.2s ease;
+    }
+
+    .post-item:hover .post-link-title {
+        text-decoration-color: var(--accent); /* La linea diventa più scura al passaggio del mouse */
+        color: var(--accent);
+    }
+
+    /* Regola per mantenere la bio pulita */
+    .bio {
+        font-size: 1.05rem;
+        line-height: 1.6;
+    }
+</style>
