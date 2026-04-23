@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Educazione come violenza gentile
 ---
 C’è un momento, nell’educazione, che nessun protocollo riesce a catturare.
