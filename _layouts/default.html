@@ -32,15 +32,15 @@
         body { 
             padding: 8vh 1.5rem 4vh; 
             max-width: var(--m-width); 
-            margin: 0 auto; /* Ripristina la centratura del blocco sito */
+            margin: 0 auto; 
             position: relative; 
-            text-align: left; /* Assicura che il testo sia allineato a sinistra */
+            text-align: left; 
         }
         
         #theme-toggle { 
             position: absolute; 
             top: 2rem; 
-            right: 1.5rem; /* Torna a destra rispetto al contenuto centrato */
+            right: 1.5rem; 
             background: none; 
             border: 1px solid var(--border); 
             border-radius: 50%; 
@@ -103,9 +103,19 @@
         footer a { color: var(--accent); text-decoration: none; font-weight: 500; }
         footer a:hover { color: var(--fg); }
 
+        /* Media Query aggiornata per mantenere l'allineamento a sinistra su mobile */
         @media (max-width: 600px) {
-            header { grid-template-columns: 1fr; text-align: center; justify-items: center; }
+            header { 
+                grid-template-columns: 85px 1fr; /* Mantiene la foto a sinistra del testo */
+                text-align: left; 
+                justify-items: start; 
+            }
             #theme-toggle { right: 1rem; }
+            
+            /* Se lo schermo è piccolissimo, puoi scegliere se impilare ma sempre a sinistra */
+            @media (max-width: 400px) {
+                header { grid-template-columns: 1fr; gap: 1rem; }
+            }
         }
     </style>
 </head>
