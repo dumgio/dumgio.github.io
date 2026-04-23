@@ -5,28 +5,43 @@ title: Home
 
 <section>
     <p class="text-block bio">
-        Dottore di Ricerca in Pedagogia generale e sociale, ricercatore e progettista esperto in politiche pubbliche e Terzo Settore. All'insegnamento della Filosofia dell'Educazione unisco la gestione operativa dell'intero ciclo di progettazione sociale.
+        Dottore di Ricerca in Pedagogia. Studio i fondamenti antropologici dell'educazione nell'epoca delle tecnologie emergenti, e progetto interventi nel Terzo Settore.
+    </p>
+    <p class="text-block bio">
+        Insegno Filosofia dell'Educazione e lavoro sull'intero ciclo della progettazione sociale, dall'analisi teorica agli interventi misurabili.
     </p>
 </section>
 
-<section id="ricerca">
-    <h2>Ricerca</h2>
+<section id="temi">
+    <h2>Alcuni temi che mi stanno a cuore</h2>
     <div class="list-grid">
         <div class="item">
             <strong>Evoluzione dell'atto educativo</strong>
-            <span>Studio dei presupposti antropologici in rapporto all'avanzamento tecnologico.</span>
+            <span>Studio dei presupposti antropologici in rapporto alla mediazione digitale.</span>
         </div>
+        <div class="item">
+            <strong>Soggettività e processi formativi</strong>
+            <span>Indagine sulla dimensione personale nei modelli formativi contemporanei.</span>
         </div>
+        <div class="item">
+            <strong>Legame sociale e pratiche di cura</strong>
+            <span>Analisi della tenuta delle relazioni nell'orizzonte delle innovazioni tecnologiche.</span>
+        </div>
+    </div>
 </section>
 
-<section>
-    <h2>Ultimi post dal blog</h2>
+<section id="blog">
+    <h2>Dal Blog</h2>
     <div class="post-list">
-        {% for post in site.posts limit:3 %}
-        <a href="{{ post.url }}" class="post-item">
-            <span class="post-date">{{ post.date | date: "%d.%m.%Y" }}</span>
-            <strong>{{ post.title }}</strong>
+        {% for post in site.posts %}
+        <a href="{{ post.url }}" class="post-item" style="text-decoration: none; display: block; margin-bottom: 1rem;">
+            <span class="post-date" style="font-size: 0.8rem; color: var(--accent); margin-right: 10px;">
+                {{ post.date | date: "%d.%m.%Y" }}
+            </span>
+            <strong style="color: var(--fg);">{{ post.title }}</strong>
         </a>
+        {% else %}
+        <p class="text-block" style="color: var(--accent);">Nessun post pubblicato ancora.</p>
         {% endfor %}
     </div>
 </section>
