@@ -1,15 +1,10 @@
 ---
 layout: default
 ---
-<article>
-  <header style="margin-bottom: 2.5rem;">
-    <h1 style="font-size: 1.8rem; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 0.5rem;">
-      {{ page.title }}
-    </h1>
-    
-    <time style="color: var(--accent); font-size: 0.85rem; font-weight: 500;">
-      {{ page.date | date: "%d.%m.%Y" }}
-    </time>
+<article class="post-container">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <time class="post-date">{{ page.date | date: "%d.%m.%Y" }}</time>
   </header>
 
   <div class="post-content">
@@ -18,6 +13,52 @@ layout: default
 </article>
 
 <style>
-  .post-content p { margin-bottom: 1.5rem; font-size: 1.05rem; }
-  .post-content h2 { margin-top: 2rem; margin-bottom: 1rem; text-transform: none; font-size: 1.4rem; color: var(--fg); }
+  /* Contenitore principale */
+  .post-container {
+    text-align: left;
+  }
+
+  .post-header {
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column; /* Mette la data SOTTO il titolo */
+    align-items: flex-start; /* Allinea tutto a sinistra */
+  }
+
+  /* Titolo più piccolo e pulito */
+  .post-title {
+    font-size: 1.6rem; /* Dimensione ridotta */
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 0.4rem;
+    color: var(--fg);
+    text-align: left;
+  }
+
+  /* Data */
+  .post-date {
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-align: left;
+  }
+
+  /* Testo dell'appunto */
+  .post-content {
+    text-align: left;
+  }
+
+  .post-content p {
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  /* Correzione per Mobile: forza l'allineamento a sinistra */
+  @media (max-width: 600px) {
+    .post-header, .post-title, .post-date, .post-content {
+      text-align: left !important;
+      align-items: flex-start !important;
+    }
+  }
 </style>
