@@ -5,33 +5,34 @@ title: Home
 
 <section>
     <p class="text-block bio">
-        Dottore di Ricerca in Scienze dell'educazione (ambito Pedagogia generale e sociale). Studio i fondamenti antropologici dell'educazione nell'epoca delle tecnologie emergenti, e progetto interventi nel Terzo Settore.
+        Dottore di Ricerca in Pedagogia generale e sociale, esperto in ricerca antropologica e progettazione nel Terzo Settore. La mia attività analizza i fondamenti dell’educazione di fronte alle sfide delle tecnologie emergenti, traducendo la riflessione teorica in interventi sociali misurabili.
     </p>
+    <br>
     <p class="text-block bio">
-        Insegno Filosofia dell'Educazione e lavoro sull'intero ciclo della progettazione sociale, dall'analisi teorica agli interventi misurabili.
+        Insegno Filosofia dell'Educazione e coordino l'intero ciclo della progettazione, integrando rigore pedagogico e operatività basata sugli esiti.
     </p>
 </section>
 
-<section id="temi">
-    <h2>Alcuni temi che mi stanno a cuore</h2>
+<section id="ricerca">
+    <h2>Ambiti di ricerca</h2>
     <div class="list-grid">
         <div class="item">
             <strong>Evoluzione dell'atto educativo</strong>
-            <span>Studio dei presupposti antropologici in rapporto alla mediazione digitale.</span>
+            <span>Analisi delle trasformazioni dei processi educativi in relazione alla mediazione tecnologica.</span>
         </div>
         <div class="item">
             <strong>Soggettività e processi formativi</strong>
-            <span>Indagine sulla dimensione personale nei modelli formativi contemporanei.</span>
+            <span>Studio della dimensione personale nei modelli formativi contemporanei.</span>
         </div>
         <div class="item">
             <strong>Legame sociale e pratiche di cura</strong>
-            <span>Analisi della tenuta delle relazioni nell'orizzonte delle innovazioni tecnologiche.</span>
+            <span>Indagine sulla tenuta delle relazioni e delle forme di cura nei contesti innovativi.</span>
         </div>
     </div>
 </section>
 
 <section id="blog">
-    <h2>Ultimi appunti</h2>
+    <h2>Dal Blog</h2>
     <div class="post-list">
         {% for post in site.posts %}
         <a href="{{ post.url }}" class="post-item" style="text-decoration: none; display: block; margin-bottom: 1rem;">
@@ -41,7 +42,7 @@ title: Home
             <strong style="color: var(--fg);">{{ post.title }}</strong>
         </a>
         {% else %}
-        <p class="text-block" style="color: var(--accent);">Nessun post pubblicato ancora.</p>
+        <p class="text-block" style="color: var(--accent);">In attesa del primo post.</p>
         {% endfor %}
     </div>
 </section>
