@@ -5,11 +5,11 @@ title: Home
 
 <section>
     <p class="text-block bio">
-        Dottore di Ricerca in Pedagogia generale e sociale, esperto in ricerca antropologica e progettazione nel Terzo Settore. La mia attività analizza i fondamenti dell’educazione di fronte alle sfide delle tecnologie emergenti, traducendo la riflessione teorica in interventi sociali misurabili.
+        Dottore di Ricerca in Pedagogia generale e sociale, mi occupo della dimensione educativa nelle sue forme più complesse: dalla ricerca antropologica alla progettazione sociale, dalla riflessione sui fondamenti teorici agli interventi concreti nel Terzo Settore.
     </p>
     <br>
     <p class="text-block bio">
-        Insegno Filosofia dell'Educazione e coordino l'intero ciclo della progettazione, integrando rigore pedagogico e operatività basata sugli esiti.
+        Insegno Filosofia dell'Educazione e guido l'intero ciclo della progettazione sociale, con una competenza specifica nell'accesso e nella gestione di fondi europei e nazionali.
     </p>
 </section>
 
@@ -18,22 +18,21 @@ title: Home
     <div class="list-grid">
         <div class="item">
             <strong>Evoluzione dell'atto educativo</strong>
-            <span>Analisi delle trasformazioni dei processi educativi in relazione alla mediazione tecnologica.</span>
+            <span>Come la mediazione tecnologica sta ridefinendo i processi formativi e il senso stesso dell'educare.</span>
         </div>
         <div class="item">
-            <strong>Soggettività e processi formativi</strong>
-            <span>Studio della dimensione personale nei modelli formativi contemporanei.</span>
+            <strong>Soggettività e formazione</strong>
+            <span>La persona come centro irriducibile di ogni modello educativo contemporaneo.</span>
         </div>
         <div class="item">
-            <strong>Legame sociale e pratiche di cura</strong>
-            <span>Indagine sulla tenuta delle relazioni e delle forme di cura nei contesti innovativi.</span>
+            <strong>Legame sociale e cura</strong>
+            <span>Le condizioni che rendono possibile la cura e la relazione nei contesti di innovazione sociale.</span>
         </div>
     </div>
 </section>
 
 <section id="blog">
-    <h2>Dal Blog</h2>
-    <div class="post-list">
+    <h2>Ultimi appunti</h2> <div class="post-list">
         {% for post in site.posts %}
         <a href="{{ post.url }}" class="post-item" style="text-decoration: none; display: block; margin-bottom: 1rem;">
             <span class="post-date" style="font-size: 0.8rem; color: var(--accent); margin-right: 10px;">
@@ -42,7 +41,7 @@ title: Home
             <strong style="color: var(--fg);">{{ post.title }}</strong>
         </a>
         {% else %}
-        <p class="text-block" style="color: var(--accent);">In attesa del primo post.</p>
+        <p class="text-block" style="color: var(--accent);">In attesa del primo appunto.</p>
         {% endfor %}
     </div>
 </section>
