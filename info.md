@@ -11,6 +11,4 @@ Il sito è costruito in HTML per essere semplice e leggero: una scelta deliberat
 
 **No tracking. No cookies. Just text.**
 
----
-
-Per dialoghi più approfonditi o collaborazioni, la via migliore rimane la [email](mailto:giovanni.duminuco@gmail.com).
+Per dialoghi più approfonditi o collaborazioni, inviami una [email](mailto:giovanni.duminuco@gmail.com).
