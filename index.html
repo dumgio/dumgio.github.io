@@ -49,26 +49,55 @@ title: Pedagogia e Sociale
 </section>
 
 <style>
-    /* Stile specifico per i titoli degli appunti nella Home */
+    /* 1. Bio compatta */
+    .bio {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        margin-bottom: 0.8rem !important;
+    }
+
+    /* 2. Ripristino Griglia e Animazione Ambiti di Ricerca */
+    .list-grid { 
+        display: grid; 
+        gap: 1.5rem; /* Spazio tra i blocchi */
+    }
+    
+    .item { 
+        padding-left: 1rem; 
+        border-left: 2px solid var(--border); 
+        transition: all 0.3s ease; /* Qui c'è l'animazione */
+    }
+    
+    .item:hover { 
+        border-left-color: var(--accent); 
+        padding-left: 1.2rem; /* Leggero movimento al passaggio del mouse */
+    }
+    
+    .item strong { 
+        display: block; 
+        font-size: 0.95rem; 
+        color: var(--fg); 
+        margin-bottom: 0.2rem; 
+    }
+    
+    .item span { 
+        font-size: 0.9rem; 
+        color: var(--accent); 
+    }
+
+    /* 3. Stile Appunti */
     .post-link-title {
         font-weight: 500;
         color: var(--fg);
         font-size: 1.05rem;
         text-decoration: underline;
-        text-decoration-color: var(--border); /* Sottolineatura grigio chiaro */
-        text-underline-offset: 4px; /* Distanza tra testo e linea */
+        text-decoration-color: var(--border);
+        text-underline-offset: 4px;
         transition: all 0.2s ease;
     }
 
     .post-item:hover .post-link-title {
-        text-decoration-color: var(--accent); /* La linea diventa più scura al passaggio del mouse */
+        text-decoration-color: var(--accent);
         color: var(--accent);
-    }
-
-    /* Regola per la bio: margin-bottom ridotto rispetto allo standard del sito per maggiore compattezza */
-    .bio {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        margin-bottom: 0.8rem !important;
     }
 </style>
