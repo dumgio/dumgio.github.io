@@ -9,8 +9,7 @@ I contenuti di questo sito non sono generati dall'intelligenza artificiale. Sono
 
 Il sito è costruito in HTML per essere semplice e leggero: una scelta deliberata per restituire centralità al testo e rispettare l'attenzione di chi legge.
 
-**No tracking. No cookies. Just text.**
-
+Niente tracciamento. Niente cookie. Solo testo.
 ---
 
 Per dialoghi più approfonditi o collaborazioni, inviami una [email](mailto:giovanni.duminuco@gmail.com).
