@@ -1,4 +1,30 @@
+# --- Informazioni del Sito ---
 title: "Giovanni Duminuco, PhD"
 description: "Ricerca pedagogica applicata al sociale"
-baseurl: ""
 url: "https://www.giovanniduminuco.it"
+baseurl: ""
+
+# --- Impostazioni di Pubblicazione ---
+# Forza la generazione dei post anche se la data è odierna (evita blocchi di fuso orario)
+future: true
+# Formato degli URL (pulito e professionale per l'indicizzazione)
+permalink: /:year/:month/:day/:title/
+
+# --- Plugin Consigliati ---
+# Nota: Questi plugin sono supportati nativamente da GitHub Pages.
+# jekyll-sitemap: crea il file sitemap.xml che Google legge per indicizzarti.
+# jekyll-feed: crea il feed RSS per i lettori di notizie.
+plugins:
+  - jekyll-sitemap
+  - jekyll-feed
+
+# --- Esclusioni ---
+# Evita che file tecnici finiscano nei risultati di ricerca
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
