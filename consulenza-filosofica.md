@@ -1,28 +1,29 @@
 ---
 layout: default
 title: Consulenza Filosofica Online
-description: Spazi di dialogo e ricerca pedagogica per l'orientamento esistenziale e professionale.
+description: Percorsi di consulenza filosofica e pedagogica online con Giovanni Duminuco, PhD. Dialogo critico e ricerca di senso.
 ---
 
 # Consulenza filosofica e pedagogica online
 
-La consulenza filosofica non è una terapia, ma un **esercizio di pensiero**. È uno spazio dedicato a chi avverte il bisogno di fare ordine, di interrogare le proprie scelte o di abitare con più consapevolezza la complessità della vita quotidiana e professionale.
+La consulenza filosofica non è una terapia, ma una **pratica di pensiero**. È uno spazio di sosta dedicato a chi sente il bisogno di interrogare la propria esperienza, di decostruire automatismi o di abitare con maggior consapevolezza le sfide della vita quotidiana e professionale.
 
-### Di cosa si tratta?
-Spesso ci sentiamo bloccati in automatismi o in quella che chiamo "illusione di autonomia". Attraverso il dialogo clinico-pedagogico e l'analisi filosofica, lavoriamo per:
-* **Decodificare la complessità:** Comprendere le dinamiche educative e sociali in cui siamo immersi.
-* **Orientamento esistenziale:** Trovare parole nuove per descrivere il proprio presente e progettare il futuro.
-* **Supporto alla progettazione:** Per chi lavora nel Terzo Settore e cerca una supervisione che unisca rigore metodologico e sensibilità pedagogica.
+### Perché intraprendere un percorso
+Nella frenesia contemporanea, spesso smarriamo la capacità di guardare ai nostri problemi con occhio critico. Attraverso il dialogo clinico-pedagogico e l'analisi filosofica, ci proponiamo di:
 
-### Perché online?
-Ho scelto di offrire la **consulenza filosofica online** per abbattere le distanze e permettere a questa pratica di inserirsi con naturalezza nei tempi della vita moderna, garantendo al contempo un ambiente riservato, ovunque tu sia.
+* **Orientarsi nella complessità:** Tradurre il disorientamento in domande di senso.
+* **Abilitare il pensiero critico:** Riconoscere l' "illusione di autonomia" per ritrovare una libertà autentica.
+* **Supervisione per il sociale:** Offrire supporto a chi opera nel Terzo Settore, unendo rigore metodologico e sensibilità pedagogica.
 
-### Il mio approccio
-Come ricercatore (PhD), credo fermamente nella cura della parola. Non offro soluzioni preconfezionate, ma un metodo di indagine. La mia consulenza riflette la filosofia di questo sito: **essenzialità, ascolto profondo e assenza di distrazioni.**
+### La modalità online
+Ho scelto di offrire la mia consulenza esclusivamente **online**. Questa scelta permette di integrare il colloquio nei propri tempi e spazi, garantendo la massima riservatezza e la possibilità di connettersi da qualsiasi luogo, mantenendo intatta l'intensità del dialogo.
+
+### Un approccio fondato sulla ricerca
+Come ricercatore (PhD), porto nella consulenza lo stesso rigore che dedico ai miei studi. Non troverai soluzioni standardizzate o ricette di "self-help", ma un metodo di indagine condiviso. Coerentemente con lo spirito di questo sito, la mia pratica si fonda sulla **centralità della parola** e sull'assenza di distrazioni superflue.
 
 ---
 
-### Iniziare un percorso
-Se desideri fissare un primo incontro conoscitivo o ricevere informazioni sui costi e sulle modalità delle sessioni online, puoi scrivermi direttamente.
+### Contatti
+Se desideri fissare un primo colloquio conoscitivo o ricevere informazioni su modalità e costi delle sessioni online, puoi scrivermi direttamente.
 
 [**Invia una Email**](mailto:giovanni.duminuco@gmail.com)
