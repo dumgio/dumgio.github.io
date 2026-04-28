@@ -1,6 +1,6 @@
---
+---
 layout: post
-title: L'illusione dell'autonomia: la lezione dell'1,6%
+title: "L'illusione dell'autonomia: la lezione dell'1,6%"
 ---
 
 È emerso di recente un dato interessante dall'analisi di Claude Code, uno dei più avanzati agenti di intelligenza artificiale: solo l’1,6% del suo codice è dedicato alla logica decisionale, mentre il rimanente 98,4% è pura infrastruttura (gestione dei limiti, protocolli di sicurezza, filtri di contesto e sistemi di controllo).
@@ -11,5 +11,6 @@ Spesso tendiamo a sottovalutare questo "98% invisibile": il setting, la postura 
 
 Senza la rigidità del limite, l'intelligenza non è libertà, ma solo una forza destinata a dissolversi.
 
--- 
-**Maggiori informazioni sul paper citato in questo articolo sono disponibili all'indirizzo https://github.com/VILA-Lab/Dive-into-Claude-Code**
+---
+
+*Maggiori informazioni sul paper citato in questo articolo sono disponibili all'indirizzo: [https://github.com/VILA-Lab/Dive-into-Claude-Code](https://github.com/VILA-Lab/Dive-into-Claude-Code)*
