@@ -3,9 +3,41 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }} | Giovanni Duminuco, PhD</title>
-    <meta name="description" content="Giovanni Duminuco, PhD. Ricerca pedagogica applicata al sociale e progettazione nel Terzo Settore.">
     
+    <title>{{ page.title }} | Giovanni Duminuco, PhD</title>
+    <meta name="description" content="Giovanni Duminuco, PhD. Ricerca pedagogica, filosofia dell'educazione e consulenza filosofica online.">
+    
+    {% seo %}
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Giovanni Duminuco",
+      "givenName": "Giovanni",
+      "familyName": "Duminuco",
+      "jobTitle": "PhD in Pedagogia",
+      "honorificSuffix": "PhD",
+      "description": "Ricerca pedagogica e consulenza filosofica online. Specializzato in filosofia dell'educazione e progettazione sociale.",
+      "url": "https://www.giovanniduminuco.it",
+      "image": "https://www.giovanniduminuco.it/profile.jpg",
+      "sameAs": [
+        "https://orcid.org/0009-0007-9687-4819",
+        "https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it",
+        "https://www.linkedin.com/in/dumgio/"
+      ],
+      "knowsAbout": [
+        "Filosofia dell'educazione",
+        "Consulenza filosofica online",
+        "Consulenza pedagogica online",
+        "Pedagogia sociale",
+        "Ricerca educativa",
+        "Terzo Settore",
+        "Progettazione sociale"
+      ]
+    }
+    </script>
+
     <script>
         (function() {
             const savedTheme = localStorage.getItem("theme");
@@ -37,7 +69,6 @@
             text-align: left; 
         }
 
-        /* Gestione spaziatura paragrafi in tutto il sito */
         main p { margin-bottom: 1.5rem; }
         
         #theme-toggle { 
@@ -134,7 +165,7 @@
         <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
         <div>
             <h1><a href="/">Giovanni Duminuco, PhD</a></h1>
-            <p class="hero-role">Ricerca pedagogica applicata al sociale</p>
+            <p class="hero-role">Ricerca pedagogica e consulenza filosofica online</p>
             <nav class="social-links">
                 <a href="/blog">Appunti</a>
                 <a href="mailto:giovanni.duminuco@gmail.com">Email</a>
