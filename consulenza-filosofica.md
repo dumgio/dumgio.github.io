@@ -15,6 +15,7 @@ Nella frenesia contemporanea, spesso smarriamo la capacità di guardare ai nostr
 * **Abilitare il pensiero critico:** Riconoscere l' "illusione di autonomia" per ritrovare una libertà autentica.
 * **Supervisione per il sociale:** Offrire supporto a chi opera nel Terzo Settore, unendo rigore metodologico e sensibilità pedagogica.
 
+
 ### La modalità online
 Ho scelto di offrire la mia consulenza esclusivamente **online**. Questa scelta permette di integrare il colloquio nei propri tempi e spazi, garantendo la massima riservatezza e la possibilità di connettersi da qualsiasi luogo, mantenendo intatta l'intensità del dialogo.
 
