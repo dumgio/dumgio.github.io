@@ -25,6 +25,6 @@ Come ricercatore (PhD), porto nella consulenza lo stesso rigore che dedico ai mi
 ---
 
 ### Contatti
-Se desideri fissare un primo colloquio conoscitivo o ricevere informazioni su modalità e costi delle sessioni online, puoi scrivermi direttamente.
+Se desideri fissare un primo colloquio conoscitivo o ricevere maggiori informazioni, puoi scrivermi direttamente.
 
 [**Invia una Email**](mailto:giovanni.duminuco@gmail.com)
