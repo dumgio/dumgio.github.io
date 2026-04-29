@@ -41,12 +41,7 @@
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
-        /* Rimossa la transition per evitare l'effetto "area centrale" durante il cambio */
-        html, body { 
-            background-color: var(--bg-color); 
-            color: var(--text-color);
-        }
+        html, body { background-color: var(--bg-color); color: var(--text-color); }
 
         body {
             max-width: var(--max-width);
@@ -59,6 +54,7 @@
             position: relative;
         }
 
+        /* Posizionamento Tema Migliorato */
         #theme-toggle {
             position: absolute;
             top: 2rem;
@@ -70,10 +66,8 @@
             padding: 5px;
             opacity: 0.6;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            z-index: 10;
         }
-        #theme-toggle:hover { opacity: 1; }
         
         #sun-icon, #moon-icon { display: none; width: 20px; height: 20px; }
         [data-theme="dark"] #sun-icon { display: block; }
@@ -95,7 +89,7 @@
             border: 1px solid var(--border-light);
         }
 
-        .title h1 { font-size: 1.25rem; font-weight: 600; margin: 0; }
+        .title h1 { font-size: 1.25rem; font-weight: 600; margin: 0; line-height: 1.2; }
         
         a { color: inherit; text-decoration: none; }
         a:hover {
@@ -108,36 +102,44 @@
         nav a { margin-right: 1rem; }
 
         main { margin-bottom: 4rem; }
-        h2 { font-size: 1.3rem; margin: 2.5rem 0 1.5rem; font-weight: 600; }
-
-        .ambito-item { margin-bottom: 0.5rem; line-height: 1.5; }
-        .ambito-titolo { font-weight: 600; display: inline; }
-        .ambito-descrizione { font-weight: 400; display: inline; }
-
-        hr { border: none; border-top: 1px solid var(--border-light); margin: 2.5rem 0; }
 
         footer {
             margin-top: 5rem;
             padding-top: 1.5rem;
             border-top: 1px solid var(--border-light);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: flex;
             justify-content: space-between;
+            align-items: center;
         }
+        
+        .footer-nav { display: flex; gap: 12px; }
         footer a { opacity: 0.8; }
-        footer a:hover { opacity: 1; }
 
+        /* Mobile Adjustments */
         @media screen and (max-width: 600px) {
-            body { padding: 2rem 1.2rem; }
-            #theme-toggle { top: 1rem; right: 1rem; }
+            body { padding: 5rem 1.2rem 2rem; }
+            #theme-toggle { top: 1.5rem; right: 1.2rem; }
+            header { flex-direction: row; }
+            .title h1 { font-size: 1.15rem; max-width: 200px; } /* Evita collisione con icona */
+            
+            footer { 
+                flex-direction: column; 
+                gap: 1.5rem; 
+                text-align: center; 
+            }
+            .footer-nav { 
+                justify-content: center;
+                flex-wrap: wrap;
+            }
         }
     </style>
 </head>
 <body>
 
     <button id="theme-toggle" aria-label="Cambia tema">
-        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
     </button>
 
     <header>
@@ -159,11 +161,11 @@
 
     <footer>
         <span>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</span>
-        <nav>
-            <a href="/info">Info</a> &middot; 
-            <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a> &middot; 
+        <div class="footer-nav">
+            <a href="/info">Info</a>
+            <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a>
             <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
-        </nav>
+        </div>
     </footer>
 
     <script>
