@@ -9,7 +9,7 @@ Questo dato ci ricorda che l’autonomia non è mai qualcosa di isolato o astrat
 
 È lo stesso paradosso che attraversa ogni atto educativo: non si educa eliminando i limiti, ma rendendoli abitabili. L’autonomia nasce all'interno di una cornice, non fuori da essa.
 
-Spesso tendiamo a ignorare questo “98% di invisibilità": il contesto, la responsabilità etica, la cornice istituzionale. Eppure è proprio lì che si regge tutto. L’autonomia, infatti, non è assenza di struttura, ma la possibilità di muoversi dentro una struttura così solida e ben costruita da diventare quasi invisibile.
+Spesso tendiamo a ignorare questo “98% invisibile": il contesto, la responsabilità etica, la cornice istituzionale. Eppure è proprio lì che si regge tutto. L’autonomia, infatti, non è assenza di struttura, ma la possibilità di muoversi dentro una struttura così solida e ben costruita da diventare quasi invisibile.
 
 Senza il limite, l’intelligenza non è libertà: è solo una forza che finisce per disperdersi.
 
