@@ -8,32 +8,8 @@
     
     {% seo %}
 
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}">
-    <meta property="og:description" content="Ricerca pedagogica, filosofia dell'educazione e progettazione sociale.">
-    <meta property="og:image" content="https://giovanniduminuco.it/assets/img/og-default.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://giovanniduminuco.it{{ page.url }}">
-    <meta name="twitter:card" content="summary_large_image">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Giovanni Duminuco",
-      "jobTitle": "PhD in Pedagogia",
-      "url": "https://giovanniduminuco.it",
-      "sameAs": [
-        "https://orcid.org/0009-0007-9687-4819",
-        "https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it",
-        "https://www.linkedin.com/in/dumgio/"
-      ]
-    }
-    </script>
-
     <style>
-        /* Importazione Font Serif (Bespoke Serif come Dave Lee, o usiamo Georgia/Times come fallback) */
+        /* Importazione Font Serif di Dave Lee */
         @font-face {
             font-family: 'Bespoke Serif';
             src: url('https://static.mighil.com/fonts/BespokeSerif-Variable.woff2') format('woff2');
@@ -43,21 +19,17 @@
         }
 
         :root {
-            /* Palette Dave Lee */
             --bg-color: #FFFFFF;
             --text-color: #111;
-            /* Colore primario per i link (un blu scuro/violaceo molto retro) */
             --color-primary: #1a0dab; 
             --spacing: 1rem;
-            --max-width: 700px; /* Leggermente più largo del tuo originale per favorire la lettura serif */
+            --max-width: 700px;
         }
 
-        /* Dark mode nativa basata sulle preferenze di sistema (come Dave Lee) */
         @media (prefers-color-scheme: dark) {
             :root {
                 --bg-color: #222;
                 --text-color: #fff;
-                /* Colore link dark (Giallo paglierino/wheat) */
                 --color-primary: wheat; 
             }
         }
@@ -65,19 +37,18 @@
         * { box-sizing: border-box; }
 
         body {
-            max-width: var(--max-width);
+            max-width: var(--m-width);
             margin: 0 auto;
             padding: var(--spacing);
             background: var(--bg-color);
             color: var(--text-color);
-            /* Font di sistema per l'interfaccia */
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            font-size: 1.165rem; /* Dimensione generosa Dave Lee */
+            /* Qui usiamo il font Serif per TUTTO il corpo, inclusi titolo e nav */
+            font-family: 'Bespoke Serif', Georgia, serif !important;
+            font-size: 1.165rem; 
             line-height: 1.6;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
-        /* Adattamento per mobile */
         @media screen and (max-width: 620px) {
             body {
                 font-size: 1.125rem !important;
@@ -85,43 +56,39 @@
             }
         }
 
-        img { display: block; max-width: 100%; height: auto; }
-
-        /* HEADER STILE DAVE LEE (Modificato per includere la foto) */
         header {
             border-bottom: 1px solid #96909061;
             display: flex;
-            align-items: center; /* Allinea foto e testo verticalmente */
+            align-items: center; 
             padding: 1rem 0;
-            text-transform: lowercase; /* Navigazione in minuscolo */
         }
 
-        /* Foto Profilo adattata allo stile minimal */
         .profile-photo {
-            width: 50px; /* Più piccola per integrarsi nell'header lineare */
-            height: 50px;
+            width: 55px; 
+            height: 55px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: var(--spacing);
+            margin-right: 1.5rem;
             border: 1px solid #96909061;
         }
 
         .title-group {
             display: flex;
             flex-direction: column;
-            flex-grow: 1;
         }
 
+        /* Titolo con lo stesso font del blog di Dave Lee */
         .title h1 {
-            font-size: 1.165rem; /* Stessa dimensione del corpo del testo */
+            font-size: 1.3rem; 
             margin: 0;
             font-weight: 600;
+            font-family: 'Bespoke Serif', Georgia, serif !important;
         }
 
         header a { text-decoration: none; color: inherit; }
 
         nav {
-            margin-top: 0.25rem;
+            margin-top: 0.1rem;
             font-size: 1rem;
         }
 
@@ -129,15 +96,13 @@
             margin-right: var(--spacing);
             text-decoration: none;
             color: inherit;
+            font-family: 'Bespoke Serif', Georgia, serif !important;
         }
 
-        /* MAIN (Area Contenuto) - Qui applichiamo il font Serif */
         main {
             margin: 2rem 0 3rem 0;
-            font-family: 'Bespoke Serif', Georgia, Cambria, "Times New Roman", Times, serif !important;
         }
 
-        /* Sintassi Link Dave Lee (Sottolineatura sottile fissa, cambio colore on hover) */
         a {
             color: currentColor;
             text-decoration-color: currentColor;
@@ -158,73 +123,15 @@
             margin-bottom: 1rem;
         }
 
-        /* Liste Post (come usate da Dave Lee per "Recent Writing") */
-        ul.blog-posts {
-            list-style-type: none;
-            padding: unset;
-            margin: 2rem 0;
-        }
-
-        ul.blog-posts li {
-            display: flex;
-            flex-direction: row;
-            align-items: baseline;
-            gap: calc(var(--spacing) / 2);
-            margin-bottom: calc(var(--spacing) / 2);
-        }
-
-        ul.blog-posts li span {
-            min-width: 8ch; /* Spazio fisso per la data */
-            font-family: system-ui, sans-serif; /* Data in Sans-serif */
-        }
-
-        time {
-            opacity: 0.75;
-            font-style: normal;
-            font-size: 90%;
-        }
-
-        /* Orizzontal Rule minimale */
-        hr {
-            border: none;
-            border-top: 1px solid #96909061;
-            margin: 2rem 0;
-        }
-
-        /* Blockquote stilizzato Dave Lee */
-        blockquote {
-            position: relative;
-            border-left: 4px solid #888;
-            padding: 1.5rem 1.75rem;
-            margin: 1.5rem 0;
-            color: #444;
-            background: #f9f9f9;
-            overflow: hidden;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            blockquote {
-                background: #333;
-                color: #ccc;
-                border-left-color: #555;
-            }
-        }
-
-        /* FOOTER STILE DAVE LEE */
         footer {
             margin-top: 4rem;
             padding: 2rem 0;
-            font-size: 0.9rem;
-            color: var(--text-color);
-            opacity: 0.8;
-            text-align: left;
-            text-transform: lowercase;
+            font-size: 1rem;
             border-top: 1px solid #96909061;
+            text-transform: lowercase;
         }
 
         footer a { text-decoration: none; color: inherit; }
-        footer a:hover { text-decoration: underline; color: var(--color-primary); }
-
     </style>
 </head>
 <body class="home">
@@ -238,8 +145,8 @@
             </a>
             
             <nav>
-                <a href="/blog">Appunti</a>
-                <a href="/info">Info</a>
+                <a href="/blog">Blog</a> 
+                <a href="/info">Bio</a> 
                 <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
             </nav>
         </div>
@@ -250,12 +157,11 @@
     </main>
 
     <footer>
-        <p>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</p>
-        <p>
+        <span>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</span>
+        <span style="float: right;">
             <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a> &middot; 
-            <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a> &middot;
-            <a href="/feed.xml">RSS</a>
-        </p>
+            <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
+        </span>
     </footer>
 
 </body>
