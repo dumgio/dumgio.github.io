@@ -41,6 +41,7 @@
             --border-light: #2a2f33;
         }
 
+        /* Reset e Base */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html, body { background-color: var(--bg-color); color: var(--text-color); }
 
@@ -54,11 +55,12 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Header */
         header {
             border-bottom: 1px solid var(--border-light);
             padding: 1rem 0;
             display: flex;
-            align-items: flex-start; /* Allinea gli elementi all'inizio */
+            align-items: flex-start;
         }
 
         .profile-photo {
@@ -78,18 +80,32 @@
         .title-row {
             display: flex;
             justify-content: space-between;
-            align-items: center; /* Allinea il nome e l'icona sulla stessa linea */
+            align-items: center;
             width: 100%;
         }
 
+        /* Titolo e link sempre colore testo */
         .title h1 { 
             font-size: 1.25rem; 
             font-weight: 600; 
             margin: 0;
             white-space: nowrap;
+            color: var(--text-color);
         }
 
         .phd-text { font-size: 0.9rem; font-weight: 400; opacity: 0.8; }
+
+        /* Logica Link Globale: Colore testo, no sottolineatura fissa */
+        a { 
+            color: var(--text-color); 
+            text-decoration: none; 
+        }
+
+        a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 0.1ex;
+            text-underline-offset: 0.3ex;
+        }
 
         #theme-toggle {
             background: none;
@@ -108,16 +124,11 @@
         html:not([data-theme="dark"]) #moon-icon { display: block; }
 
         nav { display: flex; gap: var(--spacing); margin-top: 0.2rem; }
-        nav a { font-size: 1rem; text-decoration: none; color: inherit; }
+        nav a { font-size: 1rem; }
 
+        /* Spaziature Main */
         main { margin: 2rem 0 3rem 0; }
         main p { margin-bottom: 1.5rem; }
-
-        a:hover {
-            text-decoration: underline;
-            text-decoration-thickness: 0.1ex;
-            text-underline-offset: 0.3ex;
-        }
 
         h2 { font-size: 1.3rem; margin: 2.5rem 0 1rem; font-weight: 600; }
 
@@ -126,6 +137,7 @@
 
         hr { border: none; border-top: 1px solid var(--border-light); margin: 2rem 0; }
 
+        /* Footer */
         footer {
             margin-top: 4rem;
             padding: 1.5rem 0;
