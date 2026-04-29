@@ -1,30 +1,37 @@
 ---
 layout: default
-title: Consulenza Filosofica Online
-description: Percorsi di consulenza filosofica e pedagogica online con Giovanni Duminuco, PhD. Dialogo critico e ricerca di senso.
+title: Consulenza Filosofica Online | Giovanni Duminuco PhD
+description: Consulenza filosofica e pedagogica online con Giovanni Duminuco (PhD). Colloqui individuali per sviluppare pensiero critico e orientarsi nelle scelte personali e professionali.
 ---
 
 # Consulenza filosofica e pedagogica online
 
-La consulenza filosofica non è una terapia, ma una **pratica di pensiero**. È uno spazio di sosta dedicato a chi sente il bisogno di interrogare la propria esperienza, di decostruire automatismi o di abitare con maggior consapevolezza le sfide della vita quotidiana e professionale.
+La consulenza filosofica online non è una terapia, ma una *pratica di pensiero*. È uno spazio di sosta dedicato a chi sente il bisogno di interrogare la propria esperienza, di decostruire automatismi o di abitare con maggiore consapevolezza le sfide della vita quotidiana e professionale.
 
-### Perché intraprendere un percorso
-Nella frenesia contemporanea, spesso smarriamo la capacità di guardare ai nostri problemi con occhio critico. Attraverso il dialogo clinico-pedagogico e l'analisi filosofica, ci proponiamo di:
+Attraverso il colloquio filosofico online, è possibile avviare un percorso di ricerca personale fondato sul dialogo critico e sull’analisi dell’esperienza.
 
-* **Orientarsi nella complessità:** Tradurre il disorientamento in domande di senso.
-* **Abilitare il pensiero critico:** Riconoscere l' "illusione di autonomia" per ritrovare una libertà autentica.
-* **Supervisione per il sociale:** Offrire supporto a chi opera nel Terzo Settore, unendo rigore metodologico e sensibilità pedagogica.
+### Perché intraprendere un percorso di consulenza filosofica
 
+Nella frenesia contemporanea, spesso smarriamo la capacità di guardare ai nostri problemi con occhio critico. Attraverso la consulenza filosofica online e il dialogo clinico-filosofico, il percorso si propone di:
 
-### La modalità online
-Ho scelto di offrire la mia consulenza esclusivamente **online**. Questa scelta permette di integrare il colloquio nei propri tempi e spazi, garantendo la massima riservatezza e la possibilità di connettersi da qualsiasi luogo, mantenendo intatta l'intensità del dialogo.
+* **Orientarsi nella complessità:** tradurre il disorientamento in domande di senso.
+* **Sviluppare il pensiero critico:** riconoscere l’ *illusione di autonomia* per ritrovare una libertà più consapevole.
+* **Supervisione per il sociale:** offrire supporto a chi opera nel Terzo Settore, integrando rigore metodologico e sensibilità pedagogica.
 
-### Un approccio fondato sulla ricerca
-Come ricercatore (PhD), porto nella consulenza lo stesso rigore che dedico ai miei studi. Non troverai soluzioni standardizzate o ricette di "self-help", ma un metodo di indagine condiviso. Coerentemente con lo spirito di questo sito, la mia pratica si fonda sulla **centralità della parola** e sull'assenza di distrazioni superflue.
+### Come funziona la consulenza filosofica online
+
+Ho scelto di offrire la mia consulenza esclusivamente online. Questa modalità consente di integrare il colloquio nei propri tempi e spazi, garantendo riservatezza e flessibilità, senza compromettere la qualità e l’intensità del dialogo.
+
+### Un approccio fondato sulla ricerca filosofica
+
+Come ricercatore accademico, porto nella consulenza lo stesso rigore che dedico ai miei studi. Non si tratta di offrire soluzioni standardizzate o strumenti di self-help, ma di costruire insieme un metodo di indagine, orientato alla comprensione e alla chiarificazione dei problemi.
 
 ---
 
 ### Contatti
-Se desideri fissare un primo colloquio conoscitivo o ricevere maggiori informazioni, puoi scrivermi direttamente.
+
+Se desideri fissare un primo colloquio conoscitivo o ricevere maggiori informazioni sulla consulenza filosofica online, puoi scrivermi direttamente.
+
+👉 Puoi richiedere un primo colloquio senza impegno.
 
 [**Invia una Email**](mailto:giovanni.duminuco@gmail.com)
