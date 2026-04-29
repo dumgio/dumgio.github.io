@@ -6,6 +6,20 @@
     <title>{% if page.url == "/" %}Giovanni Duminuco, PhD{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
     {% seo %}
 
+    <script>
+        // Script per gestire il tema prima del rendering della pagina
+        (function() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            } else if (savedTheme === "light") {
+                document.documentElement.setAttribute("data-theme", "light");
+            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+
     <style>
         @font-face {
             font-family: 'Bespoke Serif';
@@ -17,22 +31,20 @@
         :root {
             --bg-color: #f2f2f2; 
             --text-color: #111;
-            --color-primary: #1a0dab; 
-            --max-width: 700px;
             --border-light: #96909061;
+            --max-width: 700px;
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-color: #0f1417;
-                --text-color: #d0d0d0;
-                --color-primary: wheat; 
-            }
+        /* Dark Mode gestita tramite attributo per il toggle manuale */
+        [data-theme="dark"] {
+            --bg-color: #0f1417;
+            --text-color: #d0d0d0;
+            --border-light: #2a2f33;
         }
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html { background-color: var(--bg-color); }
+        html { background-color: var(--bg-color); transition: background-color 0.3s ease; }
 
         body {
             max-width: var(--max-width);
@@ -44,7 +56,25 @@
             font-size: 17px; 
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            position: relative;
         }
+
+        /* Pulsante Dark Mode minimale in alto a destra */
+        #theme-toggle {
+            position: absolute;
+            top: 2rem;
+            right: 1.5rem;
+            background: none;
+            border: 1px solid var(--border-light);
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 4px 8px;
+            font-size: 0.8rem;
+            font-family: inherit;
+            border-radius: 4px;
+            opacity: 0.6;
+        }
+        #theme-toggle:hover { opacity: 1; }
 
         header {
             border-bottom: 1px solid var(--border-light);
@@ -63,33 +93,39 @@
         }
 
         .title h1 { font-size: 1.25rem; font-weight: 600; margin: 0; }
-        header a { text-decoration: none; color: inherit; }
+        
+        /* LOGICA LINK DAVE LEE: Niente sottolineatura di base, compare in hover */
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--text-color);
+            text-decoration: underline;
+            text-decoration-thickness: 0.1ex;
+            text-underline-offset: 0.3ex;
+        }
+
         nav { margin-top: 0.2rem; font-size: 17px; }
-        nav a { margin-right: 1rem; text-decoration: none; color: inherit; }
+        nav a { margin-right: 1rem; }
 
         main { margin-bottom: 4rem; }
 
-        a {
-            color: currentColor;
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
-            text-underline-offset: 3px;
-        }
-
-        /* AZZERAMENTO MOVIMENTO AMBITI */
         h2 {
             font-size: 1.3rem;
-            margin: 2.5rem 0 1.5rem; /* Margine sotto il titolo di sezione */
+            margin: 2.5rem 0 1.5rem;
             font-weight: 600;
         }
 
         .ambito-item {
-            margin-bottom: 0.5rem; /* Spazio ridotto tra i vari ambiti */
+            margin-bottom: 0.5rem;
             line-height: 1.5;
         }
 
         .ambito-titolo {
-            font-weight: 600; /* Grassetto visibile ma integrato */
+            font-weight: 600;
             display: inline;
         }
 
@@ -113,10 +149,18 @@
             justify-content: space-between;
         }
 
-        footer a { text-decoration: none; opacity: 0.8; }
+        footer a { opacity: 0.8; }
+        footer a:hover { opacity: 1; }
+
+        @media screen and (max-width: 600px) {
+            body { padding: 2rem 1.2rem; }
+            #theme-toggle { top: 1rem; right: 1rem; }
+        }
     </style>
 </head>
 <body>
+
+    <button id="theme-toggle" aria-label="Cambia tema">Tema</button>
 
     <header>
         <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
@@ -144,5 +188,25 @@
         </nav>
     </footer>
 
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        
+        // Funzione per aggiornare l'etichetta del tasto
+        function updateButtonLabel(theme) {
+            toggleBtn.textContent = theme === 'dark' ? 'Chiaro' : 'Scuro';
+        }
+
+        // Inizializzazione etichetta
+        updateButtonLabel(document.documentElement.getAttribute('data-theme') || 'light');
+
+        toggleBtn.addEventListener('click', () => {
+            let currentTheme = document.documentElement.getAttribute('data-theme');
+            let nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('theme', nextTheme);
+            updateButtonLabel(nextTheme);
+        });
+    </script>
 </body>
 </html>
