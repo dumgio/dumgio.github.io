@@ -108,7 +108,7 @@
         
         .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
         
-        /* 1) Giovanni Duminuco, PhD più grande e grassetto non troppo pesante (500-600) */
+        /* 1) Giovanni Duminuco, PhD più grande e grassetto 500 */
         h1 { 
             font-size: 1.3rem; 
             font-weight: 500; 
@@ -120,30 +120,32 @@
 
         .hero-role { font-size: 1rem; color: var(--accent); margin-top: 0.1rem; }
         
-        /* 2) Appunti e contatto sottolineati solo con hover */
+        /* 2) Appunti e contatto con hover e sottolineatura */
         .social-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
-        .social-links a { text-decoration: none; color: var(--accent); font-weight: 400; }
+        .social-links a { text-decoration: none; color: var(--accent); font-weight: 400; transition: 0.2s; }
         .social-links a:hover { color: var(--fg); text-decoration: underline; }
         
         section { margin-bottom: 3rem; }
-        
-        /* 3) Stile per i titoli degli Ambiti di Ricerca (Evoluzione dell'atto creativo, ecc) */
-        /* Applicato a h3 assumendo che vengano usati nel contenuto markdown */
-        h3 { 
-            font-size: 1rem; /* Uguale al testo bio */
-            font-weight: 500; /* Grassetto leggero */
-            color: var(--fg);
-            margin: 1.5rem 0 0.5rem 0;
+
+        /* 3-4) Ambiti di ricerca uniformati */
+        .ambito-item { margin-bottom: 1.5rem; }
+
+        .ambito-titolo { 
+            font-size: 1rem;      /* Uguale alla bio */
+            font-weight: 500;     /* Grassetto leggero */
+            color: var(--fg); 
+            display: block;
         }
 
-        /* 4) Contenuti ambiti: colore uguale alla bio, font leggermente più piccolo, non grassetto */
-        .ambito-content {
-            color: var(--fg);
-            font-size: 0.95rem;
-            font-weight: 400;
+        .ambito-descrizione { 
+            font-size: 0.9rem;    /* Leggermente più piccolo */
+            font-weight: 400;     /* Non grassetto */
+            color: var(--fg);     /* Stesso colore bio */
+            display: block;
+            line-height: 1.5;
         }
 
-        /* Titoli sezioni (AMBITI DI RICERCA) */
+        /* Titoli sezioni (es. AMBITI DI RICERCA) */
         h2 { 
             text-transform: uppercase; 
             letter-spacing: 0.05em; 
