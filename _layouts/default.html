@@ -105,8 +105,13 @@
         
         header { 
             margin-bottom: 3rem; 
-            display: block; /* Modificato da grid a block per allineamento testo */
+            display: grid; 
+            grid-template-columns: 85px 1fr; 
+            gap: 1.5rem; 
+            align-items: center; 
         }
+        
+        .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
         
         h1 { 
             font-size: 1.3rem; 
@@ -175,7 +180,11 @@
         footer a:hover { color: var(--fg); text-decoration: underline; }
 
         @media (max-width: 600px) {
+            header { grid-template-columns: 85px 1fr; }
             #theme-toggle { right: 1rem; }
+            @media (max-width: 450px) {
+                header { grid-template-columns: 1fr; gap: 1rem; }
+            }
         }
     </style>
 </head>
@@ -195,11 +204,11 @@
     </button>
 
     <header>
+        <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
         <div>
             <h1><a href="/">Giovanni Duminuco, PhD</a></h1>
             <p class="hero-role">Educazione, soggettività e trasformazione sociale</p>
             <nav class="social-links">
-                <a href="/">~</a>
                 <a href="/blog">Appunti</a>
                 <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
             </nav>
