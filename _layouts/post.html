@@ -12,93 +12,36 @@ layout: default
   </div>
 
   <div class="share-section">
-    <button id="share-button" class="share-btn">
-      <span id="share-icon-container" style="display: flex; align-items: center; gap: 8px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-          <polyline points="16 6 12 2 8 6"></polyline>
-          <line x1="12" y1="2" x2="12" y2="15"></line>
-        </svg>
-      </span>
-      <span id="share-text">Condividi questo appunto</span>
-    </button>
+    <p style="font-size: 0.8rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">Condividi</p>
+    <div class="share-links">
+      <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ site.url }}{{ page.url | url_encode }}" target="_blank" class="share-btn">WhatsApp</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url | url_encode }}" target="_blank" class="share-btn">LinkedIn</a>
+      <button onclick="copyLink()" id="copy-btn" class="share-btn">Copia Link</button>
+    </div>
   </div>
 </article>
 
 <script>
-document.getElementById('share-button').addEventListener('click', async () => {
-  const shareData = {
-    title: '{{ page.title }} | Giovanni Duminuco',
-    url: window.location.href
-  };
-
-  const btn = document.getElementById('share-button');
-  const iconContainer = document.getElementById('share-icon-container');
-  const textElem = document.getElementById('share-text');
-  const originalIcon = iconContainer.innerHTML;
-  const originalText = textElem.innerText;
-
-  // Se il browser supporta la condivisione nativa (Mobile/Safari)
-  if (navigator.share) {
-    try {
-      await navigator.share(shareData);
-    } catch (err) {
-      console.log('Condivisione annullata');
-    }
-  } else {
-    // Fallback per Desktop: Copia negli appunti
-    try {
-      await navigator.clipboard.writeText(window.location.href);
-      
-      // Feedback visivo
-      iconContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
-      textElem.innerText = "Link copiato!";
-      btn.style.borderColor = "var(--fg)";
-      
-      setTimeout(() => {
-        iconContainer.innerHTML = originalIcon;
-        textElem.innerText = originalText;
-        btn.style.borderColor = "var(--border)";
-      }, 2000);
-    } catch (err) {
-      console.error('Errore copia:', err);
-    }
-  }
-});
+function copyLink() {
+  const el = document.createElement('textarea');
+  el.value = window.location.href;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand('copy');
+  document.body.removeChild(el);
+  
+  const btn = document.getElementById('copy-btn');
+  btn.innerText = 'Copiato!';
+  setTimeout(() => { btn.innerText = 'Copia Link'; }, 2000);
+}
 </script>
 
 <style>
   .post-container { text-align: left; }
-
-  .post-header {
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start; 
-  }
-
-  .post-title {
-    font-size: 1.5rem; 
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    line-height: 1.2;
-    margin-bottom: 0.3rem;
-    color: var(--fg);
-    text-align: left;
-  }
-
-  .post-date {
-    color: var(--accent);
-    font-size: 0.85rem;
-    font-weight: 500;
-    text-align: left;
-    font-family: monospace;
-  }
-
-  .post-content {
-    text-align: left;
-    margin-top: 2.5rem;
-  }
+  .post-header { margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start; }
+  .post-title { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.3rem; color: var(--fg); }
+  .post-date { color: var(--accent); font-size: 0.85rem; font-weight: 500; font-family: monospace; }
+  .post-content { text-align: left; margin-top: 2.5rem; }
 
   .share-section {
     margin-top: 4rem;
@@ -106,25 +49,28 @@ document.getElementById('share-button').addEventListener('click', async () => {
     border-top: 1px solid var(--border);
   }
 
+  .share-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
   .share-btn {
     background: none;
     border: 1px solid var(--border);
     color: var(--accent);
-    padding: 8px 14px;
+    padding: 6px 12px;
     border-radius: 4px;
-    font-size: 0.85rem;
-    font-family: inherit;
+    font-size: 0.8rem;
+    text-decoration: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 8px;
     transition: all 0.2s ease;
+    font-family: inherit;
   }
 
   .share-btn:hover {
     border-color: var(--fg);
     color: var(--fg);
-    background-color: rgba(0,0,0,0.02);
   }
 
   @media (max-width: 600px) {
