@@ -3,7 +3,7 @@ layout: post
 title: "L'illusione dell'autonomia: la lezione dell'1,6%"
 ---
 
-Di recente è emerso un dato curioso dall’analisi di Claude Code, uno degli agenti di intelligenza artificiale più avanzati: appena l’1,6% del suo codice riguarda la logica decisionale, mentre tutto il resto (ben il 98,4%) serve a far funzionare il sistema in modo sicuro e affidabile. 
+Di recente è emerso un dato curioso dall’analisi di Claude Code, uno degli agenti di intelligenza artificiale più avanzati: appena l’1,6% del suo codice riguarda la logica decisionale, mentre tutto il resto (il 98,4%) serve a far funzionare il sistema in modo sicuro e affidabile. 
 
 Parliamo quindi di gestione dei limiti, protocolli di sicurezza, filtri di contesto e meccanismi di controllo.
 
