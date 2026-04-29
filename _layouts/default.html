@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
     
     <title>{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
     
@@ -11,12 +11,10 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}">
     <meta property="og:description" content="Ricerca pedagogica, filosofia dell'educazione e progettazione sociale.">
-    
     <meta property="og:image" content="https://giovanniduminuco.it/assets/img/og-default.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://giovanniduminuco.it{{ page.url }}">
-    
     <meta name="twitter:card" content="summary_large_image">
 
     <script type="application/ld+json">
@@ -34,182 +32,214 @@
     }
     </script>
 
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme) {
-                document.documentElement.setAttribute("data-theme", savedTheme);
-            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                document.documentElement.setAttribute("data-theme", "dark");
-            }
-        })();
-    </script>
-
     <style>
-        :root { 
-            --bg: #f2f2f2;      
-            --fg: #0a0a0a;      
-            --accent: #666666;  
-            --border: #e5e5e5;  
-            --m-width: 680px;
-        }
-        
-        [data-theme="dark"] { 
-            --bg: #0a0a0a; 
-            --fg: #d0d0d0; 
-            --accent: #a0a0a0; 
-            --border: #2a2f33; 
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
-        html { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg); 
-            color: var(--fg); 
-            font-size: 16px; 
-            line-height: 1.6;     
-            -webkit-font-smoothing: antialiased; 
-            transition: background-color 0.3s ease; 
-        }
-        
-        body { 
-            padding: 8vh 1.5rem 4vh; 
-            max-width: var(--m-width); 
-            margin: 0 auto; 
-            position: relative; 
-            text-align: left; 
+        /* Importazione Font Serif (Bespoke Serif come Dave Lee, o usiamo Georgia/Times come fallback) */
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('https://static.mighil.com/fonts/BespokeSerif-Variable.woff2') format('woff2');
+            font-weight: 300 800;
+            font-display: swap;
+            font-style: normal;
         }
 
-        main p { margin-bottom: 1.5rem; }
-        
-        #theme-toggle { 
-            position: absolute; 
-            top: 2rem; 
-            right: 1.5rem; 
-            background: none; 
-            border: 1px solid var(--border); 
-            border-radius: 50%; 
-            width: 38px; 
-            height: 38px; 
-            cursor: pointer; 
-            color: var(--accent); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            transition: all 0.2s ease; 
-        }
-        
-        #theme-toggle:hover { border-color: var(--fg); color: var(--fg); }
-        [data-theme="dark"] #sun-icon { color: #FFB700; }
-        
-        header { 
-            margin-bottom: 3rem; 
-            display: grid; 
-            grid-template-columns: 85px 1fr; 
-            gap: 1.5rem; 
-            align-items: center; 
-        }
-        
-        .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
-        
-        h1 { 
-            font-size: 1.3rem; 
-            font-weight: 500; 
-            letter-spacing: -0.01em; 
-            line-height: 1.4; 
-        }
-        
-        h1 a { text-decoration: none; color: inherit; }
-
-        .hero-role { font-size: 1rem; color: var(--accent); margin-top: 0.1rem; }
-        
-        .social-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
-        .social-links a { 
-            text-decoration: underline; 
-            text-underline-offset: 3px;
-            color: var(--accent); 
-            font-weight: 400; 
-            transition: 0.2s; 
-        }
-        .social-links a:hover { 
-            color: var(--fg); 
-            text-decoration: none; 
-        }
-        
-        section { margin-bottom: 3rem; }
-
-        .ambito-item { margin-bottom: 1.5rem; }
-
-        .ambito-titolo { 
-            font-size: 1rem; 
-            font-weight: 500; 
-            color: var(--fg); 
-            display: block;
+        :root {
+            /* Palette Dave Lee */
+            --bg-color: #FFFFFF;
+            --text-color: #111;
+            /* Colore primario per i link (un blu scuro/violaceo molto retro) */
+            --color-primary: #1a0dab; 
+            --spacing: 1rem;
+            --max-width: 700px; /* Leggermente più largo del tuo originale per favorire la lettura serif */
         }
 
-        .ambito-descrizione { 
-            font-size: 0.9rem; 
-            font-weight: 400; 
-            color: var(--fg); 
-            display: block;
-            line-height: 1.5;
-        }
-
-        h2 { 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em; 
-            color: var(--accent); 
-            margin-bottom: 1.2rem; 
-            padding-bottom: 0.4rem; 
-            border-bottom: 1px solid var(--border); 
-            font-size: 0.85rem; 
-            font-weight: 500;
-        }
-        
-        footer { 
-            margin-top: 5rem; 
-            padding-top: 1.5rem; 
-            border-top: 1px solid var(--border); 
-            font-size: 1rem; 
-            color: var(--accent); 
-        }
-        
-        .footer-links { display: flex; gap: 0.8rem; margin-top: 0.8rem; flex-wrap: wrap; }
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { color: var(--fg); text-decoration: underline; }
-
-        @media (max-width: 600px) {
-            header { grid-template-columns: 85px 1fr; }
-            #theme-toggle { right: 1rem; }
-            @media (max-width: 450px) {
-                header { grid-template-columns: 1fr; gap: 1rem; }
+        /* Dark mode nativa basata sulle preferenze di sistema (come Dave Lee) */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg-color: #222;
+                --text-color: #fff;
+                /* Colore link dark (Giallo paglierino/wheat) */
+                --color-primary: wheat; 
             }
         }
+
+        * { box-sizing: border-box; }
+
+        body {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: var(--spacing);
+            background: var(--bg-color);
+            color: var(--text-color);
+            /* Font di sistema per l'interfaccia */
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-size: 1.165rem; /* Dimensione generosa Dave Lee */
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Adattamento per mobile */
+        @media screen and (max-width: 620px) {
+            body {
+                font-size: 1.125rem !important;
+                line-height: 1.55 !important;
+            }
+        }
+
+        img { display: block; max-width: 100%; height: auto; }
+
+        /* HEADER STILE DAVE LEE (Modificato per includere la foto) */
+        header {
+            border-bottom: 1px solid #96909061;
+            display: flex;
+            align-items: center; /* Allinea foto e testo verticalmente */
+            padding: 1rem 0;
+            text-transform: lowercase; /* Navigazione in minuscolo */
+        }
+
+        /* Foto Profilo adattata allo stile minimal */
+        .profile-photo {
+            width: 50px; /* Più piccola per integrarsi nell'header lineare */
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: var(--spacing);
+            border: 1px solid #96909061;
+        }
+
+        .title-group {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .title h1 {
+            font-size: 1.165rem; /* Stessa dimensione del corpo del testo */
+            margin: 0;
+            font-weight: 600;
+        }
+
+        header a { text-decoration: none; color: inherit; }
+
+        nav {
+            margin-top: 0.25rem;
+            font-size: 1rem;
+        }
+
+        nav a {
+            margin-right: var(--spacing);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* MAIN (Area Contenuto) - Qui applichiamo il font Serif */
+        main {
+            margin: 2rem 0 3rem 0;
+            font-family: 'Bespoke Serif', Georgia, Cambria, "Times New Roman", Times, serif !important;
+        }
+
+        /* Sintassi Link Dave Lee (Sottolineatura sottile fissa, cambio colore on hover) */
+        a {
+            color: currentColor;
+            text-decoration-color: currentColor;
+            text-decoration-thickness: 0.1ex;
+            text-underline-offset: 0.3ex;
+        }
+
+        a:hover {
+            color: var(--color-primary);
+            text-decoration-color: var(--color-primary);
+            text-decoration: underline;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.25;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Liste Post (come usate da Dave Lee per "Recent Writing") */
+        ul.blog-posts {
+            list-style-type: none;
+            padding: unset;
+            margin: 2rem 0;
+        }
+
+        ul.blog-posts li {
+            display: flex;
+            flex-direction: row;
+            align-items: baseline;
+            gap: calc(var(--spacing) / 2);
+            margin-bottom: calc(var(--spacing) / 2);
+        }
+
+        ul.blog-posts li span {
+            min-width: 8ch; /* Spazio fisso per la data */
+            font-family: system-ui, sans-serif; /* Data in Sans-serif */
+        }
+
+        time {
+            opacity: 0.75;
+            font-style: normal;
+            font-size: 90%;
+        }
+
+        /* Orizzontal Rule minimale */
+        hr {
+            border: none;
+            border-top: 1px solid #96909061;
+            margin: 2rem 0;
+        }
+
+        /* Blockquote stilizzato Dave Lee */
+        blockquote {
+            position: relative;
+            border-left: 4px solid #888;
+            padding: 1.5rem 1.75rem;
+            margin: 1.5rem 0;
+            color: #444;
+            background: #f9f9f9;
+            overflow: hidden;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            blockquote {
+                background: #333;
+                color: #ccc;
+                border-left-color: #555;
+            }
+        }
+
+        /* FOOTER STILE DAVE LEE */
+        footer {
+            margin-top: 4rem;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            opacity: 0.8;
+            text-align: left;
+            text-transform: lowercase;
+            border-top: 1px solid #96909061;
+        }
+
+        footer a { text-decoration: none; color: inherit; }
+        footer a:hover { text-decoration: underline; color: var(--color-primary); }
+
     </style>
 </head>
-<body>
-
-    <button id="theme-toggle" aria-label="Cambia tema">
-        <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
-    </button>
+<body class="home">
 
     <header>
         <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
-        <div>
-            <h1><a href="/">Giovanni Duminuco, PhD</a></h1>
-            <p class="hero-role">Educazione, soggettività e trasformazione sociale</p>
-            <nav class="social-links">
+        
+        <div class="title-group">
+            <a class="title" href="/">
+                <h1>Giovanni Duminuco, PhD</h1>
+            </a>
+            
+            <nav>
                 <a href="/blog">Appunti</a>
+                <a href="/info">Info</a>
                 <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
             </nav>
         </div>
@@ -221,33 +251,12 @@
 
     <footer>
         <p>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</p>
-        <div class="footer-links">
-            <a href="/info">Info</a> &middot; 
+        <p>
             <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a> &middot; 
-            <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
-        </div>
+            <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a> &middot;
+            <a href="/feed.xml">RSS</a>
+        </p>
     </footer>
 
-    <script>
-        const btn = document.getElementById("theme-toggle");
-        const sunIcon = document.getElementById("sun-icon");
-        const moonIcon = document.getElementById("moon-icon");
-
-        function updateIcons(theme) {
-            const isDark = theme === "dark";
-            sunIcon.style.display = isDark ? "block" : "none";
-            moonIcon.style.display = isDark ? "none" : "block";
-        }
-
-        let currentTheme = document.documentElement.getAttribute("data-theme") || "light";
-        updateIcons(currentTheme);
-
-        btn.addEventListener("click", () => {
-            let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
-            document.documentElement.setAttribute("data-theme", theme);
-            localStorage.setItem("theme", theme);
-            updateIcons(theme);
-        });
-    </script>
 </body>
 </html>
