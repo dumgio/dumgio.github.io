@@ -42,16 +42,14 @@
 
     <style>
         :root { 
-            /* Palette Olle Lindholm (Light) */
             --bg: #f2f2f2;      
             --fg: #0a0a0a;      
             --accent: #666666;  
             --border: #e5e5e5;  
-            --m-width: 680px; /* Larghezza Olle */
+            --m-width: 680px;
         }
         
         [data-theme="dark"] { 
-            /* Palette Dario Amodei (Dark) */
             --bg: #0a0a0a; 
             --fg: #d0d0d0; 
             --accent: #a0a0a0; 
@@ -61,31 +59,29 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html { 
-            /* I tuoi font, ma proporzioni di Olle */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg); 
             color: var(--fg); 
-            font-size: 17px;       /* Dimensione Olle */
-            line-height: 1.7;     /* Interlinea Olle */
+            font-size: 16px;       /* Dimensione unica e standard */
+            line-height: 1.6;     
             -webkit-font-smoothing: antialiased; 
             transition: background-color 0.3s ease; 
         }
         
         body { 
-            padding: 3.5rem 1.25rem; 
+            padding: 8vh 1.5rem 4vh; 
             max-width: var(--m-width); 
             margin: 0 auto; 
             position: relative; 
             text-align: left; 
         }
 
-        /* Margini paragrafi di Olle */
-        main p { margin: 1.25rem 0; }
+        main p { margin-bottom: 1.5rem; }
         
         #theme-toggle { 
             position: absolute; 
             top: 2rem; 
-            right: 1.25rem; 
+            right: 1.5rem; 
             background: none; 
             border: 1px solid var(--border); 
             border-radius: 50%; 
@@ -103,7 +99,7 @@
         [data-theme="dark"] #sun-icon { color: #FFB700; }
         
         header { 
-            margin-bottom: 2.5rem; 
+            margin-bottom: 3rem; 
             display: grid; 
             grid-template-columns: 85px 1fr; 
             gap: 1.5rem; 
@@ -112,29 +108,46 @@
         
         .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
         
-        h1 { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
+        /* Titoli con grassetto leggero (500) e stessa dimensione del corpo */
+        h1, h2, .post-title { 
+            font-size: 1rem; 
+            font-weight: 500; 
+            letter-spacing: -0.01em; 
+            line-height: 1.4; 
+        }
+        
         h1 a { text-decoration: none; color: inherit; }
 
-        .hero-role { font-size: 0.9rem; color: var(--accent); margin-top: 0.2rem; }
+        .hero-role { font-size: 1rem; color: var(--accent); margin-top: 0.1rem; }
         
-        .social-links { display: flex; gap: 0.75rem; margin-top: 0.8rem; }
-        .social-links a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; color: var(--fg); font-size: 0.9rem; font-weight: 500; }
-        .social-links a:hover { opacity: 0.75; }
+        .social-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
+        .social-links a { text-decoration: none; color: var(--accent); font-weight: 400; }
+        .social-links a:hover { color: var(--fg); text-decoration: underline; }
         
-        section { margin-bottom: 3.5rem; }
-        h2 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+        section { margin-bottom: 3rem; }
+        
+        /* Titoli sezioni (Ambiti di ricerca, ecc) */
+        h2 { 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+            color: var(--accent); 
+            margin-bottom: 1.2rem; 
+            padding-bottom: 0.4rem; 
+            border-bottom: 1px solid var(--border); 
+            font-size: 0.85rem; /* Unica eccezione per i micro-titoli di sezione */
+        }
         
         footer { 
-            margin-top: 4rem; 
-            padding-top: 2rem; 
+            margin-top: 5rem; 
+            padding-top: 1.5rem; 
             border-top: 1px solid var(--border); 
-            font-size: 0.9rem; 
+            font-size: 1rem; 
             color: var(--accent); 
         }
         
-        .footer-links { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
-        footer a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
-        footer a:hover { opacity: 0.75; }
+        .footer-links { display: flex; gap: 0.8rem; margin-top: 0.8rem; flex-wrap: wrap; }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { color: var(--fg); text-decoration: underline; }
 
         @media (max-width: 600px) {
             header { grid-template-columns: 85px 1fr; }
