@@ -9,7 +9,6 @@
     {% seo %}
 
     <style>
-        /* Importazione Font Serif di Dave Lee */
         @font-face {
             font-family: 'Bespoke Serif';
             src: url('https://static.mighil.com/fonts/BespokeSerif-Variable.woff2') format('woff2');
@@ -36,9 +35,7 @@
 
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        html {
-            background-color: var(--bg-color);
-        }
+        html { background-color: var(--bg-color); }
 
         body {
             max-width: var(--max-width);
@@ -47,7 +44,7 @@
             background: var(--bg-color);
             color: var(--text-color);
             font-family: 'Bespoke Serif', Georgia, serif !important;
-            font-size: 1.15rem; 
+            font-size: 17px; /* Font fisso a 17px per tutto il sito */
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
@@ -79,7 +76,7 @@
 
         nav {
             margin-top: 0.2rem;
-            font-size: 1rem;
+            font-size: 17px;
         }
 
         nav a {
@@ -88,11 +85,8 @@
             color: inherit;
         }
 
-        main {
-            margin-bottom: 4rem;
-        }
+        main { margin-bottom: 4rem; }
 
-        /* Stile dei Link Dave Lee */
         a {
             color: currentColor;
             text-decoration: underline;
@@ -100,17 +94,30 @@
             text-underline-offset: 3px;
         }
 
-        a:hover {
-            color: var(--color-primary);
-        }
+        a:hover { color: var(--color-primary); }
 
+        /* Stile Ambiti di Ricerca (Senza movimento e con font uniforme) */
         h2 {
             font-size: 1.3rem;
             margin: 2.5rem 0 1rem;
             font-weight: 600;
         }
 
-        /* LA LINEA DI DAVE LEE */
+        .ambito-item {
+            margin-bottom: 0.8rem;
+            font-size: 17px; /* 17px come richiesto */
+        }
+
+        .ambito-titolo {
+            font-weight: 500; /* Grassetto più leggero */
+            display: inline;
+        }
+
+        .ambito-descrizione {
+            display: inline;
+            font-weight: 400;
+        }
+
         hr {
             border: none;
             border-top: 1px solid var(--border-light);
@@ -132,7 +139,6 @@
 
         @media screen and (max-width: 600px) {
             body { padding: 2rem 1.2rem; }
-            header { flex-direction: row; align-items: center; }
             .profile-photo { width: 55px; height: 55px; }
         }
     </style>
@@ -147,7 +153,6 @@
             </a>
             <nav>
                 <a href="/blog">Appunti</a> 
-                <a href="/info">Info</a> 
                 <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
             </nav>
         </div>
@@ -160,6 +165,7 @@
     <footer>
         <span>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</span>
         <nav>
+            <a href="/info">Info</a> &middot; 
             <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a> &middot; 
             <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
         </nav>
