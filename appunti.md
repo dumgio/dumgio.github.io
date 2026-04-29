@@ -12,7 +12,7 @@ permalink: /blog/
             <span style="opacity: 0.5; font-size: 0.9rem; margin-right: 1.5rem; min-width: 95px; flex-shrink: 0; font-family: system-ui, -apple-system, sans-serif;">
                 {{ post.date | date: "%d.%m.%Y" }}
             </span>
-            <a href="{{ post.url }}" style="font-weight: 500; text-decoration: none;" class="post-link">
+            <a href="{{ post.url }}" style="font-weight: 400; text-decoration: none;" class="post-link">
                 {{ post.title }}
             </a>
         </div>
@@ -23,16 +23,12 @@ permalink: /blog/
 </section>
 
 <style>
-    /* Applichiamo lo stile Dave Lee specifico per questa lista:
-       La sottolineatura compare solo in hover.
-    */
     .post-link:hover {
         text-decoration: underline !important;
         text-decoration-thickness: 0.1ex !important;
         text-underline-offset: 0.3ex !important;
     }
 
-    /* Ottimizzazione per mobile: evitiamo che la data si sovrapponga al testo */
     @media (max-width: 480px) {
         .post-list > div {
             flex-direction: column !important;
