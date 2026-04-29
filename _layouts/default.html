@@ -4,12 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>{{ page.title }} | Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale</title>
+    <title>{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
     
     {% seo %}
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ page.title }} | Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale">
+    <meta property="og:title" content="{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}">
     <meta property="og:description" content="Ricerca pedagogica, filosofia dell'educazione e progettazione sociale.">
     <meta property="og:image" content="{{ site.url }}/assets/img/og-default.png">
     <meta name="twitter:card" content="summary_large_image">
