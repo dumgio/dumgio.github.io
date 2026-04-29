@@ -3,9 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
-    
+    <title>{% if page.url == "/" %}Giovanni Duminuco, PhD{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
     {% seo %}
 
     <style>
@@ -14,7 +12,6 @@
             src: url('https://static.mighil.com/fonts/BespokeSerif-Variable.woff2') format('woff2');
             font-weight: 300 800;
             font-display: swap;
-            font-style: normal;
         }
 
         :root {
@@ -44,7 +41,7 @@
             background: var(--bg-color);
             color: var(--text-color);
             font-family: 'Bespoke Serif', Georgia, serif !important;
-            font-size: 17px; /* Font fisso a 17px per tutto il sito */
+            font-size: 17px; 
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
@@ -58,32 +55,17 @@
         }
 
         .profile-photo {
-            width: 65px; 
-            height: 65px;
+            width: 65px; height: 65px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 1.5rem;
             border: 1px solid var(--border-light);
         }
 
-        .title h1 {
-            font-size: 1.25rem; 
-            font-weight: 600;
-            margin: 0;
-        }
-
+        .title h1 { font-size: 1.25rem; font-weight: 600; margin: 0; }
         header a { text-decoration: none; color: inherit; }
-
-        nav {
-            margin-top: 0.2rem;
-            font-size: 17px;
-        }
-
-        nav a {
-            margin-right: 1rem;
-            text-decoration: none;
-            color: inherit;
-        }
+        nav { margin-top: 0.2rem; font-size: 17px; }
+        nav a { margin-right: 1rem; text-decoration: none; color: inherit; }
 
         main { margin-bottom: 4rem; }
 
@@ -94,28 +76,26 @@
             text-underline-offset: 3px;
         }
 
-        a:hover { color: var(--color-primary); }
-
-        /* Stile Ambiti di Ricerca (Senza movimento e con font uniforme) */
+        /* AZZERAMENTO MOVIMENTO AMBITI */
         h2 {
             font-size: 1.3rem;
-            margin: 2.5rem 0 1rem;
+            margin: 2.5rem 0 1.5rem; /* Margine sotto il titolo di sezione */
             font-weight: 600;
         }
 
         .ambito-item {
-            margin-bottom: 0.8rem;
-            font-size: 17px; /* 17px come richiesto */
+            margin-bottom: 0.5rem; /* Spazio ridotto tra i vari ambiti */
+            line-height: 1.5;
         }
 
         .ambito-titolo {
-            font-weight: 500; /* Grassetto più leggero */
+            font-weight: 600; /* Grassetto visibile ma integrato */
             display: inline;
         }
 
         .ambito-descrizione {
-            display: inline;
             font-weight: 400;
+            display: inline;
         }
 
         hr {
@@ -131,16 +111,9 @@
             font-size: 0.95rem;
             display: flex;
             justify-content: space-between;
-            flex-wrap: wrap;
         }
 
         footer a { text-decoration: none; opacity: 0.8; }
-        footer a:hover { text-decoration: underline; opacity: 1; }
-
-        @media screen and (max-width: 600px) {
-            body { padding: 2rem 1.2rem; }
-            .profile-photo { width: 55px; height: 55px; }
-        }
     </style>
 </head>
 <body>
