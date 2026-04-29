@@ -11,39 +11,12 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}">
     <meta property="og:description" content="Ricerca pedagogica, filosofia dell'educazione e progettazione sociale.">
-    
     <meta property="og:image" content="https://giovanniduminuco.it/assets/img/og-default.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://giovanniduminuco.it{{ page.url }}">
     
     <meta name="twitter:card" content="summary_large_image">
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Giovanni Duminuco",
-      "jobTitle": "PhD in Pedagogia",
-      "url": "https://giovanniduminuco.it",
-      "sameAs": [
-        "https://orcid.org/0009-0007-9687-4819",
-        "https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it",
-        "https://www.linkedin.com/in/dumgio/"
-      ]
-    }
-    </script>
-
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme) {
-                document.documentElement.setAttribute("data-theme", savedTheme);
-            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                document.documentElement.setAttribute("data-theme", "dark");
-            }
-        })();
-    </script>
 
     <style>
         :root { 
@@ -64,143 +37,94 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html { 
+            /* Font di sistema pulito, uniforme ovunque */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg); 
             color: var(--fg); 
-            font-size: 16px; 
+            font-size: 16px; /* Base fissa */
             line-height: 1.6;     
             -webkit-font-smoothing: antialiased; 
-            transition: background-color 0.3s ease; 
         }
         
         body { 
             padding: 8vh 1.5rem 4vh; 
             max-width: var(--m-width); 
             margin: 0 auto; 
-            position: relative; 
-            text-align: left; 
         }
 
-        main p { margin-bottom: 1.5rem; }
-        
-        #theme-toggle { 
-            position: absolute; 
-            top: 2rem; 
-            right: 1.5rem; 
-            background: none; 
-            border: 1px solid var(--border); 
-            border-radius: 50%; 
-            width: 38px; 
-            height: 38px; 
-            cursor: pointer; 
-            color: var(--accent); 
-            display: flex; 
-            align-items: center; 
-            justify-content: center; 
-            transition: all 0.2s ease; 
+        /* Testo uniforme: paragrafi, liste e descrizioni hanno la stessa dimensione */
+        p, li, .ambito-descrizione, .hero-role { 
+            font-size: 1rem; 
+            font-weight: 400;
+            margin-bottom: 1.2rem;
         }
-        
-        #theme-toggle:hover { border-color: var(--fg); color: var(--fg); }
-        [data-theme="dark"] #sun-icon { color: #FFB700; }
-        
+
+        /* Titoli sezioni: stessa dimensione del testo, solo leggermente più marcati */
+        h2 { 
+            font-size: 1rem; 
+            font-weight: 600; 
+            color: var(--fg);
+            margin: 2rem 0 1rem;
+            text-transform: none;
+            border: none;
+        }
+
+        /* Header snello */
         header { 
-            margin-bottom: 3rem; 
+            margin-bottom: 2.5rem; 
             display: grid; 
             grid-template-columns: 85px 1fr; 
             gap: 1.5rem; 
             align-items: center; 
         }
         
-        .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
+        .profile-photo { width: 85px; height: 85px; border-radius: 50%; border: 1px solid var(--border); }
         
-        h1 { 
-            font-size: 1.3rem; 
-            font-weight: 500; 
-            letter-spacing: -0.01em; 
-            line-height: 1.4; 
-        }
-        
+        h1 { font-size: 1.1rem; font-weight: 600; }
         h1 a { text-decoration: none; color: inherit; }
 
-        .hero-role { font-size: 1rem; color: var(--accent); margin-top: 0.1rem; }
+        .hero-role { color: var(--accent); margin-bottom: 0.2rem; }
         
-        .social-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
-        .social-links a { 
+        .social-links { display: flex; gap: 1rem; }
+        .social-links a, main a, .ambito-titolo a { 
             text-decoration: underline; 
             text-underline-offset: 3px;
-            color: var(--accent); 
-            font-weight: 400; 
-            transition: 0.2s; 
-        }
-        .social-links a:hover { 
-            color: var(--fg); 
-            text-decoration: none; 
-        }
-        
-        section { margin-bottom: 3rem; }
-
-        .ambito-item { margin-bottom: 1.5rem; }
-
-        .ambito-titolo { 
-            font-size: 1rem; 
-            font-weight: 500; 
-            color: var(--fg); 
-            display: block;
+            color: inherit; 
         }
 
-        .ambito-descrizione { 
-            font-size: 0.9rem; 
-            font-weight: 400; 
-            color: var(--fg); 
-            display: block;
-            line-height: 1.5;
+        /* Classi per pulire la lista Ambiti */
+        .ambito-item { margin-bottom: 0.8rem; list-style: none; }
+        .ambito-titolo { font-weight: 600; display: inline; }
+        .ambito-descrizione { display: inline; }
+
+        /* Pulsante tema minimale */
+        #theme-toggle { 
+            position: absolute; top: 2rem; right: 1.5rem; 
+            background: none; border: 1px solid var(--border); 
+            border-radius: 50%; width: 34px; height: 34px; 
+            cursor: pointer; color: var(--accent);
+            display: flex; align-items: center; justify-content: center;
         }
 
-        h2 { 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em; 
-            color: var(--accent); 
-            margin-bottom: 1.2rem; 
-            padding-bottom: 0.4rem; 
-            border-bottom: 1px solid var(--border); 
-            font-size: 0.85rem; 
-            font-weight: 500;
-        }
-        
         footer { 
-            margin-top: 5rem; 
-            padding-top: 1.5rem; 
+            margin-top: 4rem; padding-top: 1.5rem; 
             border-top: 1px solid var(--border); 
-            font-size: 1rem; 
-            color: var(--accent); 
+            font-size: 0.9rem; color: var(--accent); 
         }
-        
-        .footer-links { display: flex; gap: 0.8rem; margin-top: 0.8rem; flex-wrap: wrap; }
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { color: var(--fg); text-decoration: underline; }
+        .footer-links { display: flex; gap: 0.8rem; margin-top: 0.5rem; }
 
-        @media (max-width: 600px) {
-            header { grid-template-columns: 85px 1fr; }
-            #theme-toggle { right: 1rem; }
-            @media (max-width: 450px) {
-                header { grid-template-columns: 1fr; gap: 1rem; }
-            }
+        @media (max-width: 450px) {
+            header { grid-template-columns: 1fr; text-align: center; }
+            .social-links { justify-content: center; }
+            #theme-toggle { top: 1rem; right: 1rem; }
         }
     </style>
 </head>
 <body>
 
     <button id="theme-toggle" aria-label="Cambia tema">
-        <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-        </svg>
-        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-        </svg>
+        <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
     </button>
 
     <header>
@@ -232,16 +156,13 @@
         const btn = document.getElementById("theme-toggle");
         const sunIcon = document.getElementById("sun-icon");
         const moonIcon = document.getElementById("moon-icon");
-
         function updateIcons(theme) {
             const isDark = theme === "dark";
             sunIcon.style.display = isDark ? "block" : "none";
             moonIcon.style.display = isDark ? "none" : "block";
         }
-
         let currentTheme = document.documentElement.getAttribute("data-theme") || "light";
         updateIcons(currentTheme);
-
         btn.addEventListener("click", () => {
             let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
             document.documentElement.setAttribute("data-theme", theme);
