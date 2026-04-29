@@ -13,34 +13,56 @@ layout: default
 
   <div class="share-section">
     <button id="share-button" class="share-btn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
-        <polyline points="16 6 12 2 8 6"></polyline>
-        <line x1="12" y1="2" x2="12" y2="15"></line>
-      </svg>
-      Condividi questo appunto
+      <span id="share-icon-container" style="display: flex; align-items: center; gap: 8px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+          <polyline points="16 6 12 2 8 6"></polyline>
+          <line x1="12" y1="2" x2="12" y2="15"></line>
+        </svg>
+      </span>
+      <span id="share-text">Condividi questo appunto</span>
     </button>
   </div>
 </article>
 
 <script>
 document.getElementById('share-button').addEventListener('click', async () => {
+  const shareData = {
+    title: '{{ page.title }} | Giovanni Duminuco',
+    url: window.location.href
+  };
+
+  const btn = document.getElementById('share-button');
+  const iconContainer = document.getElementById('share-icon-container');
+  const textElem = document.getElementById('share-text');
+  const originalIcon = iconContainer.innerHTML;
+  const originalText = textElem.innerText;
+
+  // Se il browser supporta la condivisione nativa (Mobile/Safari)
   if (navigator.share) {
     try {
-      await navigator.share({
-        title: '{{ page.title }} | Giovanni Duminuco',
-        url: window.location.href
-      });
+      await navigator.share(shareData);
     } catch (err) {
       console.log('Condivisione annullata');
     }
   } else {
-    // Fallback se il browser non supporta navigator.share (es. alcuni desktop)
-    navigator.clipboard.writeText(window.location.href);
-    const btn = document.getElementById('share-button');
-    const originalText = btn.innerHTML;
-    btn.innerText = "Link copiato!";
-    setTimeout(() => { btn.innerHTML = originalText; }, 2000);
+    // Fallback per Desktop: Copia negli appunti
+    try {
+      await navigator.clipboard.writeText(window.location.href);
+      
+      // Feedback visivo
+      iconContainer.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>`;
+      textElem.innerText = "Link copiato!";
+      btn.style.borderColor = "var(--fg)";
+      
+      setTimeout(() => {
+        iconContainer.innerHTML = originalIcon;
+        textElem.innerText = originalText;
+        btn.style.borderColor = "var(--border)";
+      }, 2000);
+    } catch (err) {
+      console.error('Errore copia:', err);
+    }
   }
 });
 </script>
@@ -78,7 +100,6 @@ document.getElementById('share-button').addEventListener('click', async () => {
     margin-top: 2.5rem;
   }
 
-  /* Stile Pulsante Condividi */
   .share-section {
     margin-top: 4rem;
     padding-top: 1.5rem;
