@@ -8,64 +8,39 @@ permalink: /blog/
     <h2>Tutti gli appunti</h2>
     <div class="post-list" style="margin-top: 2rem;">
         {% for post in site.posts %}
-        <a href="{{ post.url }}" class="post-item">
-            <span class="post-date">
+        <div style="margin-bottom: 0.8rem; display: flex; align-items: baseline;">
+            <span style="opacity: 0.5; font-size: 0.9rem; margin-right: 1.5rem; min-width: 95px; flex-shrink: 0; font-family: system-ui, -apple-system, sans-serif;">
                 {{ post.date | date: "%d.%m.%Y" }}
             </span>
-            <span class="post-title-link">
+            <a href="{{ post.url }}" style="font-weight: 500; text-decoration: none;" class="post-link">
                 {{ post.title }}
-            </span>
-        </a>
+            </a>
+        </div>
         {% else %}
-        <p class="text-block" style="color: var(--accent);">Nessun appunto pubblicato ancora.</p>
+        <p style="opacity: 0.6;">Nessun appunto pubblicato ancora.</p>
         {% endfor %}
     </div>
 </section>
 
 <style>
-    /* Contenitore del singolo elemento della lista */
-    .post-item {
-        text-decoration: none;
-        display: flex;
-        align-items: baseline;
-        margin-bottom: 1.5rem;
-        transition: all 0.2s ease;
+    /* Applichiamo lo stile Dave Lee specifico per questa lista:
+       La sottolineatura compare solo in hover.
+    */
+    .post-link:hover {
+        text-decoration: underline !important;
+        text-decoration-thickness: 0.1ex !important;
+        text-underline-offset: 0.3ex !important;
     }
 
-    /* Stile della data (monospaziata per ordine visivo) */
-    .post-date {
-        font-size: 0.8rem;
-        color: var(--accent);
-        margin-right: 15px;
-        font-family: monospace;
-        flex-shrink: 0; /* Impedisce alla data di rimpicciolirsi su schermi piccoli */
-    }
-
-    /* Stile del titolo con sottolineatura elegante */
-    .post-title-link {
-        font-weight: 500;
-        color: var(--fg);
-        font-size: 1.1rem;
-        text-decoration: underline;
-        text-decoration-color: var(--border); /* Linea grigio chiaro */
-        text-underline-offset: 4px; /* Distanza tra testo e linea */
-        transition: all 0.2s ease;
-    }
-
-    /* Effetto al passaggio del mouse */
-    .post-item:hover .post-title-link {
-        text-decoration-color: var(--accent);
-        color: var(--accent);
-    }
-
-    /* Adattamento per schermi molto piccoli */
+    /* Ottimizzazione per mobile: evitiamo che la data si sovrapponga al testo */
     @media (max-width: 480px) {
-        .post-item {
-            flex-direction: column;
-            gap: 0.3rem;
+        .post-list > div {
+            flex-direction: column !important;
+            margin-bottom: 1.2rem !important;
         }
-        .post-date {
-            margin-right: 0;
+        .post-list span {
+            margin-bottom: 0.2rem;
+            min-width: auto !important;
         }
     }
 </style>
