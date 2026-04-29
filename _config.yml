@@ -1,22 +1,19 @@
-# --- Informazioni del Sito ---
 title: "Giovanni Duminuco, PhD"
-# Descrizione ottimizzata per la ricerca di servizi online
+author: "Giovanni Duminuco"
 description: "Ricerca pedagogica e consulenza filosofica online. Specializzato in filosofia dell'educazione e progettazione sociale."
 url: "https://www.giovanniduminuco.it"
 baseurl: ""
 
-# --- Impostazioni di Pubblicazione ---
+image: /assets/img/og-default.png
+
 future: true
 permalink: /:year/:month/:day/:title/
 
-# --- Plugin ---
-# jekyll-seo-tag: Fondamentale per far leggere bene a Google titoli e descrizioni
 plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-seo-tag
 
-# --- Esclusioni ---
 exclude:
   - Gemfile
   - Gemfile.lock
