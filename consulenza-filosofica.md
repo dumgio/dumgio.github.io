@@ -42,6 +42,4 @@ Non si tratta di offrire soluzioni standardizzate o strumenti di self-help, ma d
 
 Se desideri fissare un primo colloquio conoscitivo o ricevere maggiori informazioni sulla consulenza filosofica online, puoi scrivermi direttamente.
 
-> 👉 **Puoi richiedere un primo colloquio senza impegno.**
-
-[**Invia una Email**](mailto:giovanni.duminuco@gmail.com)
+> 👉 **Puoi richiedere un primo colloquio senza impegno.** [**Invia una Email**](mailto:giovanni.duminuco@gmail.com)
