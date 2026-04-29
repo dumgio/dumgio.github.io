@@ -11,7 +11,8 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content="{{ page.title }} | Giovanni Duminuco, PhD">
     <meta property="og:description" content="Ricerca pedagogica, filosofia dell'educazione e progettazione sociale.">
-    <meta property="og:image" content="{{ site.url }}/assets/img/og-default.jpg"> <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="{{ site.url }}/assets/img/og-default.jpg">
+    <meta name="twitter:card" content="summary_large_image">
 
     <script type="application/ld+json">
     {
@@ -40,44 +41,51 @@
     </script>
 
     <style>
-        /* Palette Dario Amodei */
         :root { 
-            --bg: #F7F3F0;      /* Il panna caldo di Amodei */
-            --fg: #1A1A18;      /* Testo quasi nero, molto morbido */
-            --accent: #6B6B63;  /* Grigio caldo per dettagli */
-            --border: #E6E2DE;  /* Bordi che sfumano nello sfondo */
-            --m-width: 650px; 
+            /* Palette Olle Lindholm (Light) */
+            --bg: #f2f2f2;      
+            --fg: #0a0a0a;      
+            --accent: #666666;  
+            --border: #e5e5e5;  
+            --m-width: 680px; /* Larghezza Olle */
         }
         
         [data-theme="dark"] { 
-            --bg: #0A0A0A; 
-            --fg: #F7F3F0; 
-            --accent: #8C8C85; 
-            --border: #262624; 
+            /* Palette Dario Amodei (Dark) */
+            --bg: #0a0a0a; 
+            --fg: #d0d0d0; 
+            --accent: #a0a0a0; 
+            --border: #2a2f33; 
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         html { 
+            /* I tuoi font, ma proporzioni di Olle */
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg); color: var(--fg); line-height: 1.6; 
-            -webkit-font-smoothing: antialiased; transition: background-color 0.3s ease; 
+            background-color: var(--bg); 
+            color: var(--fg); 
+            font-size: 17px;       /* Dimensione Olle */
+            line-height: 1.7;     /* Interlinea Olle */
+            -webkit-font-smoothing: antialiased; 
+            transition: background-color 0.3s ease; 
         }
         
         body { 
-            padding: 8vh 1.5rem 4vh; 
+            padding: 3.5rem 1.25rem; 
             max-width: var(--m-width); 
             margin: 0 auto; 
             position: relative; 
             text-align: left; 
         }
 
-        main p { margin-bottom: 1.5rem; }
+        /* Margini paragrafi di Olle */
+        main p { margin: 1.25rem 0; }
         
         #theme-toggle { 
             position: absolute; 
             top: 2rem; 
-            right: 1.5rem; 
+            right: 1.25rem; 
             background: none; 
             border: 1px solid var(--border); 
             border-radius: 50%; 
@@ -91,11 +99,11 @@
             transition: all 0.2s ease; 
         }
         
-        #theme-toggle:hover { border-color: var(--accent); color: var(--fg); }
+        #theme-toggle:hover { border-color: var(--fg); color: var(--fg); }
         [data-theme="dark"] #sun-icon { color: #FFB700; }
         
         header { 
-            margin-bottom: 3rem; 
+            margin-bottom: 2.5rem; 
             display: grid; 
             grid-template-columns: 85px 1fr; 
             gap: 1.5rem; 
@@ -104,29 +112,29 @@
         
         .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
         
-        h1 { font-size: 1.45rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; }
+        h1 { font-size: 1.4rem; font-weight: 600; letter-spacing: -0.01em; line-height: 1.2; }
         h1 a { text-decoration: none; color: inherit; }
 
-        .hero-role { font-size: 0.85rem; color: var(--accent); margin-top: 0.2rem; }
+        .hero-role { font-size: 0.9rem; color: var(--accent); margin-top: 0.2rem; }
         
-        .social-links { display: flex; gap: 1rem; margin-top: 0.8rem; }
-        .social-links a { text-decoration: none; color: var(--accent); font-size: 0.85rem; font-weight: 500; }
-        .social-links a:hover { color: var(--fg); text-decoration: underline; }
+        .social-links { display: flex; gap: 0.75rem; margin-top: 0.8rem; }
+        .social-links a { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; color: var(--fg); font-size: 0.9rem; font-weight: 500; }
+        .social-links a:hover { opacity: 0.75; }
         
         section { margin-bottom: 3.5rem; }
         h2 { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1.5rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
         
         footer { 
-            margin-top: 5rem; 
+            margin-top: 4rem; 
             padding-top: 2rem; 
             border-top: 1px solid var(--border); 
-            font-size: 0.85rem; 
+            font-size: 0.9rem; 
             color: var(--accent); 
         }
         
         .footer-links { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
-        footer a { color: var(--accent); text-decoration: none; }
-        footer a:hover { color: var(--fg); text-decoration: underline; }
+        footer a { color: var(--fg); text-decoration: underline; text-underline-offset: 3px; }
+        footer a:hover { opacity: 0.75; }
 
         @media (max-width: 600px) {
             header { grid-template-columns: 85px 1fr; }
