@@ -10,12 +10,43 @@ layout: default
   <div class="post-content">
     {{ content }}
   </div>
+
+  <div class="share-section">
+    <button id="share-button" class="share-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+        <polyline points="16 6 12 2 8 6"></polyline>
+        <line x1="12" y1="2" x2="12" y2="15"></line>
+      </svg>
+      Condividi questo appunto
+    </button>
+  </div>
 </article>
 
-<style>
-  .post-container {
-    text-align: left;
+<script>
+document.getElementById('share-button').addEventListener('click', async () => {
+  if (navigator.share) {
+    try {
+      await navigator.share({
+        title: '{{ page.title }} | Giovanni Duminuco',
+        url: window.location.href
+      });
+    } catch (err) {
+      console.log('Condivisione annullata');
+    }
+  } else {
+    // Fallback se il browser non supporta navigator.share (es. alcuni desktop)
+    navigator.clipboard.writeText(window.location.href);
+    const btn = document.getElementById('share-button');
+    const originalText = btn.innerHTML;
+    btn.innerText = "Link copiato!";
+    setTimeout(() => { btn.innerHTML = originalText; }, 2000);
   }
+});
+</script>
+
+<style>
+  .post-container { text-align: left; }
 
   .post-header {
     margin-bottom: 2rem;
@@ -45,6 +76,34 @@ layout: default
   .post-content {
     text-align: left;
     margin-top: 2.5rem;
+  }
+
+  /* Stile Pulsante Condividi */
+  .share-section {
+    margin-top: 4rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .share-btn {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--accent);
+    padding: 8px 14px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-family: inherit;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+  }
+
+  .share-btn:hover {
+    border-color: var(--fg);
+    color: var(--fg);
+    background-color: rgba(0,0,0,0.02);
   }
 
   @media (max-width: 600px) {
