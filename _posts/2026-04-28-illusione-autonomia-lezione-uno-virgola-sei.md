@@ -13,7 +13,7 @@ Spesso tendiamo a ignorare questo “98% invisibile”: il contesto, la responsa
 
 Senza il limite, l’intelligenza non è libertà: è solo una forza che finisce per disperdersi.
 
-In fondo, lo aveva già intuito Erich Fromm: l’uomo non teme tanto la mancanza di libertà, quanto il peso che la libertà comporta. Senza una struttura che la renda abitabile, la libertà non viene vissuta come possibilità, ma come vertigine. E spesso si trasforma nel bisogno di delegare, conformarsi, obbedire.
+In fondo, lo aveva già intuito Erich Fromm: l’uomo non teme tanto la mancanza di libertà, quanto il peso che la libertà comporta. Senza una struttura che la renda abitabile, la libertà non viene vissuta come possibilità, ma come vertigine. E spesso si trasforma nel bisogno di delegare o conformarsi.
 
 ---
 
