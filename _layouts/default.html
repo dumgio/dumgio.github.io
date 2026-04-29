@@ -4,136 +4,215 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>{% if page.url == "/" %}Giovanni Duminuco, PhD{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
+    <title>{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
     
     {% seo %}
 
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{% if page.url == "/" %}Giovanni Duminuco, PhD{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}">
+    <meta property="og:title" content="{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}">
     <meta property="og:description" content="Ricerca pedagogica, filosofia dell'educazione e progettazione sociale.">
+    
     <meta property="og:image" content="https://giovanniduminuco.it/assets/img/og-default.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://giovanniduminuco.it{{ page.url }}">
+    
     <meta name="twitter:card" content="summary_large_image">
 
-    <style>
-        :root {
-            --width: 680px;
-            --font-main: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-scale: 17px;
-            
-            /* Light mode (Olle Palette) */
-            --background-color: #f2f2f2;
-            --heading-color: #111111;
-            --text-color: #0A0A0A;
-            --link-color: #111111;
-            --visited-color: #666666;
-            --border-color: #e5e5e5;
-        }
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Giovanni Duminuco",
+      "jobTitle": "PhD in Pedagogia",
+      "url": "https://giovanniduminuco.it",
+      "sameAs": [
+        "https://orcid.org/0009-0007-9687-4819",
+        "https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it",
+        "https://www.linkedin.com/in/dumgio/"
+      ]
+    }
+    </script>
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --background-color: #0f1417;
-                --heading-color: #f2f2f2;
-                --text-color: #d0d0d0;
-                --link-color: #f2f2f2;
-                --visited-color: #a0a0a0;
-                --border-color: #2a2f33;
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                document.documentElement.setAttribute("data-theme", savedTheme);
+            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.setAttribute("data-theme", "dark");
             }
-        }
+        })();
+    </script>
 
-        html {
-            font-family: var(--font-main);
-            background-color: var(--background-color);
-            color: var(--text-color);
-        }
-
-        body {
-            margin: 3.5rem auto;
-            padding: 0 1.25rem;
-            max-width: var(--width);
-            font-size: var(--font-scale);
-            line-height: 1.7;
-            word-wrap: break-word;
-        }
-
-        /* Header e Titolo */
-        header { margin-bottom: 2rem; }
-        .title h1 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            margin: 0;
-            color: var(--heading-color);
+    <style>
+        :root { 
+            --bg: #f2f2f2;      
+            --fg: #0a0a0a;      
+            --accent: #666666;  
+            --border: #e5e5e5;  
+            --m-width: 680px;
         }
         
-        header a { text-decoration: none; color: inherit; }
-
-        /* Headings uniformi */
-        h1, h2, h3 {
-            color: var(--heading-color);
-            font-weight: 600;
-            letter-spacing: -0.01em;
-            margin-top: 2.5rem;
-            font-size: 1.2rem; /* Uniformità dimensionale stile Olle */
+        [data-theme="dark"] { 
+            --bg: #0a0a0a; 
+            --fg: #d0d0d0; 
+            --accent: #a0a0a0; 
+            --border: #2a2f33; 
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg); 
+            color: var(--fg); 
+            font-size: 16px; 
+            line-height: 1.6;     
+            -webkit-font-smoothing: antialiased; 
+            transition: background-color 0.3s ease; 
+        }
+        
+        body { 
+            padding: 8vh 1.5rem 4vh; 
+            max-width: var(--m-width); 
+            margin: 0 auto; 
+            position: relative; 
+            text-align: left; 
         }
 
-        p { margin: 1.25rem 0; }
+        main p { margin-bottom: 1.5rem; }
+        
+        #theme-toggle { 
+            position: absolute; 
+            top: 2rem; 
+            right: 1.5rem; 
+            background: none; 
+            border: 1px solid var(--border); 
+            border-radius: 50%; 
+            width: 38px; 
+            height: 38px; 
+            cursor: pointer; 
+            color: var(--accent); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            transition: all 0.2s ease; 
+        }
+        
+        #theme-toggle:hover { border-color: var(--fg); color: var(--fg); }
+        [data-theme="dark"] #sun-icon { color: #FFB700; }
+        
+        header { 
+            margin-bottom: 3rem; 
+            display: grid; 
+            grid-template-columns: 85px 1fr; 
+            gap: 1.5rem; 
+            align-items: center; 
+        }
+        
+        .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
+        
+        h1 { 
+            font-size: 1.3rem; 
+            font-weight: 500; 
+            letter-spacing: -0.01em; 
+            line-height: 1.4; 
+        }
+        
+        h1 a { text-decoration: none; color: inherit; }
 
-        /* Link: Sottolineatura fissa, NO HOOVER */
-        a {
-            color: var(--link-color);
-            text-decoration: underline;
-            text-decoration-thickness: 1px;
+        .hero-role { font-size: 1rem; color: var(--accent); margin-top: 0.1rem; }
+        
+        .social-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
+        .social-links a { 
+            text-decoration: underline; 
             text-underline-offset: 3px;
+            color: var(--accent); 
+            font-weight: 400; 
+            transition: 0.2s; 
+        }
+        .social-links a:hover { 
+            color: var(--fg); 
+            text-decoration: none; 
         }
         
-        /* Navigazione orizzontale */
-        nav a { margin-right: 0.75rem; text-decoration: underline; }
+        section { margin-bottom: 3rem; }
 
-        /* Liste (Ambiti e Post) */
-        ul { list-style: none; padding: 0; }
-        li { margin-bottom: 0.6rem; }
+        .ambito-item { margin-bottom: 1.5rem; }
 
-        hr {
-            border: none;
-            border-top: 1px solid var(--border-color);
-            margin: 3rem 0;
-        }
-
-        footer {
-            margin-top: 4rem;
-            padding: 2rem 0;
-            font-size: 0.9rem;
-            color: var(--visited-color);
-        }
-
-        /* Foto profilo opzionale (se vuoi tenerla) */
-        .profile-photo {
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            margin-bottom: 1rem;
+        .ambito-titolo { 
+            font-size: 1rem; 
+            font-weight: 500; 
+            color: var(--fg); 
             display: block;
         }
 
-        /* Per gli ultimi post stile blog */
-        .post-date {
-            color: var(--visited-color);
-            font-size: 0.9rem;
-            margin-right: 1rem;
+        .ambito-descrizione { 
+            font-size: 0.9rem; 
+            font-weight: 400; 
+            color: var(--fg); 
+            display: block;
+            line-height: 1.5;
+        }
+
+        h2 { 
+            text-transform: uppercase; 
+            letter-spacing: 0.05em; 
+            color: var(--accent); 
+            margin-bottom: 1.2rem; 
+            padding-bottom: 0.4rem; 
+            border-bottom: 1px solid var(--border); 
+            font-size: 0.85rem; 
+            font-weight: 500;
+        }
+        
+        footer { 
+            margin-top: 5rem; 
+            padding-top: 1.5rem; 
+            border-top: 1px solid var(--border); 
+            font-size: 1rem; 
+            color: var(--accent); 
+        }
+        
+        .footer-links { display: flex; gap: 0.8rem; margin-top: 0.8rem; flex-wrap: wrap; }
+        footer a { color: var(--accent); text-decoration: none; }
+        footer a:hover { color: var(--fg); text-decoration: underline; }
+
+        @media (max-width: 600px) {
+            header { grid-template-columns: 85px 1fr; }
+            #theme-toggle { right: 1rem; }
+            @media (max-width: 450px) {
+                header { grid-template-columns: 1fr; gap: 1rem; }
+            }
         }
     </style>
 </head>
-<body class="home">
+<body>
+
+    <button id="theme-toggle" aria-label="Cambia tema">
+        <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
 
     <header>
-        <a class="title" href="/">
-            <h1>Giovanni Duminuco</h1>
-        </a>
-        <nav style="margin-top: 0.5rem;">
-            <a href="/blog">Appunti</a>
-            <a href="/info">Info</a>
-            <a href="mailto:giovanni.duminuco@gmail.com">Email</a>
-        </nav>
+        <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
+        <div>
+            <h1><a href="/">Giovanni Duminuco, PhD</a></h1>
+            <p class="hero-role">Educazione, soggettività e trasformazione sociale</p>
+            <nav class="social-links">
+                <a href="/blog">Appunti</a>
+                <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -141,10 +220,34 @@
     </main>
 
     <footer>
-        <hr>
-        <p>Giovanni Duminuco, PhD · <a href="https://www.linkedin.com/in/dumgio/">LinkedIn</a> · <a href="/feed.xml">RSS</a></p>
-        <p style="font-size: 0.8rem; margin-top: 0.5rem;">Educazione, soggettività e trasformazione sociale.</p>
+        <p>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</p>
+        <div class="footer-links">
+            <a href="/info">Info</a> &middot; 
+            <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a> &middot; 
+            <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
+        </div>
     </footer>
 
+    <script>
+        const btn = document.getElementById("theme-toggle");
+        const sunIcon = document.getElementById("sun-icon");
+        const moonIcon = document.getElementById("moon-icon");
+
+        function updateIcons(theme) {
+            const isDark = theme === "dark";
+            sunIcon.style.display = isDark ? "block" : "none";
+            moonIcon.style.display = isDark ? "none" : "block";
+        }
+
+        let currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+        updateIcons(currentTheme);
+
+        btn.addEventListener("click", () => {
+            let theme = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-theme", theme);
+            localStorage.setItem("theme", theme);
+            updateIcons(theme);
+        });
+    </script>
 </body>
 </html>
