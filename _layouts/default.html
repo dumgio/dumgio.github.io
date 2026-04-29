@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>{% if page.url == "/" %}Giovanni Duminuco, PhD | Ricerca Pedagogica e Sociale{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
     
@@ -19,134 +19,135 @@
         }
 
         :root {
-            --bg-color: #FFFFFF;
+            --bg-color: #f2f2f2; 
             --text-color: #111;
             --color-primary: #1a0dab; 
-            --spacing: 1rem;
             --max-width: 700px;
+            --border-light: #96909061;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-color: #222;
-                --text-color: #fff;
+                --bg-color: #0f1417;
+                --text-color: #d0d0d0;
                 --color-primary: wheat; 
             }
         }
 
-        * { box-sizing: border-box; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-        body {
-            max-width: var(--m-width);
-            margin: 0 auto;
-            padding: var(--spacing);
-            background: var(--bg-color);
-            color: var(--text-color);
-            /* Qui usiamo il font Serif per TUTTO il corpo, inclusi titolo e nav */
-            font-family: 'Bespoke Serif', Georgia, serif !important;
-            font-size: 1.165rem; 
-            line-height: 1.6;
-            transition: background-color 0.3s ease, color 0.3s ease;
+        html {
+            background-color: var(--bg-color);
         }
 
-        @media screen and (max-width: 620px) {
-            body {
-                font-size: 1.125rem !important;
-                line-height: 1.55 !important;
-            }
+        body {
+            max-width: var(--max-width);
+            margin: 0 auto; 
+            padding: 4rem 1.5rem; 
+            background: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Bespoke Serif', Georgia, serif !important;
+            font-size: 1.15rem; 
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
         header {
-            border-bottom: 1px solid #96909061;
+            border-bottom: 1px solid var(--border-light);
             display: flex;
             align-items: center; 
-            padding: 1rem 0;
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
 
         .profile-photo {
-            width: 55px; 
-            height: 55px;
+            width: 65px; 
+            height: 65px;
             border-radius: 50%;
             object-fit: cover;
             margin-right: 1.5rem;
-            border: 1px solid #96909061;
+            border: 1px solid var(--border-light);
         }
 
-        .title-group {
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Titolo con lo stesso font del blog di Dave Lee */
         .title h1 {
-            font-size: 1.3rem; 
-            margin: 0;
+            font-size: 1.25rem; 
             font-weight: 600;
-            font-family: 'Bespoke Serif', Georgia, serif !important;
+            margin: 0;
         }
 
         header a { text-decoration: none; color: inherit; }
 
         nav {
-            margin-top: 0.1rem;
+            margin-top: 0.2rem;
             font-size: 1rem;
         }
 
         nav a {
-            margin-right: var(--spacing);
+            margin-right: 1rem;
             text-decoration: none;
             color: inherit;
-            font-family: 'Bespoke Serif', Georgia, serif !important;
         }
 
         main {
-            margin: 2rem 0 3rem 0;
+            margin-bottom: 4rem;
         }
 
+        /* Stile dei Link Dave Lee */
         a {
             color: currentColor;
-            text-decoration-color: currentColor;
-            text-decoration-thickness: 0.1ex;
-            text-underline-offset: 0.3ex;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
         }
 
         a:hover {
             color: var(--color-primary);
-            text-decoration-color: var(--color-primary);
-            text-decoration: underline;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h2 {
+            font-size: 1.3rem;
+            margin: 2.5rem 0 1rem;
             font-weight: 600;
-            line-height: 1.25;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
+        }
+
+        /* LA LINEA DI DAVE LEE */
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-light);
+            margin: 2.5rem 0;
         }
 
         footer {
-            margin-top: 4rem;
-            padding: 2rem 0;
-            font-size: 1rem;
-            border-top: 1px solid #96909061;
-            text-transform: lowercase;
+            margin-top: 5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.95rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
         }
 
-        footer a { text-decoration: none; color: inherit; }
+        footer a { text-decoration: none; opacity: 0.8; }
+        footer a:hover { text-decoration: underline; opacity: 1; }
+
+        @media screen and (max-width: 600px) {
+            body { padding: 2rem 1.2rem; }
+            header { flex-direction: row; align-items: center; }
+            .profile-photo { width: 55px; height: 55px; }
+        }
     </style>
 </head>
-<body class="home">
+<body>
 
     <header>
         <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
-        
         <div class="title-group">
             <a class="title" href="/">
                 <h1>Giovanni Duminuco, PhD</h1>
             </a>
-            
             <nav>
-                <a href="/blog">Blog</a> 
-                <a href="/info">Bio</a> 
+                <a href="/blog">Appunti</a> 
+                <a href="/info">Info</a> 
                 <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
             </nav>
         </div>
@@ -158,10 +159,10 @@
 
     <footer>
         <span>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</span>
-        <span style="float: right;">
+        <nav>
             <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a> &middot; 
             <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
-        </span>
+        </nav>
     </footer>
 
 </body>
