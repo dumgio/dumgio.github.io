@@ -15,6 +15,8 @@ Senza il limite, l’intelligenza non è libertà: è solo una forza che finisce
 
 ---
 
+ 
+
 Riferimenti
 
-*Dive into Claude Code* — https://github.com/VILA-Lab/Dive-into-Claude-Code  
+*Dive into Claude Code* — [https://github.com/VILA-Lab/Dive-into-Claude-Code](https://github.com/VILA-Lab/Dive-into-Claude-Code)  
