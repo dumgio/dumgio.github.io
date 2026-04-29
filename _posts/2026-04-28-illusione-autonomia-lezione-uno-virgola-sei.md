@@ -3,13 +3,15 @@ layout: post
 title: "L'illusione dell'autonomia: la lezione dell'1,6%"
 ---
 
-È emerso di recente un dato interessante dall'analisi di Claude Code, uno dei più avanzati agenti di intelligenza artificiale: solo l’1,6% del suo codice è dedicato alla logica decisionale, mentre il rimanente 98,4% è pura infrastruttura (gestione dei limiti, protocolli di sicurezza, filtri di contesto e sistemi di controllo).
+Di recente è emerso un dato curioso dall’analisi di Claude Code, uno degli agenti di intelligenza artificiale più avanzati: appena l’1,6% del suo codice riguarda la logica decisionale, mentre tutto il resto, ben il 98,4%, serve a far funzionare il sistema in modo sicuro e affidabile. Parliamo quindi di gestione dei limiti, protocolli di sicurezza, filtri di contesto e meccanismi di controllo.
 
-Questo dato ci ricorda che l’autonomia non è mai un evento isolato o disincarnato: quell'uno per cento di libertà decisionale può esistere e agire solo perché è sostenuto da una mole mastodontica di vincoli, regole e mediazioni.
+Questo dato ci ricorda che l’autonomia non è mai qualcosa di isolato o astratto: quel piccolo margine di libertà decisionale può esistere solo perché sostenuto da una struttura fatta di vincoli, regole e mediazioni.
 
-Spesso tendiamo a sottovalutare questo "98% invisibile": il setting, la postura deontologica, la cornice istituzionale, dimenticando di fatto che l'autonomia non è assenza di infrastruttura, ma possibilità di poter abitare una struttura talmente curata da farsi dimenticare. 
+È lo stesso paradosso che attraversa ogni atto educativo: non si educa eliminando i limiti, ma rendendoli abitabili. L’autonomia nasce all'interno di una cornice, non fuori da essa.
 
-Senza la rigidità del limite, l'intelligenza non è libertà, ma solo una forza destinata a dissolversi.
+Spesso tendiamo a ignorare questo “98% di invisibilità": il contesto, la responsabilità etica, la cornice istituzionale. Eppure è proprio lì che si regge tutto. L’autonomia, infatti, non è assenza di struttura, ma la possibilità di muoversi dentro una struttura così solida e ben costruita da diventare quasi invisibile.
+
+Senza il limite, l’intelligenza non è libertà: è solo una forza che finisce per disperdersi.
 
 ---
 
