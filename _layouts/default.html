@@ -108,7 +108,7 @@
         
         .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
         
-        /* 1) Giovanni Duminuco, PhD più grande e grassetto 500 */
+        /* 1) Giovanni Duminuco, PhD - Più grande e grassetto medio */
         h1 { 
             font-size: 1.3rem; 
             font-weight: 500; 
@@ -120,14 +120,23 @@
 
         .hero-role { font-size: 1rem; color: var(--accent); margin-top: 0.1rem; }
         
-        /* 2) Appunti e contatto con hover e sottolineatura */
+        /* 2) Appunti e contatto - Sottolineati di default, rimuovi su hover */
         .social-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
-        .social-links a { text-decoration: none; color: var(--accent); font-weight: 400; transition: 0.2s; }
-        .social-links a:hover { color: var(--fg); text-decoration: underline; }
+        .social-links a { 
+            text-decoration: underline; 
+            text-underline-offset: 3px;
+            color: var(--accent); 
+            font-weight: 400; 
+            transition: 0.2s; 
+        }
+        .social-links a:hover { 
+            color: var(--fg); 
+            text-decoration: none; 
+        }
         
         section { margin-bottom: 3rem; }
 
-        /* 3-4) Ambiti di ricerca uniformati */
+        /* 3-4) Ambiti di ricerca personalizzati */
         .ambito-item { margin-bottom: 1.5rem; }
 
         .ambito-titolo { 
