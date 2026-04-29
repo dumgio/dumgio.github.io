@@ -2,81 +2,62 @@
 layout: default
 ---
 <article class="post-container">
-  <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <time class="post-date">{{ page.date | date: "%d.%m.%Y" }}</time>
+  <header style="border-bottom: none; display: block; margin-bottom: 2rem; padding-bottom: 0;">
+    <h1 style="font-size: 1.6rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.5rem;">
+      {{ page.title }}
+    </h1>
+    <time style="opacity: 0.6; font-size: 0.95rem;">
+      {{ page.date | date: "%d %B %Y" }}
+    </time>
   </header>
 
   <div class="post-content">
     {{ content }}
   </div>
 
-  <div class="share-section">
-    <p style="font-size: 0.8rem; color: var(--accent); margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.05em;">Condividi</p>
-    <div class="share-links">
-      <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ site.url }}{{ page.url | url_encode }}" target="_blank" class="share-btn">WhatsApp</a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url | url_encode }}" target="_blank" class="share-btn">LinkedIn</a>
-      <button onclick="copyLink()" id="copy-btn" class="share-btn">Copia Link</button>
+  <hr>
+
+  <div class="share-section" style="font-size: 0.95rem;">
+    <p style="opacity: 0.6; margin-bottom: 0.5rem; text-transform: lowercase;">Condividi questo appunto:</p>
+    <div class="share-links" style="display: flex; gap: 1rem;">
+      <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ site.url }}{{ page.url | url_encode }}" target="_blank">WhatsApp</a>
+      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url | url_encode }}" target="_blank">LinkedIn</a>
+      <a href="javascript:void(0)" onclick="copyLink()" id="copy-btn">Copia Link</a>
     </div>
   </div>
 </article>
 
 <script>
 function copyLink() {
-  const el = document.createElement('textarea');
-  el.value = window.location.href;
-  document.body.appendChild(el);
-  el.select();
-  document.execCommand('copy');
-  document.body.removeChild(el);
-  
-  const btn = document.getElementById('copy-btn');
-  btn.innerText = 'Copiato!';
-  setTimeout(() => { btn.innerText = 'Copia Link'; }, 2000);
+  const url = window.location.href;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.getElementById('copy-btn');
+    btn.innerText = 'Link copiato';
+    setTimeout(() => { btn.innerText = 'Copia Link'; }, 2000);
+  });
 }
 </script>
 
 <style>
-  .post-container { text-align: left; }
-  .post-header { margin-bottom: 2rem; display: flex; flex-direction: column; align-items: flex-start; }
-  .post-title { font-size: 1.5rem; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 0.3rem; color: var(--fg); }
-  .post-date { color: var(--accent); font-size: 0.85rem; font-weight: 500; font-family: monospace; }
-  .post-content { text-align: left; margin-top: 2.5rem; }
-
-  .share-section {
-    margin-top: 4rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
+  /* Pulizia contenuti post */
+  .post-content p {
+    margin-bottom: 1.5rem;
   }
 
-  .share-links {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
+  /* Stile per i link nel corpo del post se diversi dai link globali */
+  .post-content a {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
   }
 
-  .share-btn {
-    background: none;
-    border: 1px solid var(--border);
-    color: var(--accent);
-    padding: 6px 12px;
-    border-radius: 4px;
-    font-size: 0.8rem;
+  /* Share links seguono la logica Dave Lee: sottolineatura solo hover */
+  .share-links a {
     text-decoration: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-family: inherit;
   }
-
-  .share-btn:hover {
-    border-color: var(--fg);
-    color: var(--fg);
-  }
-
-  @media (max-width: 600px) {
-    .post-header, .post-title, .post-date, .post-content {
-      text-align: left !important;
-      align-items: flex-start !important;
-    }
+  .share-links a:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 0.1ex;
+    text-underline-offset: 0.3ex;
   }
 </style>
