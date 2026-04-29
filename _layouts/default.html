@@ -7,7 +7,6 @@
     {% seo %}
 
     <script>
-        // Script per gestire il tema prima del rendering della pagina
         (function() {
             const savedTheme = localStorage.getItem("theme");
             if (savedTheme === "dark") {
@@ -35,17 +34,15 @@
             --max-width: 700px;
         }
 
-        /* Dark Mode gestita tramite attributo per il toggle manuale */
         [data-theme="dark"] {
             --bg-color: #0f1417;
             --text-color: #d0d0d0;
             --border-light: #2a2f33;
         }
 
+        /* Reset e Base */
         * { box-sizing: border-box; margin: 0; padding: 0; }
-
         html { background-color: var(--bg-color); transition: background-color 0.3s ease; }
-
         body {
             max-width: var(--max-width);
             margin: 0 auto; 
@@ -59,22 +56,27 @@
             position: relative;
         }
 
-        /* Pulsante Dark Mode minimale in alto a destra */
+        /* Pulsante Dark Mode con Icone */
         #theme-toggle {
             position: absolute;
             top: 2rem;
             right: 1.5rem;
             background: none;
-            border: 1px solid var(--border-light);
+            border: none;
             color: var(--text-color);
             cursor: pointer;
-            padding: 4px 8px;
-            font-size: 0.8rem;
-            font-family: inherit;
-            border-radius: 4px;
+            padding: 5px;
             opacity: 0.6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         #theme-toggle:hover { opacity: 1; }
+        
+        /* Nascondi l'icona non attiva */
+        #sun-icon, #moon-icon { display: none; width: 20px; height: 20px; }
+        [data-theme="dark"] #sun-icon { display: block; }
+        html:not([data-theme="dark"]) #moon-icon { display: block; }
 
         header {
             border-bottom: 1px solid var(--border-light);
@@ -94,15 +96,9 @@
 
         .title h1 { font-size: 1.25rem; font-weight: 600; margin: 0; }
         
-        /* LOGICA LINK DAVE LEE: Niente sottolineatura di base, compare in hover */
-        a {
-            color: inherit;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
+        /* Link Stile Dave Lee */
+        a { color: inherit; text-decoration: none; transition: color 0.2s; }
         a:hover {
-            color: var(--text-color);
             text-decoration: underline;
             text-decoration-thickness: 0.1ex;
             text-underline-offset: 0.3ex;
@@ -112,33 +108,13 @@
         nav a { margin-right: 1rem; }
 
         main { margin-bottom: 4rem; }
+        h2 { font-size: 1.3rem; margin: 2.5rem 0 1.5rem; font-weight: 600; }
 
-        h2 {
-            font-size: 1.3rem;
-            margin: 2.5rem 0 1.5rem;
-            font-weight: 600;
-        }
+        .ambito-item { margin-bottom: 0.5rem; line-height: 1.5; }
+        .ambito-titolo { font-weight: 600; display: inline; }
+        .ambito-descrizione { font-weight: 400; display: inline; }
 
-        .ambito-item {
-            margin-bottom: 0.5rem;
-            line-height: 1.5;
-        }
-
-        .ambito-titolo {
-            font-weight: 600;
-            display: inline;
-        }
-
-        .ambito-descrizione {
-            font-weight: 400;
-            display: inline;
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid var(--border-light);
-            margin: 2.5rem 0;
-        }
+        hr { border: none; border-top: 1px solid var(--border-light); margin: 2.5rem 0; }
 
         footer {
             margin-top: 5rem;
@@ -148,7 +124,6 @@
             display: flex;
             justify-content: space-between;
         }
-
         footer a { opacity: 0.8; }
         footer a:hover { opacity: 1; }
 
@@ -160,7 +135,10 @@
 </head>
 <body>
 
-    <button id="theme-toggle" aria-label="Cambia tema">Tema</button>
+    <button id="theme-toggle" aria-label="Cambia tema">
+        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
 
     <header>
         <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
@@ -191,21 +169,12 @@
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
         
-        // Funzione per aggiornare l'etichetta del tasto
-        function updateButtonLabel(theme) {
-            toggleBtn.textContent = theme === 'dark' ? 'Chiaro' : 'Scuro';
-        }
-
-        // Inizializzazione etichetta
-        updateButtonLabel(document.documentElement.getAttribute('data-theme') || 'light');
-
         toggleBtn.addEventListener('click', () => {
             let currentTheme = document.documentElement.getAttribute('data-theme');
             let nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
             
             document.documentElement.setAttribute('data-theme', nextTheme);
             localStorage.setItem('theme', nextTheme);
-            updateButtonLabel(nextTheme);
         });
     </script>
 </body>
