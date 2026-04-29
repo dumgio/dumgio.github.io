@@ -62,7 +62,7 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--bg); 
             color: var(--fg); 
-            font-size: 16px;       /* Dimensione unica e standard */
+            font-size: 16px; 
             line-height: 1.6;     
             -webkit-font-smoothing: antialiased; 
             transition: background-color 0.3s ease; 
@@ -108,9 +108,9 @@
         
         .profile-photo { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 1px solid var(--border); }
         
-        /* Titoli con grassetto leggero (500) e stessa dimensione del corpo */
-        h1, h2, .post-title { 
-            font-size: 1rem; 
+        /* 1) Giovanni Duminuco, PhD più grande e grassetto non troppo pesante (500-600) */
+        h1 { 
+            font-size: 1.3rem; 
             font-weight: 500; 
             letter-spacing: -0.01em; 
             line-height: 1.4; 
@@ -120,13 +120,30 @@
 
         .hero-role { font-size: 1rem; color: var(--accent); margin-top: 0.1rem; }
         
+        /* 2) Appunti e contatto sottolineati solo con hover */
         .social-links { display: flex; gap: 1rem; margin-top: 0.5rem; }
         .social-links a { text-decoration: none; color: var(--accent); font-weight: 400; }
         .social-links a:hover { color: var(--fg); text-decoration: underline; }
         
         section { margin-bottom: 3rem; }
         
-        /* Titoli sezioni (Ambiti di ricerca, ecc) */
+        /* 3) Stile per i titoli degli Ambiti di Ricerca (Evoluzione dell'atto creativo, ecc) */
+        /* Applicato a h3 assumendo che vengano usati nel contenuto markdown */
+        h3 { 
+            font-size: 1rem; /* Uguale al testo bio */
+            font-weight: 500; /* Grassetto leggero */
+            color: var(--fg);
+            margin: 1.5rem 0 0.5rem 0;
+        }
+
+        /* 4) Contenuti ambiti: colore uguale alla bio, font leggermente più piccolo, non grassetto */
+        .ambito-content {
+            color: var(--fg);
+            font-size: 0.95rem;
+            font-weight: 400;
+        }
+
+        /* Titoli sezioni (AMBITI DI RICERCA) */
         h2 { 
             text-transform: uppercase; 
             letter-spacing: 0.05em; 
@@ -134,7 +151,8 @@
             margin-bottom: 1.2rem; 
             padding-bottom: 0.4rem; 
             border-bottom: 1px solid var(--border); 
-            font-size: 0.85rem; /* Unica eccezione per i micro-titoli di sezione */
+            font-size: 0.85rem; 
+            font-weight: 500;
         }
         
         footer { 
