@@ -17,7 +17,7 @@ In fondo, lo aveva già intuito Erich Fromm: l’uomo non teme tanto la mancanza
 
 ---
 
-### Riferimenti
+Riferimenti
 
 - *Dive into Claude Code* — https://github.com/VILA-Lab/Dive-into-Claude-Code  
 - Erich Fromm, *Fuga dalla libertà*
