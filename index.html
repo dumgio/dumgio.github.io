@@ -4,100 +4,50 @@ title: Giovanni Duminuco, PhD
 ---
 
 <section>
-    <p class="text-block bio">
+    <p style="margin-bottom: 1rem;">
         Dottore di Ricerca in Pedagogia generale e sociale, studio e progetto interventi educativi nei contesti complessi, integrando ricerca antropologica e progettazione sociale.
     </p>
-    <p class="text-block bio">
+    <p>
         Insegno Filosofia dell’Educazione e accompagno enti del Terzo Settore, organizzazioni e istituzioni nell’intero ciclo della progettazione sociale, con una competenza specifica nell’accesso e nella gestione di fondi europei e nazionali.
     </p>
 </section>
 
+<hr>
+
 <section id="ricerca">
     <h2>Ambiti di ricerca</h2>
-    <div class="list-grid">
-        <div class="item">
-            <strong>Evoluzione dell'atto educativo</strong>
-            <span>Come la mediazione tecnologica sta ridefinendo i processi formativi e il senso stesso dell'educare.</span>
-        </div>
-        <div class="item">
-            <strong>Soggettività e formazione</strong>
-            <span>La persona come centro irriducibile di ogni modello educativo contemporaneo.</span>
-        </div>
-        <div class="item">
-            <strong>Legame sociale e cura</strong>
-            <span>Le condizioni che rendono possibile la cura e la relazione nei contesti di innovazione sociale.</span>
-        </div>
+    
+    <div class="ambito-item">
+        <span class="ambito-titolo">Evoluzione dell'atto educativo.</span>
+        <span class="ambito-descrizione">Come la mediazione tecnologica sta ridefinendo i processi formativi e il senso stesso dell'educare.</span>
+    </div>
+
+    <div class="ambito-item">
+        <span class="ambito-titolo">Soggettività e formazione.</span>
+        <span class="ambito-descrizione">La persona come centro irriducibile di ogni modello educativo contemporaneo.</span>
+    </div>
+
+    <div class="ambito-item">
+        <span class="ambito-titolo">Legame sociale e cura.</span>
+        <span class="ambito-descrizione">Le condizioni che rendono possibile la cura e la relazione nei contesti di innovazione sociale.</span>
     </div>
 </section>
 
 <section id="blog">
-    <h2>Ultimi appunti</h2> 
+    <h2>Ultimi appunti</h2>
+    
     <div class="post-list">
         {% for post in site.posts limit:5 %}
-        <a href="{{ post.url }}" class="post-item" style="text-decoration: none; display: block; margin-bottom: 1.5rem;">
-            <span class="post-date" style="font-size: 0.8rem; color: var(--accent); margin-right: 12px; font-family: monospace;">
+        <div style="margin-bottom: 0.5rem;">
+            <span style="opacity: 0.6; font-size: 0.9rem; margin-right: 1rem;">
                 {{ post.date | date: "%d.%m.%Y" }}
             </span>
-            <span class="post-link-title">
+            <a href="{{ post.url }}" style="font-weight: 500;">
                 {{ post.title }}
-            </span>
-        </a>
+            </a>
+        </div>
         {% else %}
-        <p class="text-block" style="color: var(--accent);">In attesa del primo appunto.</p>
+        <p style="opacity: 0.6;">In attesa del primo appunto.</p>
         {% endfor %}
     </div>
 </section>
-
-<style>
-    /* 1. Bio compatta */
-    .bio {
-        font-size: 1.05rem;
-        line-height: 1.6;
-        margin-bottom: 0.8rem !important;
-    }
-
-    /* 2. Ripristino Griglia e Animazione Ambiti di Ricerca */
-    .list-grid { 
-        display: grid; 
-        gap: 1.5rem; /* Spazio tra i blocchi */
-    }
-    
-    .item { 
-        padding-left: 1rem; 
-        border-left: 2px solid var(--border); 
-        transition: all 0.3s ease; /* Qui c'è l'animazione */
-    }
-    
-    .item:hover { 
-        border-left-color: var(--accent); 
-        padding-left: 1.2rem; /* Leggero movimento al passaggio del mouse */
-    }
-    
-    .item strong { 
-        display: block; 
-        font-size: 0.95rem; 
-        color: var(--fg); 
-        margin-bottom: 0.2rem; 
-    }
-    
-    .item span { 
-        font-size: 0.9rem; 
-        color: var(--accent); 
-    }
-
-    /* 3. Stile Appunti */
-    .post-link-title {
-        font-weight: 500;
-        color: var(--fg);
-        font-size: 1.05rem;
-        text-decoration: underline;
-        text-decoration-color: var(--border);
-        text-underline-offset: 4px;
-        transition: all 0.2s ease;
-    }
-
-    .post-item:hover .post-link-title {
-        text-decoration-color: var(--accent);
-        color: var(--accent);
-    }
-</style>
