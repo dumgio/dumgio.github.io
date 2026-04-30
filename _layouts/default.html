@@ -20,15 +20,20 @@
     </script>
 
     <style>
-        /* Font Shikun Style */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&display=swap');
+        /* Sostituisci i percorsi se hai i file locali del font Athletics */
+        @font-face {
+            font-family: 'Athletics';
+            src: url('/assets/fonts/Athletics-Regular.woff2') format('woff2');
+            font-weight: 300;
+            font-style: normal;
+            font-display: swap;
+        }
 
         :root {
             --bg-color: #f6f6f6; 
             --text-color: #1a1a1a;
             --border-color: rgba(0,0,0,0.08);
-            --font-sans: 'Inter', system-ui, sans-serif;
-            --font-serif: 'Newsreader', serif;
+            --font-main: "Athletics", serif;
             --max-width: 900px;
         }
 
@@ -45,13 +50,13 @@
             max-width: var(--max-width);
             margin: 0 auto; 
             padding: 0 2rem;
-            font-family: var(--font-serif);
-            font-size: 1.15rem; 
-            line-height: 1.7;
+            font-family: var(--font-main);
+            font-size: 18px; 
+            line-height: 29px;
+            font-weight: 300;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Navigation Desktop con Pallino */
         header {
             padding: 3rem 0;
             display: flex;
@@ -60,19 +65,18 @@
         }
 
         .header-logo {
-            font-family: var(--font-sans);
             font-weight: 600;
             font-size: 0.9rem;
             letter-spacing: 0.05em;
             text-decoration: none;
             color: var(--text-color);
+            text-transform: uppercase;
         }
 
         .nav-desktop {
             display: flex;
             align-items: center;
             gap: 0.8rem;
-            font-family: var(--font-sans);
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -82,17 +86,16 @@
         .nav-desktop a:hover { opacity: 1; }
         .nav-dot { width: 4px; height: 4px; background: var(--text-color); border-radius: 50%; opacity: 0.2; }
 
-        /* Mobile Menu (Hamburger) */
         .menu-toggle {
             display: none;
             flex-direction: column;
-            gap: 5px;
+            gap: 6px;
             cursor: pointer;
             background: none;
             border: none;
             z-index: 1001;
         }
-        .menu-toggle span { width: 22px; height: 1.5px; background: var(--text-color); transition: 0.3s; }
+        .menu-toggle span { width: 22px; height: 1px; background: var(--text-color); transition: 0.3s; }
 
         .nav-mobile {
             position: fixed;
@@ -108,9 +111,10 @@
             transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .nav-mobile.active { right: 0; }
-        .nav-mobile a { font-family: var(--font-sans); font-size: 1.5rem; text-decoration: none; color: var(--text-color); }
+        .nav-mobile a { font-size: 1.5rem; text-decoration: none; color: var(--text-color); text-transform: uppercase; }
 
-        /* Layout Hero */
+        main { margin-bottom: 4rem; }
+
         .home-hero {
             display: flex;
             gap: 4rem;
@@ -121,19 +125,17 @@
         .hero-image { flex: 1; text-align: right; }
         .hero-image img { width: 100%; max-width: 300px; filter: grayscale(100%); }
 
-        h1 { font-family: var(--font-sans); font-size: 2.8rem; font-weight: 400; margin-bottom: 2rem; }
-        h2 { font-family: var(--font-sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.2em; margin: 4rem 0 2rem; opacity: 0.5; }
+        h1 { font-size: 3rem; font-weight: 300; margin-bottom: 2rem; line-height: 1.1; }
+        h2 { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; margin: 4rem 0 2rem; opacity: 0.5; font-weight: 600; }
 
         hr { border: none; border-top: 1px solid var(--border-color); margin: 4rem 0; }
 
-        /* Links */
         a { color: inherit; transition: opacity 0.2s; }
         .post-list a { text-decoration: none; }
         .post-list a:hover { text-decoration: underline; text-underline-offset: 4px; }
 
         footer {
             padding: 5rem 0 3rem;
-            font-family: var(--font-sans);
             font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -143,18 +145,21 @@
         }
 
         @media screen and (max-width: 768px) {
+            header { padding: 2rem 0; }
             .nav-desktop { display: none; }
             .menu-toggle { display: flex; }
-            .home-hero { flex-direction: column-reverse; gap: 2rem; padding: 2rem 0; }
-            h1 { font-size: 2rem; }
-            body { padding: 0 1.5rem; }
+            .home-hero { flex-direction: column-reverse; gap: 2.5rem; padding: 1rem 0; }
+            h1 { font-size: 2.2rem; }
+            .hero-image { text-align: left; }
+            .hero-image img { max-width: 180px; }
+            footer { flex-direction: column; gap: 1.5rem; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="/" class="header-logo">G. DUMINUCO</a>
+        <a href="/" class="header-logo">G. Duminuco</a>
         
         <div class="nav-desktop">
             <a href="/blog">Appunti</a>
@@ -163,7 +168,7 @@
             <div class="nav-dot"></div>
             <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
             <div class="nav-dot"></div>
-            <button id="theme-toggle" style="cursor:pointer; background:none; border:none; color:inherit; font:inherit; text-transform:inherit; letter-spacing:inherit; opacity:0.6;">Tema</button>
+            <button id="theme-toggle" style="cursor:pointer; background:none; border:none; color:inherit; font-size:inherit; text-transform:inherit; letter-spacing:inherit; opacity:0.6;">Tema</button>
         </div>
 
         <button class="menu-toggle" id="mobile-btn">
@@ -183,15 +188,14 @@
     </main>
 
     <footer>
-        <span>&copy; {{ "now" | date: "%Y" }}</span>
+        <span>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</span>
         <div style="display: flex; gap: 2rem;">
-            <a href="https://www.linkedin.com/in/dumgio/">Linkedin</a>
-            <a href="https://scholar.google.com/">Scholar</a>
+            <a href="https://www.linkedin.com/in/dumgio/" target="_blank">Linkedin</a>
+            <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
         </div>
     </footer>
 
     <script>
-        // Tema
         const toggleBtn = document.getElementById('theme-toggle');
         toggleBtn.addEventListener('click', () => {
             let currentTheme = document.documentElement.getAttribute('data-theme');
@@ -200,7 +204,6 @@
             localStorage.setItem('theme', nextTheme);
         });
 
-        // Mobile Menu
         const mobileBtn = document.getElementById('mobile-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         mobileBtn.addEventListener('click', () => {
