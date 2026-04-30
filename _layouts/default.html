@@ -3,155 +3,209 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ page.title }}</title>
+    <title>{% if page.url == "/" %}Giovanni Duminuco, PhD{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
     {% seo %}
 
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Gelasio:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        (function() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme === "dark") {
+                document.documentElement.setAttribute("data-theme", "dark");
+            } else if (savedTheme === "light") {
+                document.documentElement.setAttribute("data-theme", "light");
+            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
 
     <style>
+        @font-face {
+            font-family: 'Bespoke Serif';
+            src: url('https://static.mighil.com/fonts/BespokeSerif-Variable.woff2') format('woff2');
+            font-weight: 300 800;
+            font-display: swap;
+        }
+
         :root {
-            --bg: #ffffff;
-            --fg: #000000;
-            --muted: #666666;
-            --link: inherit;
-            --max-width: 640px;
+            --bg-color: #f2f2f2; 
+            --text-color: #111;
+            --border-light: #96909061;
+            --spacing: 1rem;
+            --max-width: 700px;
         }
 
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg: #000000;
-                --fg: #ffffff;
-                --muted: #999999;
-            }
+        [data-theme="dark"] {
+            --bg-color: #0f1417;
+            --text-color: #d0d0d0;
+            --border-light: #2a2f33;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        /* Reset e Base */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html, body { background-color: var(--bg-color); color: var(--text-color); }
 
         body {
-            background: var(--bg);
-            color: var(--fg);
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-
-            min-height: 100vh;
-            padding: 2rem;
             max-width: var(--max-width);
-            margin: 0 auto;
-
+            margin: 0 auto; 
+            padding: var(--spacing);
+            font-family: 'Bespoke Serif', Georgia, serif !important;
+            font-size: 1.165rem; 
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        main {
+        /* Header */
+        header {
+            border-bottom: 1px solid var(--border-light);
+            padding: 1rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .profile-photo {
+            width: 60px; height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: var(--spacing);
+            border: 1px solid var(--border-light);
+        }
+
+        .header-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             width: 100%;
         }
 
-        /* LOGO (titolo piccolo) */
-
-        h1.logo {
-            font-family: "Gelasio", serif;
-            font-size: 29px;
-            line-height: 35px;
-            font-weight: 700;
-
-            margin-bottom: 2rem;
+        /* Titolo e link sempre colore testo */
+        .title h1 { 
+            font-size: 1.25rem; 
+            font-weight: 600; 
+            margin: 0;
+            white-space: nowrap;
+            color: var(--text-color);
         }
 
-        h1.logo span {
-            font-weight: 400;
-            opacity: 0.6;
-        }
+        .phd-text { font-size: 0.9rem; font-weight: 400; opacity: 0.8; }
 
-        /* HEADLINE (titolo grande) */
-
-        section h1:not(.logo) {
-            font-family: "Gelasio", serif;
-            font-size: 48px;
-            line-height: 62px;
-            font-weight: 700;
-
-            letter-spacing: -0.01em;
-            margin-bottom: 1.5rem;
-        }
-
-        /* SEZIONI */
-
-        h2 {
-            font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            margin-top: 3rem;
-            margin-bottom: 1rem;
-            color: var(--muted);
-            border: none;
-        }
-
-        p {
-            margin-bottom: 1.2rem;
-            max-width: 60ch;
-        }
-
-        em {
-            font-style: italic;
-        }
-
-        strong {
-            font-weight: 700;
-        }
-
-        /* LISTE */
-
-        ul {
-            list-style: none;
-        }
-
-        li {
-            margin-bottom: 0.6rem;
-        }
-
-        small {
-            font-family: monospace;
-            opacity: 0.5;
-            margin-right: 0.5rem;
-        }
-
-        /* LINK */
-
-        a {
-            color: var(--link);
-            text-decoration: none;
-            border-bottom: 1px solid currentColor;
+        /* Logica Link Globale: Colore testo, no sottolineatura fissa */
+        a { 
+            color: var(--text-color); 
+            text-decoration: none; 
         }
 
         a:hover {
-            opacity: 0.7;
+            text-decoration: underline;
+            text-decoration-thickness: 0.1ex;
+            text-underline-offset: 0.3ex;
         }
 
-        /* FOOTER */
+        #theme-toggle {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            opacity: 0.6;
+            transition: opacity 0.2s;
+        }
+        #theme-toggle:hover { opacity: 1; }
 
+        #sun-icon, #moon-icon { display: none; width: 18px; height: 18px; }
+        [data-theme="dark"] #sun-icon { display: block; }
+        html:not([data-theme="dark"]) #moon-icon { display: block; }
+
+        nav { display: flex; gap: var(--spacing); margin-top: 0.2rem; }
+        nav a { font-size: 1rem; }
+
+        /* Spaziature Main */
+        main { margin: 2rem 0 3rem 0; }
+        main p { margin-bottom: 1.5rem; }
+
+        h2 { font-size: 1.3rem; margin: 2.5rem 0 1rem; font-weight: 600; }
+
+        .ambito-item { margin-bottom: 0.8rem; }
+        .ambito-titolo { font-weight: 600; display: inline; }
+
+        hr { border: none; border-top: 1px solid var(--border-light); margin: 2rem 0; }
+
+        /* Footer */
         footer {
             margin-top: 4rem;
-            font-size: 0.75rem;
-            color: var(--muted);
+            padding: 1.5rem 0;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.95rem;
+            text-transform: lowercase;
+        }
+        
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-nav { display: flex; gap: var(--spacing); }
+
+        @media screen and (max-width: 620px) {
+            body { font-size: 1.125rem !important; }
+            .profile-photo { width: 50px; height: 50px; }
+            .title h1 { font-size: 1.05rem; }
+            .footer-container { flex-direction: column; gap: 1rem; align-items: flex-start; }
         }
     </style>
 </head>
+<body class="home">
 
-<body>
+    <header>
+        <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
+        <div class="header-content">
+            <div class="title-row">
+                <a class="title" href="/">
+                    <h1>Giovanni Duminuco, <span class="phd-text">Ph.D.</span></h1>
+                </a>
+                <button id="theme-toggle" aria-label="Cambia tema">
+                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                </button>
+            </div>
+            <nav>
+                <a href="/blog">Appunti</a> 
+                <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
+            </nav>
+        </div>
+    </header>
+
     <main>
         {{ content }}
     </main>
 
     <footer>
-        <p>&copy; {{ "now" | date: "%Y" }} giovanniduminuco.it</p>
+        <div class="footer-container">
+            <span>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</span>
+            <div class="footer-nav">
+                <a href="/info">Info</a>
+                <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a>
+                <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        toggleBtn.addEventListener('click', () => {
+            let currentTheme = document.documentElement.getAttribute('data-theme');
+            let nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('theme', nextTheme);
+        });
+    </script>
 </body>
 </html>
