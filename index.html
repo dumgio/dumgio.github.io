@@ -7,15 +7,24 @@ layout: default
 </div>
 
 <p style="font-size: 1.2rem; margin-bottom: 4rem;">
-  Docente di Filosofia dell’Educazione, lavoro con enti, organizzazioni e istituzioni su progettazione sociale e accesso a fondi europei e nazionali, con attenzione alla centralità della persona e alle pratiche del dialogo e della cura.
+  Attualmente impegnato nello studio della mediazione tecnologica e della soggettività nei processi formativi.
 </p>
 
-<h2>Appunti</h2>
+<h2>Scrittura</h2>
 
 <div class="post-list">
   {% for post in site.posts %}
   <div class="post-item">
-    <span class="post-date">{{ post.date | date: "%Y-%m-%d" }}</span>
+    <span class="post-date">
+      {{ post.date | date: "%-d" }}
+      {% assign m = post.date | date: "%-m" | minus: 1 %}
+      {% case m %}
+        {% when 0 %}gennaio{% when 1 %}febbraio{% when 2 %}marzo{% when 3 %}aprile
+        {% when 4 %}maggio{% when 5 %}giugno{% when 6 %}luglio{% when 7 %}agosto
+        {% when 8 %}settembre{% when 9 %}ottobre{% when 10 %}novembre{% when 11 %}dicembre
+      {% endcase %}
+      {{ post.date | date: "%Y" }}
+    </span>
     <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
   </div>
   {% else %}
