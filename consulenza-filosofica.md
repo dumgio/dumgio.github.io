@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: page
 title: Consulenza Filosofica Online | Giovanni Duminuco PhD
 description: Consulenza filosofica e pedagogica online con Giovanni Duminuco (PhD). Colloqui individuali per sviluppare pensiero critico e orientarsi nelle scelte personali e professionali.
 ---
