@@ -3,14 +3,20 @@ layout: default
 title: Giovanni Duminuco, PhD
 ---
 
-<section>
-    <p>
-        Dottore di Ricerca in Pedagogia generale e sociale, studio e progetto interventi educativi nei contesti complessi, integrando ricerca antropologica e progettazione sociale.
-    </p>
-    <p>
-        Insegno Filosofia dell’Educazione e accompagno enti del Terzo Settore, organizzazioni e istituzioni nell’intero ciclo della progettazione sociale, con una competenza specifica nell’accesso e nella gestione di fondi europei e nazionali.
-    </p>
-</section>
+<div class="home-hero">
+    <div class="hero-text">
+        <h1>Giovanni Duminuco</h1>
+        <p>
+            Dottore di Ricerca in Pedagogia generale e sociale, studio e progetto interventi educativi nei contesti complessi, integrando ricerca antropologica e progettazione sociale.
+        </p>
+        <p>
+            Insegno Filosofia dell’Educazione e accompagno enti del Terzo Settore, organizzazioni e istituzioni nell’intero ciclo della progettazione sociale, con una competenza specifica nell’accesso e nella gestione di fondi europei e nazionali.
+        </p>
+    </div>
+    <div class="hero-image">
+        <img src="/profile.jpg" alt="Giovanni Duminuco">
+    </div>
+</div>
 
 <hr>
 
@@ -39,29 +45,13 @@ title: Giovanni Duminuco, PhD
     <div class="post-list">
         {% for post in site.posts limit:5 %}
         <div style="margin-bottom: 0.8rem; display: flex; align-items: baseline;">
-            <span style="opacity: 0.5; font-size: 0.9rem; margin-right: 1.5rem; min-width: 95px; flex-shrink: 0; font-family: system-ui, -apple-system, sans-serif;">
+            <span style="opacity: 0.5; font-size: 0.9rem; margin-right: 1.5rem; min-width: 95px; flex-shrink: 0; font-family: system-ui, sans-serif;">
                 {{ post.date | date: "%d.%m.%Y" }}
             </span>
-            <a href="{{ post.url }}" style="font-weight: 400; text-decoration: none;">
+            <a href="{{ post.url }}" style="font-weight: 400;">
                 {{ post.title }}
             </a>
         </div>
-        {% else %}
-        <p style="opacity: 0.6;">In attesa del primo appunto.</p>
         {% endfor %}
     </div>
 </section>
-
-<style>
-    /* Ottimizzazione mobile per la lista appunti in home */
-    @media (max-width: 480px) {
-        .post-list > div {
-            flex-direction: column !important;
-            margin-bottom: 1.2rem !important;
-        }
-        .post-list span {
-            margin-bottom: 0.2rem;
-            min-width: auto !important;
-        }
-    }
-</style>
