@@ -10,19 +10,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
 
-    <script>
-        (function() {
-            const savedTheme = localStorage.getItem("theme");
-            if (savedTheme === "dark") {
-                document.documentElement.setAttribute("data-theme", "dark");
-            } else if (savedTheme === "light") {
-                document.documentElement.setAttribute("data-theme", "light");
-            } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                document.documentElement.setAttribute("data-theme", "dark");
-            }
-        })();
-    </script>
-
     <style>
         @font-face {
             font-family: 'Bespoke Serif';
@@ -32,118 +19,112 @@
         }
 
         :root {
-            --bg-color: #F0F0F0; 
+            --bg-color: #F0F0F0;
             --text-color: #111;
+            --text-muted: #555;
+            --text-faint: #888;
             --title-color: rgb(20, 20, 20);
             --border-light: #96909061;
-            --spacing: 2rem; /* Aumentato per dare respiro a sinistra */
-            --max-width: 650px; /* Ridotto leggermente per coerenza con Gorman */
+            --max-width: 650px;
+            --spacing: 2rem;
         }
 
-        [data-theme="dark"] {
-            --bg-color: #0f1417;
-            --text-color: #d0d0d0;
-            --title-color: #f2f2f2;
-            --border-light: #2a2f33;
-        }
-
-        /* Reset e Base */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html, body { background-color: var(--bg-color); color: var(--text-color); }
 
         body {
-            /* MODIFICA CHIAVE: Rimosso margin: 0 auto; */
             max-width: var(--max-width);
-            margin: 0; 
+            margin: 0;
             padding: var(--spacing);
-            font-family: 'Bespoke Serif', Georgia, serif !important;
-            font-size: 1.165rem; 
+            font-family: 'Bespoke Serif', Georgia, serif;
+            font-size: 1.1rem;
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             text-align: left;
         }
 
-        /* Struttura a stack (Gorman style) */
-        .stack > * + * { margin-top: 1.5rem; }
-
         /* Header */
         header {
-            padding: 1rem 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 1.5rem;
+            padding: 1rem 0 2rem;
         }
 
-        .profile-photo {
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 1px solid var(--border-light);
-        }
-
-        .title h1 { 
-            font-family: 'Gelasio', serif !important;
-            font-size: 29px; 
-            font-weight: 700; 
-            line-height: 35px;
+        .site-name {
+            display: block;
+            font-family: 'Gelasio', serif;
+            font-size: 22px;
+            font-weight: 700;
             color: var(--title-color);
-            margin: 0;
-            letter-spacing: -0.04em;
+            text-decoration: none;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
         }
 
-        .title span { font-weight: 400; } /* Effetto Gorman: J span{ason} */
+        .site-name span { font-weight: 400; }
 
-        nav { display: flex; gap: 1.5rem; margin-top: 0.5rem; }
-        nav a { font-size: 1rem; opacity: 0.7; }
-        nav a:hover { opacity: 1; text-decoration: underline; }
+        nav { display: flex; gap: 1.25rem; }
+        nav a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            text-decoration: none;
+        }
+        nav a:hover {
+            color: var(--text-color);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
 
         /* Contenuto */
-        main { margin: 3rem 0; }
-        
-        h2 { 
-            font-size: 1.3rem; 
-            margin: 3rem 0 1rem; 
+        main { margin: 2rem 0; }
+
+        .stack > * + * { margin-top: 1.25rem; }
+
+        h2 {
+            font-size: 1rem;
             font-weight: 700;
+            margin: 2.5rem 0 0.75rem;
+            color: var(--title-color);
         }
 
-        hr { border: none; border-top: 1px solid var(--border-light); margin: 3rem 0; }
+        hr {
+            border: none;
+            border-top: 1px solid var(--border-light);
+            margin: 2.5rem 0;
+        }
+
+        a {
+            color: var(--text-color);
+            text-underline-offset: 3px;
+        }
 
         /* Footer */
         footer {
-            margin-top: 5rem;
-            padding: 2rem 0;
-            font-size: 0.9rem;
-            opacity: 0.6;
+            margin-top: 4rem;
+            padding: 1rem 0;
+            font-size: 0.85rem;
+            color: var(--text-faint);
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            align-items: center;
         }
 
-        #theme-toggle {
-            background: none;
-            border: none;
-            color: var(--text-color);
-            cursor: pointer;
-            padding: 0;
-            margin-top: 1rem;
-            opacity: 0.4;
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
         }
 
-        #sun-icon, #moon-icon { width: 18px; height: 18px; }
+        footer a:hover { text-decoration: underline; }
 
         @media screen and (max-width: 620px) {
             body { padding: 1.5rem; }
-            .title h1 { font-size: 26px; }
+            .site-name { font-size: 20px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
-        <div class="title">
-            <a href="/">
-                <h1>G<span>iovanniDuminuco</span></h1>
-            </a>
-        </div>
+        <a href="/" class="site-name">Giovanni<span>Duminuco</span></a>
         <nav>
             <a href="/bio">Bio</a>
             <a href="/blog">Appunti</a>
@@ -156,32 +137,10 @@
     </main>
 
     <footer>
-        <p>&copy; {{ "now" | date: "%Y" }} giovanniduminuco.it</p>
-        
-        <button id="theme-toggle" aria-label="Cambia tema">
-            <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-            <svg id="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        </button>
+        <span>&copy; {{ "now" | date: "%Y" }} giovanniduminuco.it</span>
+        <a href="https://www.linkedin.com/in/dumgio/">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it">Scholar</a>
     </footer>
 
-    <script>
-        const toggleBtn = document.getElementById('theme-toggle');
-        const sun = document.getElementById('sun-icon');
-        const moon = document.getElementById('moon-icon');
-
-        function updateIcons() {
-            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
-            sun.style.display = isDark ? 'block' : 'none';
-            moon.style.display = isDark ? 'none' : 'block';
-        }
-
-        updateIcons();
-        toggleBtn.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme);
-            updateIcons();
-        });
-    </script>
 </body>
 </html>
