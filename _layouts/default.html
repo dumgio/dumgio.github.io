@@ -36,8 +36,8 @@
             --text-color: #111;
             --title-color: rgb(20, 20, 20);
             --border-light: #96909061;
-            --spacing: 1rem;
-            --max-width: 700px;
+            --spacing: 2rem; /* Aumentato per dare respiro a sinistra */
+            --max-width: 650px; /* Ridotto leggermente per coerenza con Gorman */
         }
 
         [data-theme="dark"] {
@@ -52,70 +52,69 @@
         html, body { background-color: var(--bg-color); color: var(--text-color); }
 
         body {
+            /* MODIFICA CHIAVE: Rimosso margin: 0 auto; */
             max-width: var(--max-width);
-            margin: 0 auto; 
+            margin: 0; 
             padding: var(--spacing);
             font-family: 'Bespoke Serif', Georgia, serif !important;
             font-size: 1.165rem; 
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            text-align: left;
         }
+
+        /* Struttura a stack (Gorman style) */
+        .stack > * + * { margin-top: 1.5rem; }
 
         /* Header */
         header {
-            border-bottom: 1px solid var(--border-light);
             padding: 1rem 0;
             display: flex;
+            flex-direction: column;
             align-items: flex-start;
+            gap: 1.5rem;
         }
 
         .profile-photo {
             width: 60px; height: 60px;
             border-radius: 50%;
             object-fit: cover;
-            margin-right: var(--spacing);
             border: 1px solid var(--border-light);
         }
 
-        .header-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .title-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-        }
-
-        /* Modifica specifica Titolo H1 secondo le nuove specifiche */
         .title h1 { 
             font-family: 'Gelasio', serif !important;
-            font-style: normal;
-            font-weight: 700;
             font-size: 29px; 
+            font-weight: 700; 
             line-height: 35px;
             color: var(--title-color);
             margin: 0;
-            white-space: nowrap;
-            /* Ho rimosso letter-spacing negativo per fedeltà alla tua specifica, 
-               ma se vuoi riavvicinarli aggiungi: letter-spacing: -0.04em; */
+            letter-spacing: -0.04em;
         }
 
-        .phd-text { font-size: 0.9rem; font-weight: 400; opacity: 0.8; }
+        .title span { font-weight: 400; } /* Effetto Gorman: J span{ason} */
 
-        /* Logica Link Globale */
-        a { 
-            color: var(--text-color); 
-            text-decoration: none; 
+        nav { display: flex; gap: 1.5rem; margin-top: 0.5rem; }
+        nav a { font-size: 1rem; opacity: 0.7; }
+        nav a:hover { opacity: 1; text-decoration: underline; }
+
+        /* Contenuto */
+        main { margin: 3rem 0; }
+        
+        h2 { 
+            font-size: 1.3rem; 
+            margin: 3rem 0 1rem; 
+            font-weight: 700;
         }
 
-        a:hover {
-            text-decoration: underline;
-            text-decoration-thickness: 0.1ex;
-            text-underline-offset: 0.3ex;
+        hr { border: none; border-top: 1px solid var(--border-light); margin: 3rem 0; }
+
+        /* Footer */
+        footer {
+            margin-top: 5rem;
+            padding: 2rem 0;
+            font-size: 0.9rem;
+            opacity: 0.6;
         }
 
         #theme-toggle {
@@ -124,104 +123,64 @@
             color: var(--text-color);
             cursor: pointer;
             padding: 0;
-            display: flex;
-            opacity: 0.6;
-            transition: opacity 0.2s;
-        }
-        #theme-toggle:hover { opacity: 1; }
-
-        #sun-icon, #moon-icon { display: none; width: 18px; height: 18px; }
-        [data-theme="dark"] #sun-icon { display: block; }
-        html:not([data-theme="dark"]) #moon-icon { display: block; }
-
-        nav { display: flex; gap: var(--spacing); margin-top: 0.2rem; }
-        nav a { font-size: 1rem; }
-
-        /* Spaziature Main */
-        main { margin: 2rem 0 3rem 0; }
-        main p { margin-bottom: 1.5rem; }
-
-        h2 { font-size: 1.3rem; margin: 2.5rem 0 1rem; font-weight: 600; }
-
-        .ambito-titolo { 
-            font-weight: 400; 
-            text-decoration: underline; 
-            text-decoration-thickness: 0.1ex;
-            text-underline-offset: 0.3ex;
-            display: inline; 
+            margin-top: 1rem;
+            opacity: 0.4;
         }
 
-        hr { border: none; border-top: 1px solid var(--border-light); margin: 2rem 0; }
-
-        footer {
-            margin-top: 4rem;
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--border-light);
-            font-size: 0.95rem;
-            text-transform: lowercase;
-        }
-        
-        .footer-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .footer-nav { display: flex; gap: var(--spacing); }
+        #sun-icon, #moon-icon { width: 18px; height: 18px; }
 
         @media screen and (max-width: 620px) {
-            body { font-size: 1.125rem !important; }
-            .profile-photo { width: 50px; height: 50px; }
-            /* Mobile adjustment per non far uscire il titolo */
-            .title h1 { font-size: 24px; line-height: 28px; } 
-            .footer-container { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            body { padding: 1.5rem; }
+            .title h1 { font-size: 26px; }
         }
     </style>
 </head>
-<body class="home">
+<body>
 
     <header>
         <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
-        <div class="header-content">
-            <div class="title-row">
-                <a class="title" href="/">
-                    <h1>Giovanni Duminuco, <span class="phd-text">Ph.D.</span></h1>
-                </a>
-                <button id="theme-toggle" aria-label="Cambia tema">
-                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-            </div>
-            <nav>
-                <a href="/bio">Bio</a>
-                <a href="/blog">Appunti</a>
-                <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
-            </nav>
+        <div class="title">
+            <a href="/">
+                <h1>G<span>iovanniDuminuco</span></h1>
+            </a>
         </div>
+        <nav>
+            <a href="/bio">Bio</a>
+            <a href="/blog">Appunti</a>
+            <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
+        </nav>
     </header>
 
-    <main>
+    <main class="stack">
         {{ content }}
     </main>
 
     <footer>
-        <div class="footer-container">
-            <span>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</span>
-            <div class="footer-nav">
-                <a href="/info">Info</a>
-                <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
-            </div>
-        </div>
+        <p>&copy; {{ "now" | date: "%Y" }} giovanniduminuco.it</p>
+        
+        <button id="theme-toggle" aria-label="Cambia tema">
+            <svg id="sun-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+            <svg id="moon-icon" style="display:none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
     </footer>
 
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
+        const sun = document.getElementById('sun-icon');
+        const moon = document.getElementById('moon-icon');
+
+        function updateIcons() {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            sun.style.display = isDark ? 'block' : 'none';
+            moon.style.display = isDark ? 'none' : 'block';
+        }
+
+        updateIcons();
         toggleBtn.addEventListener('click', () => {
-            let currentTheme = document.documentElement.getAttribute('data-theme');
-            let nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', nextTheme);
-            localStorage.setItem('theme', nextTheme);
+            let theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateIcons();
         });
     </script>
 </body>
