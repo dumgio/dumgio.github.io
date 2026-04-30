@@ -1,12 +1,18 @@
+
 ---
 layout: default
 ---
+
+<nav style="margin-bottom: 2rem;">
+  <a href="{{ '/' | relative_url }}" style="text-decoration: none; font-family: var(--body-font); font-size: 1rem; opacity: 0.7;">‹ Indietro</a>
+</nav>
+
 <article class="post-container">
-  <header style="border-bottom: none; display: block; margin-bottom: 2rem; padding-bottom: 0;">
-    <h1 style="font-size: 1.6rem; font-weight: 600; line-height: 1.2; margin-bottom: 0.5rem;">
+  <header style="margin-bottom: 3rem;">
+    <h1 style="font-size: 2.2rem; line-height: 1.2; margin-bottom: 0.5rem; margin-top: 0;">
       {{ page.title }}
     </h1>
-    <time style="opacity: 0.6; font-size: 0.95rem;">
+    <time style="font-family: 'IBM Plex Mono', monospace; opacity: 0.5; font-size: 0.9rem;">
       {{ page.date | date: "%d %B %Y" }}
     </time>
   </header>
@@ -15,16 +21,16 @@ layout: default
     {{ content }}
   </div>
 
-  <hr>
-
-  <div class="share-section" style="font-size: 0.95rem;">
-    <p style="opacity: 0.6; margin-bottom: 0.5rem; text-transform: lowercase;">Condividi questo appunto:</p>
-    <div class="share-links" style="display: flex; gap: 1rem;">
-      <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ site.url }}{{ page.url | url_encode }}" target="_blank">WhatsApp</a>
-      <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url | url_encode }}" target="_blank">LinkedIn</a>
-      <a href="javascript:void(0)" onclick="copyLink()" id="copy-btn">Copia Link</a>
+  <footer style="margin-top: 4rem; border-top: 1px solid var(--grey); padding-top: 2rem;">
+    <div class="share-section" style="font-size: 0.9rem;">
+      <p style="opacity: 0.6; margin-bottom: 0.8rem;">Condividi questo appunto:</p>
+      <div class="share-links" style="display: flex; gap: 1.5rem;">
+        <a href="https://wa.me/?text={{ page.title | url_encode }}%20{{ site.url }}{{ page.url | url_encode }}" target="_blank" style="text-decoration: none;">WhatsApp</a>
+        <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url | url_encode }}" target="_blank" style="text-decoration: none;">LinkedIn</a>
+        <a href="javascript:void(0)" onclick="copyLink()" id="copy-btn" style="text-decoration: none;">Copia Link</a>
+      </div>
     </div>
-  </div>
+  </footer>
 </article>
 
 <script>
@@ -39,25 +45,17 @@ function copyLink() {
 </script>
 
 <style>
-  /* Pulizia contenuti post */
+  .post-content {
+    line-height: 1.7;
+  }
   .post-content p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.8rem;
   }
-
-  /* Stile per i link nel corpo del post se diversi dai link globali */
-  .post-content a {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-  }
-
-  /* Share links seguono la logica Dave Lee: sottolineatura solo hover */
-  .share-links a {
-    text-decoration: none;
+  .post-content h2, .post-content h3 {
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
   }
   .share-links a:hover {
     text-decoration: underline;
-    text-decoration-thickness: 0.1ex;
-    text-underline-offset: 0.3ex;
   }
 </style>
