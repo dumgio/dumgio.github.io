@@ -1,40 +1,69 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: 'it' }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if page.url == "/" %}{{ site.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
+    {% seo %}
+    <link rel="icon" type="image/jpeg" href="{{ '/profile.jpg' | relative_url }}">
 
-<div class="hero-intro">
-  <em>Ricerca pedagogica</em> e <em>progettazione sociale</em> per contesti complessi.
-</div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
 
-<p style="font-size: 1.2rem; margin-bottom: 4rem;">
-  Attualmente impegnato nello studio della mediazione tecnologica e della soggettività nei processi formativi.
-</p>
+    <header style="display: flex; align-items: baseline; justify-content: space-between; max-width: var(--measure);">
+        <h1>
+          <a href="{{ '/' | relative_url }}">
+            {{ site.author | replace: ' ', '' }} <span class="title-phd">PhD</span><span class="cursor">_</span>
+          </a>
+        </h1>
+        <button id="theme-toggle" title="Cambia atmosfera">◐</button>
+    </header>
 
-<h2>Scrittura</h2>
+    <script>
+      const toggle = document.getElementById('theme-toggle');
+      const body = document.body;
+      
+      // Controlla se c'è una preferenza salvata
+      if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-theme');
+      }
 
-<div class="post-list">
-  {% for post in site.posts %}
-  <div class="post-item">
-    <span class="post-date">
-      {{ post.date | date: "%-d" }}
-      {% assign m = post.date | date: "%-m" | minus: 1 %}
-      {% case m %}
-        {% when 0 %}gennaio{% when 1 %}febbraio{% when 2 %}marzo{% when 3 %}aprile
-        {% when 4 %}maggio{% when 5 %}giugno{% when 6 %}luglio{% when 7 %}agosto
-        {% when 8 %}settembre{% when 9 %}ottobre{% when 10 %}novembre{% when 11 %}dicembre
-      {% endcase %}
-      {{ post.date | date: "%Y" }}
-    </span>
-    <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-  </div>
-  {% else %}
-  <p>In attesa del primo appunto.</p>
-  {% endfor %}
-</div>
+      toggle.addEventListener('click', () => {
+        body.classList.toggle('dark-theme');
+        const isDark = body.classList.contains('dark-theme');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      });
+    </script>
 
-<h2>Altro</h2>
-<ul style="margin-top: 1rem;">
-  <li><a href="/bio">Bio completa</a></li>
-  <li><a href="/consulenza-filosofica/">Consulenza filosofica</a></li>
-  <li><a href="/blog">Archivio appunti</a></li>
-</ul>
+    <style>
+      /* Classi per il toggle manuale */
+      body.dark-theme {
+        --bg-color: hsl(0deg, 0%, 8%);
+        --text-color: hsl(0deg, 0%, 80%);
+        --highlight-bg-color: hsl(0deg, 0%, 85%);
+        --highlight-text-color: hsl(0deg, 0%, 0%);
+        --copyright-color: hsl(0deg, 0%, 60%);
+      }
+    </style>
+
+    <main>
+        {{ content }}
+    </main>
+
+    <footer>
+        <p>&copy; {{ "now" | date: "%Y" }} {{ site.author }}</p>
+        <nav>
+            <a href="mailto:{{ site.email | default: 'giovanni.duminuco@gmail.com' }}">Email</a>
+            <a href="https://www.linkedin.com/in/dumgio/">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it">Scholar</a>
+            <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </nav>
+    </footer>
+
+</body>
+</html>
