@@ -90,17 +90,18 @@
             width: 100%;
         }
 
-        /* Modifica specifica Titolo H1 */
+        /* Modifica specifica Titolo H1 secondo le nuove specifiche */
         .title h1 { 
             font-family: 'Gelasio', serif !important;
+            font-style: normal;
+            font-weight: 700;
             font-size: 29px; 
-            font-weight: 700; 
             line-height: 35px;
             color: var(--title-color);
             margin: 0;
             white-space: nowrap;
-            letter-spacing: -0.04em;
-            word-spacing: -0.1em;
+            /* Ho rimosso letter-spacing negativo per fedeltà alla tua specifica, 
+               ma se vuoi riavvicinarli aggiungi: letter-spacing: -0.04em; */
         }
 
         .phd-text { font-size: 0.9rem; font-weight: 400; opacity: 0.8; }
@@ -171,7 +172,8 @@
         @media screen and (max-width: 620px) {
             body { font-size: 1.125rem !important; }
             .profile-photo { width: 50px; height: 50px; }
-            .title h1 { font-size: 24px; }
+            /* Mobile adjustment per non far uscire il titolo */
+            .title h1 { font-size: 24px; line-height: 28px; } 
             .footer-container { flex-direction: column; gap: 1rem; align-items: flex-start; }
         }
     </style>
