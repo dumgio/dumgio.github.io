@@ -1,145 +1,35 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="{{ site.lang | default: 'it' }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if page.url == "/" %}Giovanni Duminuco, PhD{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
+    <title>{% if page.url == "/" %}{{ site.title }}{% else %}{{ page.title }} | {{ site.title }}{% endif %}</title>
     {% seo %}
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
-
-    <style>
-        @font-face {
-            font-family: 'Bespoke Serif';
-            src: url('https://static.mighil.com/fonts/BespokeSerif-Variable.woff2') format('woff2');
-            font-weight: 300 800;
-            font-display: swap;
-        }
-
-        :root {
-            --bg-color: #F0F0F0;
-            --text-color: #111;
-            --text-muted: #555;
-            --text-faint: #888;
-            --title-color: rgb(20, 20, 20);
-            --border-light: #96909061;
-            --max-width: 650px;
-            --spacing: 2rem;
-        }
-
-        * { box-sizing: border-box; margin: 0; padding: 0; }
-        html, body { background-color: var(--bg-color); color: var(--text-color); }
-
-        body {
-            max-width: var(--max-width);
-            margin: 0;
-            padding: var(--spacing);
-            font-family: 'Bespoke Serif', Georgia, serif;
-            font-size: 1.1rem;
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            text-align: left;
-        }
-
-        /* Header */
-        header {
-            padding: 1rem 0 2rem;
-        }
-
-        .site-name {
-            display: block;
-            font-family: 'Gelasio', serif;
-            font-size: 22px;
-            font-weight: 700;
-            color: var(--title-color);
-            text-decoration: none;
-            margin-bottom: 0.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .site-name span { font-weight: 400; }
-
-        nav { display: flex; gap: 1.25rem; }
-        nav a {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-        nav a:hover {
-            color: var(--text-color);
-            text-decoration: underline;
-            text-underline-offset: 3px;
-        }
-
-        /* Contenuto */
-        main { margin: 2rem 0; }
-
-        .stack > * + * { margin-top: 1.25rem; }
-
-        h2 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin: 2.5rem 0 0.75rem;
-            color: var(--title-color);
-        }
-
-        hr {
-            border: none;
-            border-top: 1px solid var(--border-light);
-            margin: 2.5rem 0;
-        }
-
-        a {
-            color: var(--text-color);
-            text-underline-offset: 3px;
-        }
-
-        /* Footer */
-        footer {
-            margin-top: 4rem;
-            padding: 1rem 0;
-            font-size: 0.85rem;
-            color: var(--text-faint);
-            display: flex;
-            gap: 1.25rem;
-            flex-wrap: wrap;
-            align-items: center;
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: none;
-        }
-
-        footer a:hover { text-decoration: underline; }
-
-        @media screen and (max-width: 620px) {
-            body { padding: 1.5rem; }
-            .site-name { font-size: 20px; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Gelasio:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&family=IBM+Plex+Mono&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
 <body>
 
     <header>
-        <a href="/" class="site-name">Giovanni<span>Duminuco</span></a>
-        <nav>
-            <a href="/bio">Bio</a>
-            <a href="/blog">Appunti</a>
-            <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
-        </nav>
+        <h1><a href="{{ '/' | relative_url }}" style="text-decoration: none;">{{ site.author | replace: ' ', '' }}</a><span class="cursor">_</span></h1>
     </header>
 
-    <main class="stack">
+    <main>
         {{ content }}
     </main>
 
     <footer>
-        <span>&copy; {{ "now" | date: "%Y" }} giovanniduminuco.it</span>
-        <a href="https://www.linkedin.com/in/dumgio/">LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it">Scholar</a>
+        <p>&copy; {{ "now" | date: "%Y" }} {{ site.author }}</p>
+        <nav>
+            <a href="mailto:{{ site.email | default: 'giovanni.duminuco@gmail.com' }}">Email</a>
+            <a href="https://www.linkedin.com/in/dumgio/">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it">Scholar</a>
+            <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        </nav>
     </footer>
 
 </body>
