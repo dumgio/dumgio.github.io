@@ -31,8 +31,8 @@
             --bg-color: #f2f2f2; 
             --text-color: #111;
             --border-light: #96909061;
-            --spacing: 1rem;
-            --max-width: 700px;
+            --spacing: 1.5rem;
+            --max-width: 850px;
         }
 
         [data-theme="dark"] {
@@ -41,71 +41,37 @@
             --border-light: #2a2f33;
         }
 
-        /* Reset e Base */
         * { box-sizing: border-box; margin: 0; padding: 0; }
         html, body { background-color: var(--bg-color); color: var(--text-color); }
 
         body {
             max-width: var(--max-width);
             margin: 0 auto; 
-            padding: var(--spacing);
+            padding: 2rem;
             font-family: 'Bespoke Serif', Georgia, serif !important;
-            font-size: 1.165rem; 
+            font-size: 1.15rem; 
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Header */
         header {
             border-bottom: 1px solid var(--border-light);
-            padding: 1rem 0;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .profile-photo {
-            width: 60px; height: 60px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: var(--spacing);
-            border: 1px solid var(--border-light);
-        }
-
-        .header-content {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .title-row {
+            padding: 1.5rem 0;
+            margin-bottom: 4rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
         }
 
-        /* Titolo e link sempre colore testo */
-        .title h1 { 
-            font-size: 1.25rem; 
-            font-weight: 600; 
-            margin: 0;
-            white-space: nowrap;
+        .header-logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
             color: var(--text-color);
         }
 
-        .phd-text { font-size: 0.9rem; font-weight: 400; opacity: 0.8; }
-
-        /* Logica Link Globale: Colore testo, no sottolineatura fissa */
-        a { 
-            color: var(--text-color); 
-            text-decoration: none; 
-        }
-
-        a:hover {
-            text-decoration: underline;
-            text-decoration-thickness: 0.1ex;
-            text-underline-offset: 0.3ex;
-        }
+        nav { display: flex; gap: 1.5rem; }
+        nav a { font-size: 0.95rem; text-decoration: none; color: var(--text-color); text-transform: lowercase; }
 
         #theme-toggle {
             background: none;
@@ -115,72 +81,79 @@
             padding: 0;
             display: flex;
             opacity: 0.6;
-            transition: opacity 0.2s;
         }
-        #theme-toggle:hover { opacity: 1; }
 
         #sun-icon, #moon-icon { display: none; width: 18px; height: 18px; }
         [data-theme="dark"] #sun-icon { display: block; }
         html:not([data-theme="dark"]) #moon-icon { display: block; }
 
-        nav { display: flex; gap: var(--spacing); margin-top: 0.2rem; }
-        nav a { font-size: 1rem; }
+        main { margin-bottom: 4rem; }
 
-        /* Spaziature Main */
-        main { margin: 2rem 0 3rem 0; }
-        main p { margin-bottom: 1.5rem; }
-
-        h2 { font-size: 1.3rem; margin: 2.5rem 0 1rem; font-weight: 600; }
-
-        .ambito-item { margin-bottom: 0.8rem; }
-        .ambito-titolo { font-weight: 600; display: inline; }
-
-        hr { border: none; border-top: 1px solid var(--border-light); margin: 2rem 0; }
-
-        /* Footer */
-        footer {
-            margin-top: 4rem;
-            padding: 1.5rem 0;
-            border-top: 1px solid var(--border-light);
-            font-size: 0.95rem;
-            text-transform: lowercase;
+        .home-hero {
+            display: flex;
+            gap: 4rem;
+            align-items: flex-start;
+            margin-bottom: 5rem;
         }
+
+        .hero-text { flex: 1.5; }
+        .hero-image { flex: 1; text-align: right; }
         
-        .footer-container {
+        .hero-image img {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 2px;
+            filter: grayscale(100%);
+        }
+
+        h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; line-height: 1.2; }
+        h2 { font-size: 1.3rem; margin: 3rem 0 1.5rem; font-weight: 600; }
+        p { margin-bottom: 1.5rem; }
+
+        a { color: var(--text-color); text-decoration: none; }
+        a:hover {
+            text-decoration: underline;
+            text-decoration-thickness: 0.1ex;
+            text-underline-offset: 0.3ex;
+        }
+
+        hr { border: none; border-top: 1px solid var(--border-light); margin: 3rem 0; }
+
+        .ambito-item { margin-bottom: 1rem; }
+        .ambito-titolo { font-weight: 600; }
+
+        footer {
+            margin-top: 6rem;
+            padding: 2rem 0;
+            border-top: 1px solid var(--border-light);
+            font-size: 0.9rem;
             display: flex;
             justify-content: space-between;
-            align-items: center;
+            text-transform: lowercase;
         }
 
-        .footer-nav { display: flex; gap: var(--spacing); }
-
-        @media screen and (max-width: 620px) {
-            body { font-size: 1.125rem !important; }
-            .profile-photo { width: 50px; height: 50px; }
-            .title h1 { font-size: 1.05rem; }
-            .footer-container { flex-direction: column; gap: 1rem; align-items: flex-start; }
+        @media screen and (max-width: 768px) {
+            .home-hero { flex-direction: column-reverse; gap: 2rem; }
+            .hero-image { text-align: left; }
+            .hero-image img { max-width: 150px; }
+            h1 { font-size: 1.8rem; }
+            footer { flex-direction: column; gap: 1rem; }
         }
     </style>
 </head>
-<body class="home">
+<body>
 
     <header>
-        <img src="/profile.jpg" alt="Giovanni Duminuco" class="profile-photo">
-        <div class="header-content">
-            <div class="title-row">
-                <a class="title" href="/">
-                    <h1>Giovanni Duminuco, <span class="phd-text">Ph.D.</span></h1>
-                </a>
-                <button id="theme-toggle" aria-label="Cambia tema">
-                    <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-                    <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                </button>
-            </div>
-            <nav>
-                <a href="/blog">Appunti</a> 
-                <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
-            </nav>
-        </div>
+        <a href="/" class="header-logo">GD.</a>
+        <nav>
+            <a href="/blog">Appunti</a> 
+            <a href="/info">Info</a>
+            <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
+            <button id="theme-toggle" aria-label="Cambia tema">
+                <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            </button>
+        </nav>
     </header>
 
     <main>
@@ -188,13 +161,11 @@
     </main>
 
     <footer>
-        <div class="footer-container">
-            <span>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</span>
-            <div class="footer-nav">
-                <a href="/info">Info</a>
-                <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a>
-                <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
-            </div>
+        <span>&copy; {{ "now" | date: "%Y" }} Giovanni Duminuco</span>
+        <div style="display: flex; gap: 1.5rem;">
+            <a href="/info">Info</a>
+            <a href="https://www.linkedin.com/in/dumgio/" target="_blank">LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it" target="_blank">Scholar</a>
         </div>
     </footer>
 
