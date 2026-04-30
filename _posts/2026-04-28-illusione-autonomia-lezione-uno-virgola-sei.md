@@ -18,4 +18,4 @@ L’autonomia, infatti, non è assenza di struttura, ma la possibilità di muove
 Senza il limite, l’intelligenza non è libertà: è solo una forza che finisce per disperdersi.
 
 ---
-Riferimento: _Dive into Claude Code_— <a href="https://github.com/VILA-Lab/Dive-into-Claude-Code">github.com/VILA-Lab/Dive-into-Claude-Code</a></span>
+Riferimento: _Dive into Claude Code_— <a href="https://github.com/VILA-Lab/Dive-into-Claude-Code">github.com/VILA-Lab/Dive-into-Claude-Code</a>
