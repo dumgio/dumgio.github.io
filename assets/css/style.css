@@ -29,18 +29,25 @@
 }
 
 body {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  text-rendering: optimizeSpeed;
+  font-size: 1.15rem; /* Leggermente ridotto per una migliore densità informativa */
+  line-height: 1.7;   /* Aumentato per il comfort visivo */
+  text-rendering: optimizeLegibility;
   background-color: var(--bg-color);
   font-family: var(--body-font);
   color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   padding: 4rem 2rem 4rem 2rem;
   margin: 0 0 0 10%;
   max-width: var(--measure);
   word-wrap: break-word;
-  transition: background-color 0.8s ease, color 0.8s ease; /* Transizione Chiaroscuro */
+  transition: background-color 0.8s ease, color 0.8s ease;
+}
+
+/* Perfezione Tipografica in Dark Mode */
+body.dark-theme {
+  -webkit-font-smoothing: subpixel-antialiased; /* Riduce l'espansione del font su sfondi scuri */
+  letter-spacing: 0.01rem; /* Micro-spaziatura per la nitidezza */
 }
 
 /* Note a margine rimosse per mantenere massima pulizia */
@@ -69,8 +76,15 @@ body {
 
 @media (max-width: 800px) {
   body {
-    margin-left: 0; /* Rimosso su mobile per sfruttare tutto lo spazio */
-    padding: 2rem 1.5rem;
+    margin-left: 0;
+    padding: 2.5rem 1.2rem;
+    font-size: 1.1rem; /* Ottimizzato per schermi piccoli */
+    line-height: 1.65;
+  }
+  
+  .hero-intro {
+    font-size: 1.8rem; /* Più leggibile su mobile */
+    line-height: 1.3;
   }
 }
 
