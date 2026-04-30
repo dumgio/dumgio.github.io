@@ -1,4 +1,4 @@
-```html
+```html id="m2c7xn"
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -8,6 +8,9 @@
     <title>{% if page.url == "/" %}Giovanni Duminuco, PhD{% else %}{{ page.title }} | Giovanni Duminuco, PhD{% endif %}</title>
 
     {% seo %}
+
+    <!-- Theme color (migliora mobile UX) -->
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Preload font -->
     <link rel="preload" href="https://static.mighil.com/fonts/BespokeSerif-Variable.woff2" as="font" type="font/woff2" crossorigin>
@@ -25,9 +28,10 @@
     <!-- Font secondario -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-    <!-- ✅ CSS collegato correttamente -->
-    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+    <!-- ✅ CSS corretto -->
+    <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 
+    <!-- Theme script -->
     <script>
         (function() {
             const savedTheme = localStorage.getItem("theme");
@@ -88,6 +92,7 @@
         </div>
     </footer>
 
+    <!-- Theme toggle script -->
     <script>
         const toggleBtn = document.getElementById('theme-toggle');
 
