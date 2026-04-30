@@ -36,8 +36,8 @@ body {
   font-family: var(--body-font);
   color: var(--text-color);
   -moz-osx-font-smoothing: grayscale;
-  padding: 3rem 1.5rem 4rem 1.5rem;
-  margin: 0 auto;
+  padding: 3rem 2rem 4rem 2rem; /* Aumentato leggermente il padding laterale */
+  margin: 0; /* Rimosso auto per allineare a sinistra */
   max-width: var(--measure);
   word-wrap: break-word;
 }
@@ -54,6 +54,16 @@ header h1 {
 header h1 a {
   text-decoration: none;
   color: var(--text-color);
+  display: flex;
+  align-items: baseline;
+}
+
+.title-phd {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--grey);
+  margin-left: 0.5rem;
+  font-family: var(--body-font);
 }
 
 header h1 span.cursor {
