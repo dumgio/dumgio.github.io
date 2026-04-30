@@ -1,0 +1,96 @@
+```css
+body {
+  font-family: 'Inter', sans-serif;
+  color: #111;
+  background: #fff;
+  max-width: 720px;
+  margin: auto;
+  padding: 2rem;
+  line-height: 1.7;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  font-size: 0.95rem;
+}
+
+/* HERO */
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 1.5rem;
+}
+
+.intro {
+  margin-bottom: 1.5rem;
+}
+
+/* BOTTONI */
+.btn {
+  border: 1px solid #111;
+  padding: 0.6rem 1rem;
+  margin-right: 1rem;
+}
+
+.link {
+  border-bottom: 1px solid #ccc;
+}
+
+/* BIO */
+.bio-grid {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 1.5rem;
+  margin: 4rem 0;
+}
+
+.bio img {
+  width: 100px;
+  border-radius: 50%;
+}
+
+/* AREE */
+.aree {
+  margin: 4rem 0;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+/* ARTICOLI */
+.post-list {
+  list-style: none;
+  padding: 0;
+}
+
+.post-list li {
+  margin-bottom: 0.8rem;
+}
+
+.date {
+  color: #888;
+  margin-right: 0.5rem;
+}
+
+/* CTA */
+.cta-finale {
+  margin: 4rem 0;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 4rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+```
