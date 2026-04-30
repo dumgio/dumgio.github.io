@@ -36,10 +36,23 @@ body {
   font-family: var(--body-font);
   color: var(--text-color);
   -moz-osx-font-smoothing: grayscale;
-  padding: 3rem 2rem 4rem 2rem; /* Aumentato leggermente il padding laterale */
-  margin: 0; /* Rimosso auto per allineare a sinistra */
+  padding: 4rem 2rem 4rem 2rem;
+  margin: 0 0 0 10%; /* Aggiunto margine sinistro del 10% per staccare dal bordo */
   max-width: var(--measure);
   word-wrap: break-word;
+}
+
+@media (max-width: 1200px) {
+  body {
+    margin-left: 5%; /* Ridotto su schermi medi */
+  }
+}
+
+@media (max-width: 800px) {
+  body {
+    margin-left: 0; /* Rimosso su mobile per sfruttare tutto lo spazio */
+    padding: 2rem 1.5rem;
+  }
 }
 
 /* Nome in alto - Piccolo come Gorman */
