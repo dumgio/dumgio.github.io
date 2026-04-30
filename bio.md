@@ -4,9 +4,7 @@ title: Info & CV | Giovanni Duminuco
 ---
 
 <section class="cv-container">
-
-    <h1 class="logo">G<span>iovanniDuminuco</span></h1>
-    <p><em>Aggiornato a aprile 2026</em></p>
+        <p><em>Aggiornato a aprile 2026</em></p>
 
     <h2 id="formazione">Formazione Accademica</h2>
     <div class="post-list">
