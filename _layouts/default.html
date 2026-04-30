@@ -55,6 +55,11 @@
             -webkit-font-smoothing: antialiased;
         }
 
+        /* Utility per pagine stile Gorman */
+        .stack > * + * { margin-top: 2rem; }
+        .logo { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+        .logo span { font-weight: 400; opacity: 0.6; }
+
         /* Header */
         header {
             border-bottom: 1px solid var(--border-light);
@@ -84,7 +89,6 @@
             width: 100%;
         }
 
-        /* Titolo e link sempre colore testo */
         .title h1 { 
             font-size: 1.25rem; 
             font-weight: 600; 
@@ -134,7 +138,6 @@
 
         .ambito-item { margin-bottom: 0.8rem; }
         
-        /* MODIFICA AMBITI: Sottolineato, non grassetto */
         .ambito-titolo { 
             font-weight: 400; 
             text-decoration: underline; 
@@ -185,7 +188,8 @@
                 </button>
             </div>
             <nav>
-                <a href="/blog">Appunti</a> 
+                <a href="/blog">Appunti</a>
+                <a href="/info">Bio</a> 
                 <a href="mailto:giovanni.duminuco@gmail.com">Contatto</a>
             </nav>
         </div>
