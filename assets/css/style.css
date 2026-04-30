@@ -58,12 +58,8 @@ header h1 a {
 
 header h1 span.cursor {
   display: inline-block;
-  width: 0.5ch;
-  height: 0.9em;
-  background-color: var(--text-color);
-  margin-left: 0.1rem;
-  vertical-align: baseline;
   animation: blink 1s step-end infinite;
+  margin-left: 0.1rem;
 }
 
 @keyframes blink {
