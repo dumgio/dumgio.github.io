@@ -95,7 +95,7 @@
 
         .phd-text { font-size: 0.9rem; font-weight: 400; opacity: 0.8; }
 
-        /* Logica Link Globale: Colore testo, no sottolineatura fissa */
+        /* Logica Link Globale */
         a { 
             color: var(--text-color); 
             text-decoration: none; 
@@ -133,7 +133,15 @@
         h2 { font-size: 1.3rem; margin: 2.5rem 0 1rem; font-weight: 600; }
 
         .ambito-item { margin-bottom: 0.8rem; }
-        .ambito-titolo { font-weight: 600; display: inline; }
+        
+        /* MODIFICA AMBITI: Sottolineato, non grassetto */
+        .ambito-titolo { 
+            font-weight: 400; 
+            text-decoration: underline; 
+            text-decoration-thickness: 0.1ex;
+            text-underline-offset: 0.3ex;
+            display: inline; 
+        }
 
         hr { border: none; border-top: 1px solid var(--border-light); margin: 2rem 0; }
 
