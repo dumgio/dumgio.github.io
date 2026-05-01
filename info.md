@@ -1,21 +1,31 @@
 ---
 layout: page
 title: Info
+description: Informazioni sul sito di Giovanni Duminuco — cosa trovi qui, come è fatto e perché.
 ---
-
-Questo spazio raccoglie appunti, frammenti di ricerca e riflessioni sulla pedagogia, la filosofia e il sociale.
-
-Mi occupo di ricerca pedagogica applicata e [consulenza filosofica online](/consulenza-filosofica/), con un focus sulla filosofia dell'educazione e la progettazione nel Terzo Settore. 
-
-I contenuti di questo sito non sono generati dall'intelligenza artificiale. Sono scritti ancora alla vecchia maniera, nella consapevolezza del potere riflessivo della scrittura e della cura necessaria per abitare il pensiero.
-
-Il sito è costruito in HTML per essere semplice e leggero: una scelta deliberata per restituire centralità al testo e rispettare l'attenzione di chi legge. 
-
-Niente tracciamento. Niente cookie. Solo testo.
-
----
-
-### Contatti e Ricerca
-Per dialoghi più approfonditi, collaborazioni o percorsi di **[consulenza online](/consulenza-filosofica/)**, puoi scrivermi via [email](mailto:giovanni.duminuco@gmail.com).
-
-Puoi trovare i miei contributi accademici su [Google Scholar](https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it) e il mio profilo professionale su [LinkedIn](https://www.linkedin.com/in/dumgio/).
+<div class="hero-intro" style="font-size: 1.8rem; margin-bottom: 3rem; line-height: 1.3;">
+  Appunti, frammenti di ricerca e riflessioni sulla pedagogia, la filosofia e il sociale.
+</div>
+<p>
+  Questo spazio raccoglie appunti, frammenti di ricerca e riflessioni sulla pedagogia, la filosofia e il sociale. È anche il luogo dove descrivo i servizi che offro e dove chi vuole può trovarmi.
+</p>
+<h2>Come è fatto</h2>
+<p>
+  Il sito è scritto in HTML statico, generato con Jekyll. La scelta di restare su un'architettura leggera è una preferenza precisa: un sito essenziale carica in fretta, dura nel tempo e resta leggibile su qualsiasi dispositivo.
+</p>
+<h2>Privacy</h2>
+<p>
+  Questo sito rispetta la tua navigazione: zero cookie, zero analytics, zero raccolta di dati. Puoi leggere in pace.
+</p>
+<h2>Contatti</h2>
+<p>
+  Il modo migliore per contattarmi rimane la posta elettronica.
+</p>
+<p style="margin-top: 2rem;">
+  <a href="mailto:mail@giod.it" class="post-item" style="text-decoration: none; font-weight: 700; font-size: 1.3rem;">
+    Scrivimi &rarr;
+  </a>
+</p>
+<style>
+  .page-content h2 { margin-top: 4rem; }
+</style>
