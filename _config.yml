@@ -6,7 +6,7 @@ baseurl: ""
 lang: "it"
 image: /assets/img/og-default.png
 future: true
-permalink: /:title/
+permalink: /appunti/:title/
 plugins:
   - jekyll-sitemap
   - jekyll-feed
