@@ -4,12 +4,9 @@
   --grey: hsl(0deg, 0%, 35%);
   --primary: hsl(250deg, 100%, 75%);
   --highlight-selection-background-color: hsl(0deg, 0%, 45%);
-
   --heading-font: 'Gelasio', serif;
   --body-font: 'Source Sans 3', sans-serif;
-
   --measure: 70ch;
-
   --bg-color: hsl(0deg, 0%, 94%);
   --text-color: var(--dark);
   --highlight-bg-color: var(--dark);
@@ -29,8 +26,8 @@
 }
 
 body {
-  font-size: 1.15rem; /* Leggermente ridotto per una migliore densità informativa */
-  line-height: 1.7;   /* Aumentato per il comfort visivo */
+  font-size: 1.15rem;
+  line-height: 1.7;
   text-rendering: optimizeLegibility;
   background-color: var(--bg-color);
   font-family: var(--body-font);
@@ -44,15 +41,11 @@ body {
   transition: background-color 0.8s ease, color 0.8s ease;
 }
 
-/* Perfezione Tipografica in Dark Mode */
 body.dark-theme {
-  -webkit-font-smoothing: subpixel-antialiased; /* Riduce l'espansione del font su sfondi scuri */
-  letter-spacing: 0.01rem; /* Micro-spaziatura per la nitidezza */
+  -webkit-font-smoothing: subpixel-antialiased;
+  letter-spacing: 0.01rem;
 }
 
-/* Note a margine rimosse per mantenere massima pulizia */
-
-/* Toggle Dark Mode */
 #theme-toggle {
   cursor: pointer;
   background: none;
@@ -70,7 +63,7 @@ body.dark-theme {
 
 @media (max-width: 1200px) {
   body {
-    margin-left: 5%; /* Ridotto su schermi medi */
+    margin-left: 5%;
   }
 }
 
@@ -78,17 +71,16 @@ body.dark-theme {
   body {
     margin-left: 0;
     padding: 2.5rem 1.2rem;
-    font-size: 1.1rem; /* Ottimizzato per schermi piccoli */
+    font-size: 1.1rem;
     line-height: 1.65;
   }
   
   .hero-intro {
-    font-size: 1.8rem; /* Più leggibile su mobile */
+    font-size: 1.8rem;
     line-height: 1.3;
   }
 }
 
-/* Nome in alto - Piccolo come Gorman */
 header h1 {
   font-family: var(--heading-font);
   font-size: 1.4rem;
@@ -106,10 +98,10 @@ header h1 a {
 
 .title-phd {
   font-size: 0.9rem;
-  font-weight: 400; /* Leggermente più leggero del nome ma stesso font */
+  font-weight: 400;
   color: var(--grey);
   margin-left: 0.4rem;
-  font-family: var(--heading-font); /* Stesso font del nome */
+  font-family: var(--heading-font);
   text-transform: none;
 }
 
@@ -117,6 +109,7 @@ header h1 span.cursor {
   display: inline-block;
   animation: blink 1s step-end infinite;
   margin-left: 0.1rem;
+  color: var(--primary);
 }
 
 @keyframes blink {
@@ -124,7 +117,6 @@ header h1 span.cursor {
   50% { opacity: 0; }
 }
 
-/* La grande intro - L'elemento principale */
 .hero-intro {
   font-family: var(--heading-font);
   font-size: 2.5rem;
@@ -174,7 +166,6 @@ li {
   margin-bottom: 1rem;
 }
 
-/* Lista Post stile Gorman */
 .post-item {
   display: flex;
   align-items: baseline;
