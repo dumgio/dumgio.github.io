@@ -109,7 +109,7 @@ header h1 span.cursor {
   display: inline-block;
   animation: blink 1s step-end infinite;
   margin-left: 0.1rem;
-  color: var(--primary);
+  color: #ff0000;
 }
 
 @keyframes blink {
