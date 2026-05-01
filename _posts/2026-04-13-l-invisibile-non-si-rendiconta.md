@@ -1,6 +1,7 @@
 ---
 layout: post
 title: L’invisibile non si rendiconta
+redirect_from: /2026/04/13/l-invisibile-non-si-rendiconta/
 ---
 Nella progettazione sociale, la valutazione d’impatto è diventata uno degli elementi centrali di qualsiasi intervento. Misurare cosa produce un progetto, per chi e in che misura, è una pretesa legittima e spesso necessaria per rendicontare risorse pubbliche, giustificare scelte, orientare interventi futuri.
 
