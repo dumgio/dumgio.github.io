@@ -9,7 +9,7 @@ description: Curriculum vitae di Giovanni Duminuco (PhD) — ricercatore, docent
 
 <h2>Formazione</h2>
 <ul>
-  <li><strong>Dottorato in Scienze dell'educazione</strong> (Pedagogia generale e sociale) — Pontificia Facoltà di Scienze dell'Educazione «Auxilium», Roma (2021–2026). Votazione: 110 con lode.</li>
+  <li><strong>Dottorato di ricerca in Scienze dell'educazione</strong> (Pedagogia generale e sociale) — Pontificia Facoltà di Scienze dell'Educazione «Auxilium», Roma (2021–2026). Votazione: 110 con lode.</li>
   <li><strong>Laurea in Filosofia</strong> (110 con lode) — Università degli Studi di Palermo (1999–2005).</li>
   <li><strong>Master in Bioetica</strong> — Istituto Siciliano di Bioetica, Facoltà Teologica di Sicilia (2007).</li>
   <li><strong>Corso di perfezionamento in Data Protection e Data Governance</strong> — Università degli Studi di Milano (2020–2021).</li>
