@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Educazione come attesa
+redirect_from: /2026/03/14/educazione-come-attesa/
 ---
 La razionalità aziendale ha colonizzato i contesti educativi così in profondità che il soggetto che apprende è diventato variabile dipendente di un protocollo che lo precede, e il cambiamento che non si misura è, per definizione, un cambiamento che non esiste. 
 
