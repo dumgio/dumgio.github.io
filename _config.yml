@@ -8,7 +8,7 @@ lang: "it"
 image: /assets/img/og-default.png
 
 future: true
-permalink: /:year/:month/:day/:title/
+permalink: /:title/
 
 plugins:
   - jekyll-sitemap
