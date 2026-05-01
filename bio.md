@@ -1,90 +1,58 @@
 ---
 layout: page
-title: Bio
+title: Curriculum Vitae
+description: Curriculum vitae di Giovanni Duminuco (PhD) — ricercatore, docente, progettista e consulente con esperienza pluridecennale in ambito educativo, sociale e culturale.
 ---
-
-<div class="bio-section">
-  <p class="hero-intro" style="font-size: 1.8rem; margin-bottom: 3rem;">
-    <em>Ricerca pedagogica</em>, filosofia dell'educazione e <em>progettazione sociale</em>.
-  </p>
-
-  <h2>Formazione Accademica</h2>
-  <div class="post-item">
-    <span class="post-date">2021–2026</span>
-    <div>
-      <strong>Dottorato di Ricerca in Scienze dell'Educazione</strong> (110/110 lode)  
-
-      <small>Pontificia Facoltà di Scienze dell'Educazione «Auxilium», Roma</small>
-    </div>
-  </div>
-  <div class="post-item">
-    <span class="post-date">2005–2007</span>
-    <div>
-      <strong>Master di I livello in Bioetica</strong>  
-
-      <small>Facoltà Teologica di Sicilia, Palermo</small>
-    </div>
-  </div>
-  <div class="post-item">
-    <span class="post-date">2001–2005</span>
-    <div>
-      <strong>Laurea in Filosofia</strong> (110/110 lode)  
-
-      <small>Università degli Studi di Palermo</small>
-    </div>
-  </div>
-
-  <h2>Posizioni Accademiche</h2>
-  <div class="post-item">
-    <span class="post-date">2022–Oggi</span>
-    <div>
-      <strong>Docente di Filosofia dell'Educazione e Storia della Filosofia</strong>  
-
-      <small>ISSE «Don Vincenzo Sorce», Caltanissetta</small>
-    </div>
-  </div>
-  <div class="post-item">
-    <span class="post-date">2021–2022</span>
-    <div>
-      <strong>Docente invitato</strong>  
-
-      <small>Fondazione Alessia — Istituto Euromediterraneo</small>
-    </div>
-  </div>
-
-  <h2>Attività Professionale</h2>
-  <div class="post-item">
-    <span class="post-date">2021–Oggi</span>
-    <div>
-      <strong>Esperto in Project Cycle Management — Progettista Fondi UE</strong>  
-
-      <small>Associazione Casa Rosetta Onlus. Grant writing e valutazione d'impatto</small>
-    </div>
-  </div>
-  <div class="post-item">
-    <span class="post-date">2015–Oggi</span>
-    <div>
-      <strong>Curatore editoriale e Presidente</strong>  
-
-      <small>Formebrevi APS — Formebrevi Edizioni</small>
-    </div>
-  </div>
-
-  <h2>Interessi di Ricerca</h2>
-  <p>
-    Post-umanesimo e IA generativa; Pedagogia sociale e personalismo; Valutazione d'impatto sociale; 
-    Pedagogia politica e democrazia; Neuroscienze e ontologia della persona; Ecologia integrale.
-  </p>
-
-  <h2>Competenze & Strumenti</h2>
-  <p>
-    Project Cycle Management (PCM); Grant writing; Outcome-based evaluation; 
-    IA generativa e Prompt Engineering; Data protection (GDPR); Editoria critica.
-  </p>
+<div class="hero-intro" style="font-size: 1.8rem; margin-bottom: 3rem; line-height: 1.3;">
+  Ricercatore, docente e progettista con oltre vent'anni di esperienza tra <em>scienze dell'educazione</em>, filosofia e progettazione sociale.
 </div>
 
+<h2>Formazione</h2>
+<ul>
+  <li><strong>Dottorato in Scienze dell'educazione</strong> (Pedagogia generale e sociale) — Pontificia Facoltà di Scienze dell'Educazione «Auxilium», Roma (2021–2026). Votazione: 110 con lode.</li>
+  <li><strong>Laurea in Filosofia</strong> (110 con lode) — Università degli Studi di Palermo (1999–2005).</li>
+  <li><strong>Master in Bioetica</strong> — Istituto Siciliano di Bioetica, Facoltà Teologica di Sicilia (2007).</li>
+  <li><strong>Corso di perfezionamento in Data Protection e Data Governance</strong> — Università degli Studi di Milano (2020–2021).</li>
+  <li><strong>Certificazione CEDILS in Didattica dell'italiano a stranieri (L2)</strong> — Università Ca' Foscari di Venezia (2015).</li>
+  <li><strong>Corso AI Survival Kit</strong> — Sole 24 Ore Formazione (2025–2026). Prompt engineering, agenti IA e analisi dati con LLM.</li>
+</ul>
+
+<h2>Posizione attuale</h2>
+<ul>
+  <li><strong>Docente stabile in Storia della Filosofia e Filosofia dell'educazione</strong> — Istituto Superiore di Scienze dell'Educazione e della Formazione "Don V. Sorce", Caltanissetta, affiliato alla Pontificia Facoltà di Scienze dell'Educazione "Auxilium" di Roma (dal 2022).</li>
+  <li><strong>Progettista in ambito sociale e socio-sanitario</strong> — Impresa Sociale Casa Rosetta, Caltanissetta (dal 2021). Redazione, implementazione e monitoraggio di progetti nelle aree dipendenze, disabilità e minori.</li>
+  <li><strong>Editor e Responsabile editoriale</strong> — Formebrevi APS / Formebrevi Edizioni, Caltanissetta (dal 2015). Coordinamento dell'intera filiera editoriale: scouting, editing, impaginazione, distribuzione e promozione.</li>
+</ul>
+
+<h2>Esperienze precedenti</h2>
+<ul>
+  <li><strong>Docente invitato in Storia della Filosofia e Filosofia dell'educazione</strong> — Fondazione "Alessia", affiliata alla Pontificia Facoltà di Scienze dell'Educazione "Auxilium" di Roma (2020–2022).</li>
+  <li><strong>Tutor d'impresa</strong> — Università degli Studi di Messina (2019–2021). Supporto a beneficiari SIA/REI nello sviluppo di percorsi di inserimento lavorativo e progettazione d'impresa.</li>
+  <li><strong>Responsabile processo di progettazione</strong> — ASFA Onlus, Caltanissetta (2018–2019). Project management, scrittura, monitoraggio e rendicontazione.</li>
+  <li><strong>Formatore</strong> — CERF, Consorzio Enti Regionali di Formazione, Palermo/Caltanissetta (2008–2018). Formazione frontale in discipline sociologiche, antropologiche, psico-pedagogiche nell'ambito dei Piani Regionali dell'Offerta Formativa (POR Sicilia, FESR, FSE).</li>
+  <li><strong>Ricercatore e consulente di progetto</strong> — ISAS, Istituto di Scienze Amministrative e Sociali, Palermo (2004–2010). Progetti cofinanziati da FSE, Regione Siciliana e Ministero del Lavoro su inclusione, immigrazione e sviluppo di comunità.</li>
+  <li><strong>Assessore alla Cultura</strong> — Comune di Montedoro (CL) (2013–2018).</li>
+</ul>
+
+<h2>Pubblicazioni</h2>
+<ul>
+  <li><em>La ferita distorta dell'agire</em>, con postfazione di Peter Carravetta — Formebrevi Edizioni (2016).</li>
+  <li><em>Dinamiche del disaccordo</em>, con postfazione di Giorgio Bonacini — Anterem Edizioni, Verona (2013).</li>
+  <li><em>Dostoevskij: sottosuolo e coscienza</em> — Narcissus, Milano (2011).</li>
+  <li><em>Il tocco degli dei: genio, follia, schizofrenia</em> — Compostampa, Palermo (2010).</li>
+  <li>Articoli su <em>Bioethos</em> (Istituto Studi Bioetici "S. Privitera", Palermo): bioetica, morte, psicoterapia cognitiva (2008–2010).</li>
+  <li><em>La ferita</em> (traduzione in russo di K. Timenčik) — Almanacco del Premio Raduga, con il patrocinio di Feltrinelli, Banca Intesa e Istituto Italiano di Cultura di Mosca (2014).</li>
+</ul>
+
+<h2>Lingue</h2>
+<ul>
+  <li><strong>Italiano</strong> — madrelingua</li>
+  <li><strong>Inglese</strong> — B2</li>
+  <li><strong>Francese</strong> — B2 (produzione scritta B1)</li>
+</ul>
+
 <style>
-  .bio-section h2 { margin-top: 3.5rem; margin-bottom: 1.5rem; }
-  .bio-section .post-item { margin-bottom: 1.5rem; align-items: flex-start; }
-  .bio-section small { opacity: 0.7; display: block; margin-top: 0.2rem; }
+  .page-content h2 { margin-top: 4rem; }
+  .page-content ul { margin-bottom: 2rem; }
+  .page-content li { margin-bottom: 1.2rem; padding-left: 1rem; border-left: 1px solid var(--grey); }
 </style>
