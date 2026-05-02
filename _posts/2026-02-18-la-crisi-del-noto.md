@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "La Crisi del Noto: L’Atto Educativo come Discontinuità"
+title: "La Crisi del Noto: l’atto educativo come discontinuità
 permalink: /appunti/la-crisi-del-noto/
 redirect_from: 
   - /2026/02/18/la-violenza-gentile/
