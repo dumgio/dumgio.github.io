@@ -1,7 +1,10 @@
 ---
 layout: post
-title: La crisi del noto
-redirect_from: /2026/02/18/la-violenza-gentile/
+title: "La Crisi del Noto: L’Atto Educativo come Discontinuità"
+permalink: /appunti/la-crisi-del-noto/
+redirect_from: 
+  - /2026/02/18/la-violenza-gentile/
+  - /appunti/la-violenza-gentile/
 ---
 C'è un momento, nell'educazione, che nessun protocollo è in grado di prevedere. 
 È il momento in cui qualcosa si rompe: la rottura di un equilibrio, forse di un'immagine del mondo, del _già noto_ del proprio esistere.
