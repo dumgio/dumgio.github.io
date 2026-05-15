@@ -28,7 +28,6 @@
       const toggle = document.getElementById('theme-toggle');
       const body = document.body;
       
-      // Controlla se c'è una preferenza salvata
       if (localStorage.getItem('theme') === 'dark') {
         body.classList.add('dark-theme');
       }
@@ -41,7 +40,6 @@
     </script>
 
     <style>
-      /* Classi per il toggle manuale */
       body.dark-theme {
         --bg-color: hsl(0deg, 0%, 8%);
         --text-color: hsl(0deg, 0%, 80%);
@@ -59,14 +57,13 @@
         <p>&copy; {{ "now" | date: "%Y" }} {{ site.author }}</p>
         <nav>
             <a href="{{ '/info/' | relative_url }}">Info</a>
-            <a href="mailto:{{ site.email | default: 'giovanni.duminuco@gmail.com' }}">Email</a>
+            <a href="mailto:{{ site.email | default: 'mail@giod.it' }}">Email</a>
             <a href="https://www.linkedin.com/in/dumgio/">LinkedIn</a>
             <a href="https://scholar.google.com/citations?user=lpBSylMAAAAJ&hl=it">Scholar</a>
             <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
         </nav>
     </footer>
 
-    <!-- Caricamento Istantaneo -->
     <script src="//instant.page/5.2.0" type="module" integrity="sha384-jnZyxPjiipS0NFM9FA32iIhmxIP5WlrQp457D2u9Lzme3/mSYkXG9K5Qms9vuuXE"></script>
 
 </body>
