@@ -1,10 +1,10 @@
-title: "Giovanni Duminuco, PhD"
+title: "Giovanni Duminuco, PhD | Progettazione Strategica e Valutazione Impatto"
 author: "Giovanni Duminuco"
-description: "Ricerca pedagogica e consulenza filosofica online. Specializzato in filosofia dell'educazione e progettazione sociale."
+description: "Ricerca pedagogica, innovazione sociale e sviluppo umano. Specializzato in project management per il Terzo Settore, europrogettazione e valutazione dell'impatto sociale basata sui dati."
 url: "https://www.giovanniduminuco.it"
 baseurl: ""
 lang: "it"
-image: /assets/img/og-default.png
+image: /profile.jpg
 future: true
 permalink: /appunti/:title/
 plugins:
