@@ -6,10 +6,17 @@ permalink: /now/
 
 ## Cosa sto facendo
 
-Le mie energie in questo periodo sono concentrate su tre fronti:
+**Cosa studio**
+* Python.
 
-* **Dati & Impatto:** Studio intensivo di *Data Analysis* (Python e Power BI) per integrare metriche quantitative e misurabilità scientifica nella progettazione sociale.
-* **Tecnologia & Umano:** Ricerca teorica e scrittura sull'etica dell'Intelligenza Artificiale e sul suo impatto pedagogico nelle relazioni e nei processi formativi.
-* **Letture:** *La via dei re. Le cronache della Folgoluce (Vol. 1)* di Brandon Sanderson.
+**Cosa scrivo**
+* Impatto pedagogico ed etica dell'Intelligenza Artificiale nelle relazioni umane.
 
-_Maggio 2026_
+**Cosa leggo**
+* *La via dei re. Le cronache della Folgoluce (Vol. 1)* — Brandon Sanderson.
+
+_Ultimo aggiornamento: Maggio 2026_
+
+---
+
+<small style="color: var(--copyright-color, gray);">Questa pagina "Now" è ispirata da <a href="https://sive.rs/" target="_blank" rel="noopener">Derek Sivers</a>.</small>
