@@ -4,6 +4,7 @@ title: Cosa sto facendo
 permalink: /now/
 ---
 **Ora**
+
 Oltre alle mie attività ordinarie, in questo periodo mi sto concentrando su:
 
 *   **Studio:** Python e le sue applicazioni.
