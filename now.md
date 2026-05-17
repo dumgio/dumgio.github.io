@@ -6,9 +6,9 @@ permalink: /now/
 
 **#studio** Python.
 
-**riceca** Impatto pedagogico ed etica dell'Intelligenza Artificiale nelle relazioni umane.
+**#ricerca** Impatto pedagogico ed etica dell'Intelligenza Artificiale nelle relazioni umane.
 
-**lettura** *La via dei re. Le cronache della Folgoluce (Vol. 1)* — Brandon Sanderson.
+**#lettura** *La via dei re. Le cronache della Folgoluce (Vol. 1)* — Brandon Sanderson.
 
 _Ultimo aggiornamento: Maggio 2026_
 
