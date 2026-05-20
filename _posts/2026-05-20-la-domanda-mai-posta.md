@@ -12,4 +12,4 @@ Chi delega la domanda, delega se stesso.
 Il rischio non è la risposta sbagliata. È la domanda mai posta.
 
 ---
-Riferimento: H.G. Gadamer, Verità e Metodo — <a href="https://www.bompiani.it/catalogo/verita-e-metodo-testo-tedesco-a-fronte-9788845290749">Bompiani, testo tedesco a fronte</a>
+Riferimento: H.G. Gadamer, <a href="https://www.bompiani.it/catalogo/verita-e-metodo-testo-tedesco-a-fronte-9788845290749">Verità e Metodo</a> — Bompiani, testo tedesco a fronte
