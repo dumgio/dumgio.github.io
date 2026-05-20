@@ -1,15 +1,16 @@
 ---
-layout: page
+layout: default
 title: Cosa sto facendo
 permalink: /now/
 ---
+
 **Ora**
 
-Oltre alle mie attività ordinarie, in questo periodo mi sto concentrando su:
+Oltre alle attività ordinarie, in questo periodo sto dedicando tempo a:
 
-*   **Studio:** Python e le sue applicazioni.
-*   **Ricerca:** L'impatto pedagogico e l'etica dell'Intelligenza Artificiale nelle relazioni umane.
-*   **Lettura:** _La via dei re. Le cronache della Folgoluce_ di Brandon Sanderson.
+* **Studio:** Python e le sue applicazioni.
+* **Ricerca:** l’impatto pedagogico e le implicazioni etiche dell’Intelligenza Artificiale nelle relazioni umane.
+* **Lettura:** _La via dei re_ di Brandon Sanderson.
 
 ---
 
