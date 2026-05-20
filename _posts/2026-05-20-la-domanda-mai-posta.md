@@ -12,7 +12,7 @@ La domanda è diventata il luogo della fretta, il territorio dell'urgenza. È il
 Il vero domandare è un domandare a noi stessi. Richiede tempo, elaborazione interiore.
 
 Chi delega la domanda, delega se stesso.
+Il problema non è la risposta sbagliata. È la domanda mai posta.
 
-Il rischio non è la risposta sbagliata. È la domanda mai posta.
 ---
 Riferimento: H.G. Gadamer, <a href="https://www.bompiani.it/catalogo/verita-e-metodo-testo-tedesco-a-fronte-9788845290749">Verità e Metodo</a> — Bompiani, testo tedesco a fronte
