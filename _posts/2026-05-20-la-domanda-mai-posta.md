@@ -12,4 +12,4 @@ Chi delega la domanda, delega se stesso.
 Il rischio non è la risposta sbagliata. È la domanda mai posta.
 
 ---
-Riferimento: H.G. Gadamer, Verità e Metodo (1960) — <a href="https://www.mulino.it/isbn/9788815168528"> Il Mulino, edizione italiana</a>
+Riferimento: H.G. Gadamer, Verità e Metodo — <a href="https://www.bompiani.it/catalogo/verita-e-metodo-testo-tedesco-a-fronte-9788845290749">Bompiani, testo tedesco a fronte</a>
