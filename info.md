@@ -1,31 +1,33 @@
 ---
-layout: page
+layout: default
 title: Info
-description: Informazioni sul sito di Giovanni Duminuco — cosa trovi qui, come è fatto e perché.
+permalink: /info/
 ---
-<div class="hero-intro" style="font-size: 1.8rem; margin-bottom: 3rem; line-height: 1.3;">
-  Appunti, frammenti di ricerca e riflessioni sulla pedagogia, la filosofia e il sociale.
+
+<div class="hero-intro" style="margin-top: 3rem;">
+  Info
 </div>
-<p>
-  Questo spazio raccoglie appunti, frammenti di ricerca e riflessioni sulla pedagogia, la filosofia e il sociale. È anche il luogo dove descrivo i servizi che offro e dove chi vuole può trovarmi.
+
+<p style="font-size: 1.2rem; margin-bottom: 3rem;">
+  Questo spazio raccoglie note di lavoro, studi e passaggi metodologici tra la ricerca pedagogica e la progettazione sociale.
 </p>
-<h2>Come è fatto</h2>
+
+<h2>Attività e competenze</h2>
+<ul style="margin-bottom: 3rem; padding-left: 0; list-style: none;">
+  <li style="margin-bottom: 1.2rem;"><strong>Progettazione sociale:</strong> Accesso, coordinamento e rendicontazione di fondi regionali, nazionali ed europei (FSE, FESR) per enti del Terzo Settore e organizzazioni socio-sanitarie.</li>
+  <li style="margin-bottom: 1.2rem;"><strong>Valutazione dell'impatto:</strong> Sviluppo di indicatori e modelli di monitoraggio per interventi complessi in ambito culturale e di rigenerazione urbana.</li>
+  <li style="margin-bottom: 1.2rem;"><strong>Formazione:</strong> Attività di docenza in Filosofia dell'Educazione, supervisione pedagogica e analisi dell'impatto delle tecnologie digitali sui legami sociali.</li>
+</ul>
+
+<h2>Note tecniche e privacy</h2>
 <p>
-  Il sito è scritto in HTML statico, generato con Jekyll. La scelta di restare su un'architettura leggera è una preferenza precisa: un sito essenziale carica in fretta, dura nel tempo e resta leggibile su qualsiasi dispositivo.
+  Il sito è generato in HTML statico tramite Jekyll per garantire rapidità di caricamento, minima impronta energetica e leggibilità nel tempo.
 </p>
-<h2>Privacy</h2>
 <p>
-  Questo sito rispetta la tua navigazione: zero cookie, zero analytics, zero raccolta di dati. Puoi leggere in pace.
+  Non vengono utilizzati cookie, script di tracciamento o sistemi di web analytics. 
 </p>
+
 <h2>Contatti</h2>
 <p>
-  Il modo migliore per contattarmi rimane la posta elettronica.
+  Per proposte di collaborazione, partnership di progetto o consultazioni tecniche: <strong><a href="mailto:mail@giod.it">mail@giod.it</a></strong>.
 </p>
-<p style="margin-top: 2rem;">
-  <a href="mailto:mail@giod.it" class="post-item" style="text-decoration: none; font-weight: 700; font-size: 1.3rem;">
-    Scrivimi &rarr;
-  </a>
-</p>
-<style>
-  .page-content h2 { margin-top: 4rem; }
-</style>
