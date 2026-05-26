@@ -166,7 +166,7 @@ li {
   margin-bottom: 1rem;
 }
 
-/* MODIFICATO: Allineamento a griglia con blocco da 150px per la data */
+/* Allineamento a griglia staccato a 150px per l'elenco post */
 .post-item {
   display: grid;
   grid-template-columns: 150px 1fr;
@@ -174,7 +174,6 @@ li {
   margin-bottom: 0.8rem;
 }
 
-/* MODIFICATO: Rimossa la vecchia larghezza minima che faceva ballare i testi */
 .post-date {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 0.9rem;
@@ -182,13 +181,14 @@ li {
   flex-shrink: 0;
 }
 
+/* Transizione pulita a cambio colore per i titoli degli appunti */
 .post-item a {
   text-decoration: none;
-  border-bottom: 1px solid transparent;
+  transition: color 0.2s ease;
 }
 
 .post-item a:hover {
-  border-bottom: 1px solid var(--text-color);
+  color: var(--primary);
 }
 
 footer {
@@ -211,7 +211,7 @@ footer nav a {
 
 @media (max-width: 600px) {
   .hero-intro { font-size: 2.2rem; }
-  /* Mantiene il comportamento responsive: su mobile si torna a riga singola verticale */
+  /* Comportamento su mobile: i post tornano in colonna verticale singola */
   .post-item { display: flex; flex-direction: column; margin-bottom: 1.2rem; }
   .post-date { margin-bottom: 0.2rem; }
 }
