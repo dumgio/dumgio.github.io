@@ -8,10 +8,9 @@ permalink: /info/
   Info
 </div>
 
-Il sito è generato in HTML statico tramite Jekyll per garantire rapidità di caricamento, minima impronta energetica e leggibilità nel tempo.
-</p>
+<p>Il sito è generato in HTML statico tramite Jekyll per garantire rapidità di caricamento, minima impronta energetica e leggibilità nel tempo.</p>
 <p>
-  Non vengono utilizzati cookie, script di tracciamento o sistemi di web analytics. 
+  Non vengono utilizzati cookie, script di tracciamento o sistemi di web analytics.
 </p>
 
 <h2>Contatti</h2>

@@ -12,7 +12,7 @@ permalink: /blog/
             <span style="opacity: 0.5; font-size: 0.9rem; margin-right: 1.5rem; min-width: 95px; flex-shrink: 0; font-family: system-ui, -apple-system, sans-serif;">
                 {{ post.date | date: "%d.%m.%Y" }}
             </span>
-            <a href="{{ post.url }}" style="font-weight: 400; text-decoration: none;" class="post-link">
+            <a href="{{ post.url | relative_url }}" style="font-weight: 400; text-decoration: none;" class="post-link">
                 {{ post.title }}
             </a>
         </div>

@@ -42,8 +42,25 @@ body {
 }
 
 body.dark-theme {
+  --bg-color: hsl(0deg, 0%, 8%);
+  --text-color: hsl(0deg, 0%, 80%);
+  --highlight-bg-color: hsl(0deg, 0%, 85%);
+  --highlight-text-color: hsl(0deg, 0%, 0%);
+  --copyright-color: hsl(0deg, 0%, 60%);
+  --primary: hsl(15deg, 75%, 60%);
   -webkit-font-smoothing: subpixel-antialiased;
   letter-spacing: 0.01rem;
+}
+
+body.light-theme {
+  --bg-color: hsl(0deg, 0%, 94%);
+  --text-color: hsl(0deg, 0%, 8%);
+  --highlight-bg-color: hsl(0deg, 0%, 8%);
+  --highlight-text-color: hsl(0deg, 0%, 90%);
+  --copyright-color: hsl(0deg, 0%, 35%);
+  --primary: hsl(15deg, 65%, 45%);
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0;
 }
 
 #theme-toggle {
