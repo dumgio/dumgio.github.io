@@ -4,7 +4,7 @@ title: Cosa sto facendo
 permalink: /now/
 ---
 
-**Ora**
+<div class="hero-intro">Ora</div>
 
 Oltre alle attività ordinarie, in questo periodo sto dedicando tempo a:
 
@@ -14,7 +14,7 @@ Oltre alle attività ordinarie, in questo periodo sto dedicando tempo a:
 
 ---
 
-<small style="color: var(--copyright-color, gray);">
+<small class="page-note">
   Ultimo aggiornamento: Maggio 2026. <br>
   Questa pagina "Now" è ispirata da <a href="https://sive.rs/" target="_blank" rel="noopener">Derek Sivers</a> e fa parte del progetto <a href="https://nownownow.com/" target="_blank" rel="noopener">NowNowNow</a>.
 </small>
