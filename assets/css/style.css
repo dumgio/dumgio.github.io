@@ -96,6 +96,7 @@ body.light-theme {
   align-items: baseline;
   justify-content: space-between;
   max-width: var(--measure);
+  margin-bottom: 5.4rem;
 }
 
 header h1 {
