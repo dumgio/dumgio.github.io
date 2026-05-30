@@ -4,7 +4,7 @@ title: Info
 permalink: /info/
 ---
 
-<div class="hero-intro" style="margin-top: 3rem;">
+<div class="hero-intro">
   Info
 </div>
 
