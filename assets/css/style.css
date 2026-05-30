@@ -225,6 +225,11 @@ header h1 span.cursor {
   color: var(--copyright-color);
 }
 
+.cta-link {
+  font-weight: 700;
+  font-family: var(--heading-font);
+}
+
 .post-time {
   font-family: 'IBM Plex Mono', monospace;
   opacity: 0.5;
