@@ -4,6 +4,10 @@ title: Cosa sto facendo
 permalink: /now/
 ---
 
+<nav class="page-back-nav">
+  <a href="{{ '/' | relative_url }}">‹ Indietro</a>
+</nav>
+
 <div class="hero-intro">Ora</div>
 
 Oltre alle attività ordinarie, in questo periodo sto dedicando tempo a:

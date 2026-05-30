@@ -4,6 +4,10 @@ title: Info
 permalink: /info/
 ---
 
+<nav class="page-back-nav">
+  <a href="{{ '/' | relative_url }}">‹ Indietro</a>
+</nav>
+
 <div class="hero-intro">
   Info
 </div>
