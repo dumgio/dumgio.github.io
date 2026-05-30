@@ -3,7 +3,7 @@ layout: page
 title: Curriculum Vitae
 description: Curriculum vitae di Giovanni Duminuco (PhD) — ricercatore, docente, progettista e consulente con esperienza pluridecennale in ambito educativo, sociale e culturale.
 ---
-<div class="hero-intro" style="font-size: 1.8rem; margin-bottom: 3rem; line-height: 1.3;">
+<div class="hero-intro hero-intro--sm">
   Ricercatore, docente e progettista con oltre vent'anni di esperienza tra <em>scienze dell'educazione</em>, filosofia e progettazione sociale.
 </div>
 
@@ -51,8 +51,3 @@ description: Curriculum vitae di Giovanni Duminuco (PhD) — ricercatore, docent
   <li><strong>Francese</strong> — B2 (produzione scritta B1)</li>
 </ul>
 
-<style>
-  .page-content h2 { margin-top: 4rem; }
-  .page-content ul { margin-bottom: 2rem; }
-  .page-content li { margin-bottom: 1.2rem; padding-left: 1rem; border-left: 1px solid var(--grey); }
-</style>

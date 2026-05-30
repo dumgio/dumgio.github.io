@@ -44,13 +44,21 @@
 </head>
 <body>
 
-    <header style="display: flex; align-items: baseline; justify-content: space-between; max-width: var(--measure);">
-        <h1>
-          <a href="{{ '/' | relative_url }}">
-            {{ site.author | replace: ' ', '' }} <span class="title-phd">PhD</span><span class="cursor">_</span>
-          </a>
-        </h1>
-        <button id="theme-toggle" aria-label="Cambia tema" aria-pressed="false">◐</button>
+    <header>
+        <div class="header-top">
+            <h1>
+              <a href="{{ '/' | relative_url }}">
+                {{ site.author | replace: ' ', '' }} <span class="title-phd">PhD</span><span class="cursor">_</span>
+              </a>
+            </h1>
+            <button id="theme-toggle" aria-label="Cambia tema" aria-pressed="false">◐</button>
+        </div>
+        <nav class="header-nav" aria-label="Navigazione principale">
+            <a href="{{ '/blog/' | relative_url }}"{% if page.url == '/blog/' or page.url contains '/appunti/' %} class="nav-active"{% endif %}>Appunti</a>
+            <a href="{{ '/bio/' | relative_url }}"{% if page.url contains '/bio/' %} class="nav-active"{% endif %}>Curriculum</a>
+            <a href="{{ '/now/' | relative_url }}"{% if page.url contains '/now/' %} class="nav-active"{% endif %}>Now</a>
+            <a href="{{ '/info/' | relative_url }}"{% if page.url contains '/info/' %} class="nav-active"{% endif %}>Info</a>
+        </nav>
     </header>
 
     <script>
