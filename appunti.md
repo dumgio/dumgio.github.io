@@ -5,7 +5,6 @@ permalink: /blog/
 ---
 
 <section>
-    <h2>Tutti gli appunti</h2>
     <div class="post-list">
         {% for post in site.posts %}
         <div class="archive-item">

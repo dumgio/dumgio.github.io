@@ -2,7 +2,7 @@
   --dark: hsl(0deg, 0%, 8%);
   --light: hsl(0deg, 0%, 90%);
   --grey: hsl(0deg, 0%, 35%);
-  --primary: hsl(15deg, 65%, 45%); /* MODIFICATO: Rosso Terracotta per tema chiaro */
+  --primary: #10B77F;
   --highlight-selection-background-color: hsl(0deg, 0%, 45%);
   --heading-font: 'Gelasio', serif;
   --body-font: 'Inter', sans-serif;
@@ -21,7 +21,7 @@
     --highlight-bg-color: hsl(0deg, 0%, 85%);
     --highlight-text-color: hsl(0deg, 0%, 0%);
     --copyright-color: hsl(0deg, 0%, 60%);
-    --primary: hsl(15deg, 75%, 60%); /* MODIFICATO: Sfumatura Terracotta per tema scuro */
+    --primary: #13D494;
   }
 }
 
@@ -47,7 +47,7 @@ body.dark-theme {
   --highlight-bg-color: hsl(0deg, 0%, 85%);
   --highlight-text-color: hsl(0deg, 0%, 0%);
   --copyright-color: hsl(0deg, 0%, 60%);
-  --primary: hsl(15deg, 75%, 60%);
+  --primary: #13D494;
   -webkit-font-smoothing: subpixel-antialiased;
   letter-spacing: 0.01rem;
 }
@@ -58,7 +58,7 @@ body.light-theme {
   --highlight-bg-color: hsl(0deg, 0%, 8%);
   --highlight-text-color: hsl(0deg, 0%, 90%);
   --copyright-color: hsl(0deg, 0%, 35%);
-  --primary: hsl(15deg, 65%, 45%);
+  --primary: #10B77F;
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0;
 }

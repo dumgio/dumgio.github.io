@@ -8,10 +8,6 @@ permalink: /info/
   <a href="{{ '/' | relative_url }}">‹ Indietro</a>
 </nav>
 
-<div class="hero-intro">
-  Info
-</div>
-
 <p>Il sito è generato in HTML statico tramite Jekyll per garantire rapidità di caricamento, minima impronta energetica e leggibilità nel tempo.</p>
 <p>
   Non vengono utilizzati cookie, script di tracciamento o sistemi di web analytics.

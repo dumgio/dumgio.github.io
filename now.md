@@ -8,8 +8,6 @@ permalink: /now/
   <a href="{{ '/' | relative_url }}">‹ Indietro</a>
 </nav>
 
-<div class="hero-intro">Ora</div>
-
 Oltre alle attività ordinarie, in questo periodo sto dedicando tempo a:
 
 * **Studio:** Python e le sue applicazioni.
