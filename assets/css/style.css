@@ -352,6 +352,8 @@ h2 {
   font-weight: 700;
   margin-top: 4rem;
   margin-bottom: 1.5rem;
+  border-top: 1px solid var(--grey);
+  padding-top: 1.5rem;
 }
 
 p {
