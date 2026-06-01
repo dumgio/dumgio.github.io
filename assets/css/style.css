@@ -5,7 +5,7 @@
   --primary: hsl(15deg, 65%, 45%); /* MODIFICATO: Rosso Terracotta per tema chiaro */
   --highlight-selection-background-color: hsl(0deg, 0%, 45%);
   --heading-font: 'Gelasio', serif;
-  --body-font: 'Source Sans 3', sans-serif;
+  --body-font: 'Inter', sans-serif;
   --measure: 78ch;
   --bg-color: hsl(0deg, 0%, 94%);
   --text-color: var(--dark);
