@@ -96,7 +96,7 @@ body.light-theme {
   align-items: baseline;
   justify-content: space-between;
   max-width: var(--measure);
-  margin-bottom: 5.4rem;
+  margin-bottom: 2.5rem;
 }
 
 header h1 {
@@ -332,13 +332,13 @@ header h1 span.cursor {
 }
 
 .hero-intro {
-  font-family: var(--heading-font);
-  font-size: 2.5rem;
-  line-height: 1.2;
+  font-family: var(--body-font);
+  font-size: 1.25rem;
+  line-height: 1.6;
   font-weight: 400;
-  margin-bottom: 3rem;
+  margin-bottom: 1.5rem;
   color: var(--text-color);
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .hero-intro em {
