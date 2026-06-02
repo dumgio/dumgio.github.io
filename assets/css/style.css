@@ -122,7 +122,7 @@ header h1 {
 }
 
 .header-nav a:hover {
-  color: var(--primary);
+  color: var(--text-color);
   opacity: 1;
 }
 
@@ -214,7 +214,6 @@ header h1 span.cursor {
 }
 
 .intro-text {
-  font-size: 1.2rem;
   margin-bottom: 2rem;
 }
 
@@ -370,7 +369,6 @@ a {
 
 a:hover {
   opacity: 0.7;
-  color: var(--primary);
 }
 
 ul {
@@ -397,14 +395,14 @@ li {
   flex-shrink: 0;
 }
 
-/* Transizione pulita a cambio colore per i titoli degli appunti */
+/* Transizione pulita per i titoli degli appunti */
 .post-item a {
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .post-item a:hover {
-  color: var(--primary);
+  opacity: 0.7;
 }
 
 footer {
