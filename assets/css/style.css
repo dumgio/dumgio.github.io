@@ -1,11 +1,11 @@
 :root {
-  --dark: hsl(0deg, 0%, 8%);
+  --dark: rgb(10, 10, 10);
   --light: hsl(0deg, 0%, 90%);
   --grey: hsl(0deg, 0%, 35%);
   --primary: #10B77F;
   --highlight-selection-background-color: hsl(0deg, 0%, 45%);
   --heading-font: 'Gelasio', serif;
-  --body-font: 'Inter', sans-serif;
+  --body-font: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --measure: 78ch;
   --bg-color: hsl(0deg, 0%, 94%);
   --text-color: var(--dark);
@@ -26,8 +26,8 @@
 }
 
 body {
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 17px;
+  line-height: 29px;
   text-rendering: optimizeLegibility;
   background-color: var(--bg-color);
   font-family: var(--body-font);
