@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Curriculum Vitae
-description: Curriculum vitae di Giovanni Duminuco (PhD) — ricercatore, docente, progettista e consulente con esperienza pluridecennale in ambito educativo, sociale e culturale.
+description: Pedagogia sociale · Filosofia dell'educazione · Progettazione sociale
 ---
 
 <nav class="page-back-nav">
