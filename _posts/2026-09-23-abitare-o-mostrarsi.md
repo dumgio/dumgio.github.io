@@ -6,9 +6,7 @@ permalink: /appunti/abitare-o-mostrarsi/
 ---
 Nel 1938 Heidegger scriveva che l'epoca moderna è quella in cui il mondo diviene immagine: qualcosa che l'uomo si mette davanti, rappresenta e tiene a disposizione.
 
-Oggi è l'osservatore stesso a farsi immagine: si espone, si rappresenta, si rende disponibile.
-
-Accade allora che la presenza ceda il posto all'immagine, e ogni cosa diventi una rappresentazione da mostrare. Parole generate prima di essere pensate, voci prese in prestito per dire ciò che non si sa ancora dire.
+Oggi è l'osservatore stesso a farsi immagine: si espone, si rappresenta, si rende disponibile. Parole generate prima di essere pensate, voci prese in prestito per dire ciò che non si sa ancora dire.
 
 Forse è anche per questo che si produce tanto e si vive poco.
 
